@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Zap, Bot, Waves, Sun, ExternalLink } from "lucide-react";
+import { Zap, Bot, Waves, Sun, ExternalLink, FileText } from "lucide-react";
 
 const projects = [
   {
@@ -17,6 +17,7 @@ const projects = [
     border: "border-cyan-500/20",
     image:
       "https://images.unsplash.com/photo-1593941707882-a5bac6861d12?w=800&q=80",
+    proposal: "/sphoorthi-website/ev-charger-proposal.pdf",
   },
   {
     title: "Project EDEN — AI Humanoid Robot",
@@ -139,6 +140,18 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
+
+                  {"proposal" in project && project.proposal && (
+                    <a
+                      href={project.proposal as string}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`inline-flex items-center gap-1.5 text-xs font-mono ${project.color} hover:underline mt-1`}
+                    >
+                      <FileText className="w-3.5 h-3.5" />
+                      View proposal
+                    </a>
+                  )}
                 </div>
               </motion.div>
             );
