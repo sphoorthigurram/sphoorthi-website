@@ -9,7 +9,7 @@ function Hero() {
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(
     () => ["an engineer", "a researcher", "a builder", "a leader", "an innovator"],
-    [],
+    []
   );
 
   useEffect(() => {
@@ -24,27 +24,25 @@ function Hero() {
       id="home"
       className="relative w-full min-h-screen flex items-center justify-center overflow-hidden grid-bg"
     >
-      {/* Radial glow behind content */}
+      {/* Radial glow */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[600px] h-[600px] rounded-full bg-cyan-500/5 blur-3xl" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex gap-6 py-20 lg:py-40 items-center justify-center flex-col">
-          {/* Badge */}
+          {/* Badge — links to #about */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Button
-              variant="secondary"
-              size="sm"
-              className="gap-3 border border-cyan-500/20 bg-cyan-500/5 text-cyan-300 hover:bg-cyan-500/10"
-            >
-              EE Honors Program · Texas A&M · Class of 2029{" "}
-              <MoveRight className="w-4 h-4" />
-            </Button>
+            <a href="#about">
+              <span className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/5 text-cyan-300 text-sm hover:bg-cyan-500/10 transition-colors cursor-pointer">
+                EE Honors Program · Texas A&M · Class of 2029{" "}
+                <MoveRight className="w-4 h-4" />
+              </span>
+            </a>
           </motion.div>
 
           {/* Headline */}

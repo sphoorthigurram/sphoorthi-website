@@ -6,13 +6,33 @@ export default function Footer() {
           <span className="text-cyan-400 font-semibold">Sphoorthi Gurram</span>{" "}
           · EE @ Texas A&amp;M
         </p>
+        <div className="flex items-center gap-4">
+          <a
+            href="https://github.com/sphoorthigurram"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-cyan-400 transition-colors"
+          >
+            GitHub
+          </a>
+          <span className="text-border">·</span>
+          <a
+            href="https://linkedin.com/in/sphoorthi-gurram"
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-cyan-400 transition-colors"
+          >
+            LinkedIn
+          </a>
+          <span className="text-border">·</span>
+          <a
+            href="mailto:gurramsphoorthi@tamu.edu"
+            className="hover:text-cyan-400 transition-colors"
+          >
+            gurramsphoorthi@tamu.edu
+          </a>
+        </div>
         <p>College Station, TX · Class of 2029</p>
-        <a
-          href="mailto:gurramsphoorthi@tamu.edu"
-          className="hover:text-cyan-400 transition-colors"
-        >
-          gurramsphoorthi@tamu.edu
-        </a>
       </div>
     </footer>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Linkedin, MapPin, MoveRight } from "lucide-react";
+import { Mail, Linkedin, MapPin, Github, MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const contactLinks = [
@@ -22,6 +22,15 @@ const contactLinks = [
     color: "text-indigo-400",
     bg: "bg-indigo-500/10",
     border: "border-indigo-500/20",
+  },
+  {
+    icon: Github,
+    label: "GitHub",
+    value: "github.com/sphoorthigurram",
+    href: "https://github.com/sphoorthigurram",
+    color: "text-violet-400",
+    bg: "bg-violet-500/10",
+    border: "border-violet-500/20",
   },
   {
     icon: MapPin,
@@ -52,9 +61,8 @@ export default function Contact() {
             Let&apos;s connect
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto leading-relaxed">
-            I&apos;m always open to research opportunities, internships, and
-            interesting engineering conversations. Don&apos;t hesitate to reach
-            out.
+            Open to research opportunities, internships, and interesting
+            engineering conversations. Don&apos;t hesitate to reach out.
           </p>
         </motion.div>
 
@@ -63,7 +71,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.15 }}
           viewport={{ once: true }}
-          className="grid sm:grid-cols-3 gap-4 mb-8"
+          className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-8"
         >
           {contactLinks.map((link) => {
             const Icon = link.icon;
@@ -81,7 +89,7 @@ export default function Contact() {
                     {link.label}
                   </p>
                   <p
-                    className={`text-sm font-medium ${link.color} break-all leading-snug`}
+                    className={`text-xs font-medium ${link.color} break-all leading-snug`}
                   >
                     {link.value}
                   </p>

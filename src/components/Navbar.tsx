@@ -57,7 +57,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* Resume button */}
+          {/* Contact button */}
           <div className="hidden md:block">
             <Button
               variant="outline"
@@ -65,13 +65,7 @@ export default function Navbar() {
               className="border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10 hover:text-cyan-200"
               asChild
             >
-              <a
-                href="mailto:gurramsphoorthi@tamu.edu"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Contact Me
-              </a>
+              <a href="#contact">Contact Me</a>
             </Button>
           </div>
 
@@ -81,7 +75,11 @@ export default function Navbar() {
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            {mobileOpen ? (
+              <X className="w-5 h-5" />
+            ) : (
+              <Menu className="w-5 h-5" />
+            )}
           </button>
         </div>
       </div>
