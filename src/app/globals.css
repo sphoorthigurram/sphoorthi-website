@@ -45,10 +45,10 @@
 @layer utilities {
   .grid-bg {
     background-image:
-      linear-gradient(rgba(34, 211, 238, 0.07) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(34, 211, 238, 0.07) 1px, transparent 1px);
+      linear-gradient(rgba(34, 211, 238, 0.09) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(34, 211, 238, 0.09) 1px, transparent 1px);
     background-size: 60px 60px;
-    background-color: hsl(240 12% 5%);
+    background-color: hsl(240 14% 4%);
   }
 
   .glow-cyan {

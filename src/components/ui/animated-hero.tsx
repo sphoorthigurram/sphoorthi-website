@@ -26,9 +26,14 @@ function Hero() {
     >
       {/* Background glows */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-cyan-500/8 blur-[120px]" />
-        <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] rounded-full bg-indigo-500/6 blur-[100px]" />
-        <div className="absolute bottom-1/3 right-1/3 w-[350px] h-[350px] rounded-full bg-cyan-400/5 blur-[90px]" />
+        {/* Radial vignette darkening edges */}
+        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 70% at 50% 50%, transparent 30%, hsl(240 12% 2%) 100%)" }} />
+        {/* Core cyan glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-cyan-500/15 blur-[130px]" />
+        {/* Indigo accent — upper left */}
+        <div className="absolute top-1/4 left-1/4 w-[500px] h-[400px] rounded-full bg-indigo-500/12 blur-[110px]" />
+        {/* Teal accent — lower right */}
+        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[350px] rounded-full bg-cyan-400/10 blur-[100px]" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
