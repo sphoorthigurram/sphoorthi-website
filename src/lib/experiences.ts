@@ -468,6 +468,7 @@ export const experiencesData: ExperienceData[] = [
       "Tutored 125+ students across 25 countries in mathematics from algebra through calculus",
       "Organized a summer math camp with structured weekly curriculum and milestone-based progress tracking",
       "Led a 4-week intensive bootcamp — designing tiered lesson plans that measurably improved student assessment scores",
+      "194 positive ratings · Top 5% — 102 'Super Helpful', Friendly, Interactive, Good Explanations",
     ],
     tags: [
       "Mathematics",
@@ -476,6 +477,15 @@ export const experiencesData: ExperienceData[] = [
       "Cross-Cultural",
       "Leadership",
       "Mentoring",
+    ],
+    schematics: [
+      {
+        type: "image",
+        title: "Featured Feedback — Schoolhouse.world Certification Portfolio",
+        src: "/sphoorthi-website/schoolhouse-feedback.png",
+        caption:
+          "Official Schoolhouse.world certification portfolio — Featured Feedback page from real learners. 194 positive ratings (Top 5%), 102 'Super Helpful' (Top 5%), 131 learners impacted across 25 countries.",
+      },
     ],
   },
 ];
