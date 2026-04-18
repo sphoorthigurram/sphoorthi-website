@@ -19,7 +19,7 @@ const projects = [
     bg: "bg-cyan-500/10",
     border: "border-cyan-500/20",
     image:
-      "https://images.unsplash.com/photo-1593941707882-a5bac6861d12?w=800&q=80",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
   },
   {
     slug: "eden",
@@ -49,8 +49,7 @@ const projects = [
     color: "text-blue-400",
     bg: "bg-blue-500/10",
     border: "border-blue-500/20",
-    image:
-      "https://images.unsplash.com/photo-1614728423169-3f65fd722b7e?w=800&q=80",
+    image: "/sphoorthi-website/wired-auv-pool.jpg",
   },
   {
     slug: "solar-furnace",

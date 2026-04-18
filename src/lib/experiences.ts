@@ -39,11 +39,20 @@ export const experiencesData: ExperienceData[] = [
     bg: "bg-cyan-500/10",
     border: "border-cyan-500/20",
     heroImage:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1400&q=80",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80",
     tagline:
       "Leading design of a 1 kW bi-directional EV charger for the IEEE Future Energy Challenge",
     overview:
       "As Technical Lead of Team Electra, I led a 9-person interdisciplinary team to design and build a 1 kW bi-directional onboard EV charger for the IEEE Future Energy Challenge (IFEC 2026). The charger achieves ~96% peak efficiency and ~0.99 power factor — performance competitive with commercial-grade hardware — while supporting full Vehicle-to-Grid (V2G) power reversal. The project pushed me to own the system at every level: simulation, schematic, PCB, gate driver tuning, and debugging across both AC and DC stages.",
+    schematics: [
+      {
+        type: "image",
+        title: "Full System Topology — LTSpice Simulation",
+        src: "/sphoorthi-website/ev-charger-topology.png",
+        caption:
+          "Complete bi-directional EV charger topology: GaN-based bridgeless totem-pole PFC frontend (GS66508T, C3M0032120K) feeding a Dual Active Bridge DC-DC stage (IPP65R065C7, IPP65R045C7) with galvanic isolation, L-C filter network, and battery load. Simulated in LTSpice prior to hardware build.",
+      },
+    ],
     technicalHighlights: [
       {
         label: "Frontend Topology",
@@ -193,8 +202,7 @@ export const experiencesData: ExperienceData[] = [
     color: "text-blue-400",
     bg: "bg-blue-500/10",
     border: "border-blue-500/20",
-    heroImage:
-      "https://images.unsplash.com/photo-1614728423169-3f65fd722b7e?w=1400&q=80",
+    heroImage: "/sphoorthi-website/wired-auv-pool.jpg",
     tagline:
       "Leading a 40+ member AUV team while redesigning the power architecture and DVL integration",
     overview:
@@ -295,50 +303,72 @@ export const experiencesData: ExperienceData[] = [
     heroImage:
       "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1400&q=80",
     tagline:
-      "Developing a Fresnel-lens solar furnace for off-grid high-temperature thermal energy",
+      "Proposing solar-thermal e-waste desoldering using a Fresnel-lens solar furnace at SHINE Lab",
     overview:
-      "At the SHINE (Solar High-temperature Irradiance and Novel Energy) Lab at Texas A&M, I'm contributing to the development of an off-grid concentrating solar system using Fresnel lenses to focus sunlight into a high-temperature solar furnace. The research targets applications in industrial process heat, materials synthesis, and decentralized renewable energy — domains where photovoltaic panels are fundamentally limited. My work spans microcontroller programming, DAQ system integration, and MATLAB/Simulink modeling of the thermal receiver.",
+      "At the SHINE (Solar Harvesting Innovations for New Ecosystems) Lab at Texas A&M, I'm contributing to an off-grid concentrating solar system that uses a Fresnel lens to focus sunlight into a high-temperature solar furnace. My research proposal targets solar-thermal e-waste desoldering — using precisely concentrated solar heat (reaching 217–250 °C) to cleanly separate electronic components from circuit boards and recover critical minerals. Over 62 million tonnes of e-waste are generated annually with less than 23% formally recycled; solar-thermal processing offers a carbon-neutral, zero-fuel alternative to acid baths and open-air burning.",
     technicalHighlights: [
       {
-        label: "Concentrating Solar Optics",
+        label: "Concentrating Solar — System Physics",
         detail:
-          "Fresnel lens array focuses direct solar irradiance onto a receiver aperture, achieving high concentration ratios and temperatures without complex parabolic dish mechanics",
+          "Fresnel lens concentrates Direct Normal Irradiance (DNI) onto a receiver. Geometric concentration factor Cg = Area_in / Area_out. Useful power: P_W = DNI × Area × η. Only direct (not diffuse) sunlight can be focused — requiring accurate dual-axis sun tracking. SHINE uses a 12″ × 12″ Fresnel lens producing small-system (<1 MW) concentrations on par with a solar furnace.",
+      },
+      {
+        label: "E-Waste Desoldering — Proposal",
+        detail:
+          "Lead-free solders melt at 217–250 °C; FR4 PCB substrate degrades/combusts at 300–400 °C. Precisely controlled solar heat allows clean desoldering within that window — separating valuable ICs, capacitors, and metals without burning the board or releasing toxic fumes. E-waste feedstock is essentially free; solar process heat costs nothing, making experimental iteration very low-cost.",
+      },
+      {
+        label: "Dual-Axis Solar Tracker",
+        detail:
+          "Dual-axis tracker keeps the Fresnel lens pointed at the sun throughout the day. Built by the ITDE senior design team (Fall 2025 – Spring 2026) using T-slot aluminum frame, belt-drive mechanism, and stepper motors. Electronics controlled via ESP32 (Arduino IDE) with data piped to MATLAB for analysis.",
       },
       {
         label: "Precision Sun-Tracking",
         detail:
-          "Programming microcontrollers and interfacing angular position sensors for two-axis sun-tracking — maximizing daily energy capture and maintaining peak concentration throughout the day",
+          "Programming microcontrollers and interfacing angular position sensors for two-axis sun-tracking — maximizing daily energy capture and maintaining peak concentration throughout the day.",
       },
       {
-        label: "Thermal Modeling",
+        label: "Thermal Modeling — MATLAB/Simulink",
         detail:
-          "MATLAB/Simulink models of receiver thermal dynamics, heat flux distribution, and system efficiency under varying insolation conditions — guiding geometry optimization",
+          "MATLAB/Simulink models of receiver thermal dynamics, heat flux distribution, and system efficiency under varying insolation — used to validate the desoldering temperature window (target: 217–250 °C) and guide receiver geometry optimization.",
       },
       {
-        label: "DAQ Integration",
+        label: "DAQ & Electronics",
         detail:
-          "Interfacing temperature sensors, pyranometers, and power measurement hardware through a multi-channel DAQ system for real-time performance monitoring and data logging",
+          "ESP32 microcontroller (Arduino IDE) interfaces with position sensors and drives the dual-axis tracker. MATLAB receives telemetry for logging and analysis. Multi-channel DAQ monitors temperature, pyranometer readings, and power output in real time.",
       },
       {
-        label: "Research Objective",
+        label: "Impact & Funding Case",
         detail:
-          "Validate concentration ratio and thermal efficiency metrics; optimize receiver geometry for maximum energy conversion toward a publishable performance characterization",
+          "62M+ tonnes of e-waste generated annually; <23% formally recycled. 'Circular Electronics' and 'Urban Mining' are top priorities for 2026 sustainability grants. Solar-thermal approach is carbon-neutral with near-zero operating cost — feedstock is free (e-waste) and fuel is free (sun).",
       },
     ],
     achievements: [
-      "Programmed microcontroller-based two-axis sun-tracking system for maximum solar collection efficiency",
-      "Built MATLAB/Simulink thermal receiver model to predict heat flux distribution and guide design optimization",
-      "Integrated multi-channel DAQ system monitoring thermal, optical, and electrical performance metrics in real time",
+      "Authored research proposal for solar-thermal e-waste desoldering — targeting the 217–250 °C solder melt window with Fresnel lens concentration",
+      "Established thermal feasibility case: solder melts before FR4 substrate degrades (300–400 °C), enabling clean component separation",
+      "Contributed to dual-axis solar tracker development (ESP32/Arduino IDE → MATLAB pipeline)",
+      "Built MATLAB/Simulink model to predict heat flux distribution at the receiver and guide geometry optimization",
+      "Integrated multi-channel DAQ system monitoring thermal, optical, and power metrics in real time",
     ],
     tags: [
       "MATLAB",
       "Simulink",
-      "Microprocessors",
-      "Sensor Integration",
+      "ESP32",
+      "Arduino IDE",
       "Fresnel Optics",
+      "Thermal Systems",
       "DAQ",
       "Embedded Systems",
-      "Thermal Systems",
+      "Solar-Thermal",
+    ],
+    schematics: [
+      {
+        type: "image",
+        title: "Dual-Axis Solar Tracker",
+        src: "/sphoorthi-website/shine-tracker.png",
+        caption:
+          "SHINE Lab dual-axis solar tracker prototype — T-slot aluminum frame with belt-drive mechanism and stepper motors. Keeps the 12″×12″ Fresnel lens pointed at the sun for maximum DNI concentration throughout the day.",
+      },
     ],
   },
   {

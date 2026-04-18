@@ -94,37 +94,7 @@ export default function ExperienceClient({
               </div>
             </motion.div>
 
-            {/* Technical Details */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.18 }}
-            >
-              <SectionLabel>Technical Details</SectionLabel>
-              <div className="grid sm:grid-cols-2 gap-3">
-                {experience.technicalHighlights.map((item, i) => (
-                  <motion.div
-                    key={item.label}
-                    initial={{ opacity: 0, y: 12 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.35, delay: 0.2 + i * 0.06 }}
-                    className={`rounded-xl border ${experience.border} bg-card overflow-hidden flex flex-col`}
-                  >
-                    <div className={`h-1 w-full ${experience.color} bg-current opacity-60`} />
-                    <div className="p-4 flex flex-col gap-2 flex-1">
-                      <p className={`text-xs font-mono font-semibold ${experience.color} leading-snug`}>
-                        {item.label}
-                      </p>
-                      <p className="text-sm text-muted-foreground leading-relaxed flex-1">
-                        {item.detail}
-                      </p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Schematics */}
+            {/* Schematics — shown before technical details */}
             {experience.schematics && experience.schematics.length > 0 && (
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -197,6 +167,36 @@ export default function ExperienceClient({
                 </div>
               </motion.div>
             )}
+
+            {/* Technical Details */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.28 }}
+            >
+              <SectionLabel>Technical Details</SectionLabel>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {experience.technicalHighlights.map((item, i) => (
+                  <motion.div
+                    key={item.label}
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.35, delay: 0.3 + i * 0.06 }}
+                    className={`rounded-xl border ${experience.border} bg-card overflow-hidden flex flex-col`}
+                  >
+                    <div className={`h-1 w-full ${experience.color} bg-current opacity-60`} />
+                    <div className="p-4 flex flex-col gap-2 flex-1">
+                      <p className={`text-xs font-mono font-semibold ${experience.color} leading-snug`}>
+                        {item.label}
+                      </p>
+                      <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                        {item.detail}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
 
             {/* Achievements */}
             <motion.div

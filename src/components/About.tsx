@@ -70,13 +70,24 @@ export default function About() {
               problems end-to-end, from circuit schematics to deployment code.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Outside engineering, I&apos;ve tutored 125+ students across 25
-              countries and competed nationally in Speech & Debate, where I was
-              recognized with the{" "}
+              Outside engineering, I tutor mathematics on Schoolhouse.world —
+              working with{" "}
+              <span className="text-foreground font-medium">
+                125+ students across 25 countries
+              </span>{" "}
+              through sessions, a summer camp, and a 4-week intensive bootcamp.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              I also competed nationally in{" "}
+              <span className="text-foreground font-medium">
+                Speech &amp; Debate
+              </span>
+              , earning the{" "}
               <span className="text-foreground font-medium">
                 National Degree of Distinction
-              </span>
-              .
+              </span>{" "}
+              — a recognition placing me in the top 4.89% of competitors
+              nationwide.
             </p>
             <div className="flex gap-3 pt-2">
               <a
