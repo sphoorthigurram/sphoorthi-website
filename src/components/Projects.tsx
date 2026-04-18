@@ -7,6 +7,7 @@ import { Zap, Bot, Waves, Sun, ExternalLink, ArrowRight } from "lucide-react";
 const projects = [
   {
     slug: "ev-charger",
+    experienceSlug: "ev-charger",
     title: "1 kW Bi-Directional EV Charger",
     org: "TAMU Think Tank · Team Electra",
     description:
@@ -22,6 +23,7 @@ const projects = [
   },
   {
     slug: "eden",
+    experienceSlug: "eden-robot",
     title: "Project EDEN — AI Humanoid Robot",
     org: "EDEN Startup · Software Engineer",
     description:
@@ -36,6 +38,7 @@ const projects = [
   },
   {
     slug: "wired-auv",
+    experienceSlug: "wired-auv",
     title: "Autonomous Underwater Vehicle",
     org: "WIRED AUV Team · Executive Lead",
     description:
@@ -51,6 +54,7 @@ const projects = [
   },
   {
     slug: "solar-furnace",
+    experienceSlug: "shine-lab",
     title: "Concentrating Solar Furnace",
     org: "SHINE Lab · Student Researcher",
     description:
@@ -97,7 +101,7 @@ export default function Projects() {
                 viewport={{ once: true }}
               >
                 <Link
-                  href={`/projects/${project.slug}`}
+                  href={`/experience/${project.experienceSlug}`}
                   className={`group rounded-2xl border ${project.border} bg-card overflow-hidden hover:${project.bg} transition-all duration-300 flex flex-col h-full block`}
                 >
                   {/* Image */}

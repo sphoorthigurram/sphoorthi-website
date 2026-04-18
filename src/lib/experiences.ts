@@ -1,3 +1,10 @@
+export interface SchematicItem {
+  type: "image" | "link";
+  title: string;
+  src: string;
+  caption?: string;
+}
+
 export interface ExperienceData {
   slug: string;
   org: string;
@@ -15,7 +22,8 @@ export interface ExperienceData {
   technicalHighlights: { label: string; detail: string }[];
   achievements: string[];
   tags: string[];
-  links?: { label: string; href: string; external?: boolean }[];
+  schematics?: SchematicItem[];
+  links?: { label: string; href: string; external?: boolean; description?: string }[];
 }
 
 export const experiencesData: ExperienceData[] = [
@@ -104,53 +112,74 @@ export const experiencesData: ExperienceData[] = [
     color: "text-indigo-400",
     bg: "bg-indigo-500/10",
     border: "border-indigo-500/20",
-    heroImage:
-      "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1400&q=80",
+    heroImage: "/sphoorthi-website/eden-simulator.png",
     tagline:
-      "Engineering the vision pipeline and power architecture for an AI humanoid robot startup",
+      "Engineering the vision pipeline and power architecture for an AI humanoid robot — with a custom 3D web simulator",
     overview:
-      "Project EDEN is building an AI-powered humanoid robot with adaptive reasoning capabilities. As a Software Engineer, I own two of the most critical subsystems: the computer vision pipeline that lets the robot perceive humans in real time, and the power distribution architecture that keeps the bipedal platform operational under dynamic load conditions. The work sits at the intersection of machine learning, embedded systems, and power electronics — the exact combination I'm most interested in.",
+      "Project EDEN is building an AI-powered humanoid robot with adaptive reasoning capabilities. As a Software Engineer I own two critical subsystems: the computer vision pipeline enabling real-time human perception, and the power distribution architecture keeping the bipedal platform operational under dynamic loads. The team also built a full-featured browser-based 3D simulator — the EDEN Simulator — to develop and validate autonomous behaviors before hardware deployment.",
     technicalHighlights: [
+      {
+        label: "EDEN Simulator — 3D Web Platform",
+        detail:
+          "Browser-native 3D robot simulator built with Three.js and React Three Fiber (R3F). Simulates a TurtleBot3-scale differential-drive robot in a 30 × 20 m procedural environment with real-time physics dynamics (motor τ = 0.14 s). Runs entirely in-browser — no backend required.",
+      },
+      {
+        label: "LIDAR Raycast Engine",
+        detail:
+          "Custom LIDAR simulation: 270° field of view, 180 rays, 1.30 m minimum range. Produces real-time occupancy point clouds used for mapping, obstacle avoidance, and autonomous navigation — mirroring physical sensor specs.",
+      },
+      {
+        label: "Cognitive Gate — LLM Autonomous Reasoning",
+        detail:
+          "LLM-based task reasoning module wired into the robot's control loop. Receives sensor state and telemetry, sets high-level goals (e.g. 'explore unexplored area'), generates action sequences, and runs in an autonomous loop. Avg decision latency: 6820 ms, P95: 9603 ms.",
+      },
+      {
+        label: "ROS-Style Topic Bus",
+        detail:
+          "Internal publish/subscribe topic bus modeled after ROS, enabling decoupled communication between the dynamics engine, LIDAR, cognitive agent, and UI telemetry panels. Active topics include /map (2.0 Hz, 341 msgs) and /odom.",
+      },
+      {
+        label: "Real-Time Telemetry",
+        detail:
+          "Full telemetry dashboard streams: X/Y position, heading, linear/angular velocity, wheel L/R speeds (rad/s), odometry drift, LIDAR min distance, collision count, bumper stop, total distance traveled, and battery %. 2D occupancy minimap with lethal, inflation, and free zones.",
+      },
       {
         label: "Computer Vision Pipeline",
         detail:
-          "Trained YOLO-based object detection models in Python for real-time human detection and tracking, optimized for latency on edge compute hardware aboard the robot",
+          "Trained YOLO-based object detection models in Python for real-time human detection and tracking on edge compute hardware. Optimized for low latency within the ROS 2 sensor-to-actuator loop.",
       },
       {
-        label: "Power Distribution",
+        label: "Power Distribution Architecture",
         detail:
-          "Designed the full power distribution architecture for the bipedal platform: rail voltages, battery management, load sequencing, and protection circuits for motors, sensors, and compute",
-      },
-      {
-        label: "Low-Latency Interface",
-        detail:
-          "Optimized the ROS 2 communication layer between vision sensors and motor controllers, reducing sensor-to-actuator latency critical for reactive and stable locomotion",
-      },
-      {
-        label: "Platform Context",
-        detail:
-          "Bipedal humanoid presents the hardest class of robotics integration challenge — vision, control, and power subsystems must be tightly co-designed for stable operation",
-      },
-      {
-        label: "Stack",
-        detail:
-          "Python (PyTorch / Ultralytics YOLO), ROS 2, Ubuntu-based embedded compute, custom power regulation hardware",
+          "Designed the full power distribution system for the bipedal platform: rail voltages, battery management, load sequencing, and protection circuits for motors, sensors, and compute boards.",
       },
     ],
     achievements: [
-      "Built real-time YOLO human detection pipeline achieving accurate tracking in dynamic, cluttered environments",
-      "Designed complete power distribution architecture for all motors, sensors, and compute boards on the bipedal platform",
-      "Reduced sensor-to-actuator communication latency through optimized ROS 2 message pipeline",
+      "Built browser-native 3D robot simulator with physics dynamics, LIDAR raycast, and LLM Cognitive Gate",
+      "Integrated Cognitive Gate: LLM autonomous reasoning loop with real-time sensor feedback and goal planning",
+      "Implemented ROS-style topic bus enabling decoupled sim architecture (dynamics, LIDAR, AI, UI)",
+      "Built real-time YOLO human detection pipeline achieving accurate tracking in dynamic environments",
+      "Designed complete power distribution architecture for motors, sensors, and compute on the bipedal platform",
     ],
     tags: [
+      "Three.js",
+      "React Three Fiber",
+      "ROS 2",
       "Python",
       "YOLO",
       "Computer Vision",
-      "ROS 2",
+      "LLM / Cognitive AI",
       "Power Electronics",
       "Embedded Systems",
-      "Deep Learning",
       "PyTorch",
+    ],
+    links: [
+      {
+        label: "EDEN Simulator",
+        href: "https://eden-robotics.github.io/Eden/sim",
+        external: true,
+        description: "Live browser-based 3D robot simulator",
+      },
     ],
   },
   {
@@ -172,36 +201,54 @@ export const experiencesData: ExperienceData[] = [
       "WIRED (Water-Integrated Robotics Engineering and Design) is Texas A&M's competitive Autonomous Underwater Vehicle team, competing in the international RoboSub competition. As Executive Lead, I manage cross-functional operations across four sub-teams while also contributing hands-on as an electrical engineer — redesigning the full power architecture and spearheading Doppler Velocity Log (DVL) sensor integration for autonomous underwater navigation.",
     technicalHighlights: [
       {
-        label: "PCB Redesign",
+        label: "Compute — NVIDIA Jetson Nano 4GB",
         detail:
-          "Redesigned the full ESC layout and PCB stack in Altium Designer to reduce mechanical wire strain, improve thermal clearance, and enable modular hot-swap stacking — reducing maintenance time at competition",
+          "Main CPU: NVIDIA Jetson Nano 4GB (25.6 GB/s memory bandwidth). Runs Python 3 control code, ZED SDK, Roboflow object detection, and DVL interface. GPIO extension PCB (Samtec SSW-120-02-T-D-RA, 40-pin) designed in Altium for peripheral connectivity.",
       },
       {
-        label: "Power Architecture",
+        label: "Power Architecture — Boost Converter Transition",
         detail:
-          "Transitioned the power subsystem from buck to boost converters, providing stabilized 24 V and 18 V regulated rails — significantly improving supply regulation under the variable thruster current spikes",
+          "Replaced legacy buck converters with boost converters providing regulated rails: 24 V (Teledyne DVL), 18 V (T200 thrusters), 16 V (Jetson Nano). Tuned via potentiometers, verified with multimeter. Powered by 2× Turnigy 16000mAh 6S 12C LiPo packs.",
       },
       {
-        label: "DVL Integration",
+        label: "Propulsion — 8× Blue Robotics T200 Thrusters",
         detail:
-          "Leading software and hardware integration of a Doppler Velocity Log — a sonar-based sensor providing precise velocity relative to the seafloor, enabling accurate dead-reckoning navigation without GPS",
+          "8× T200 Thrusters (7–26 V, 30 A) controlled via 8× Basic ESCs driven by Adafruit PCA9685 16-ch 12-bit PWM/Servo Driver (I2C). ESC layout redesigned to 1×4 modular with velcro retention to eliminate wire strain and terminal block disconnects.",
       },
       {
-        label: "Mechanical Design",
+        label: "Navigation — Teledyne Marine Wayfinder DVL",
         detail:
-          "Used Fusion360 and SolidWorks for waterproof enclosure design, pressure testing, and mounting bracket CAD for new hardware additions",
+          "600 kHz Doppler Velocity Log with ±1.15% bottom-tracking accuracy. Enables dead-reckoning navigation without GPS. PID controller uses DVL distance data for error computation — first DVL integration in WIRED team history.",
       },
       {
-        label: "Executive Leadership",
+        label: "Sensor Suite",
         detail:
-          "Manage internal operations, cross-team technical milestones, member onboarding, and competition logistics for a 40+ member organization across electrical, mechanical, software, and business teams",
+          "ZED Mini stereo camera (100 Hz, 0.1–15 m depth) for top vision; Blue Robotics Low-Light HD Camera (Sony IMX322, 1920×1080) for bottom detection; VectorNav VN-100 IMU/AHRS; Bar30 pressure sensor (300 m, 2 mm resolution); Ping2 Sonar (25° beam, 300 m rating).",
+      },
+      {
+        label: "Custom PCBs — Altium Designer",
+        detail:
+          "Designed: (1) Fuse Board PCB — centralized 10-position fuse distribution; (2) Mission Switch PCB — active-high GPIO trigger for thruster code; (3) Kill Switch — solid-state relay (25 A) disconnecting battery from thrusters; (4) GPIO Extension PCB for 40-pin Jetson header.",
+      },
+      {
+        label: "Vision & ML Pipeline",
+        detail:
+          "Roboflow Inference object detection for underwater task recognition (gate, slalom, octagon, bin). OpenCV camera pipeline. Competition tasks: Gate, Slalom, Surface in Octagon, Return Home, and Coin Flip.",
+      },
+      {
+        label: "Thermal Management",
+        detail:
+          "Researched cooling for Jetson Nano inside sealed hull: evaluated Noctua NF-A4x20 5V PWM (NVIDIA-recommended), NF-A4x10 compact, Waveshare Fan-4020-PWM-5V, Seeed ICE Tower (85°C→45°C), and IP67-rated 140mm waterproof fan.",
       },
     ],
     achievements: [
-      "Lead 40+ member organization across 4 sub-teams with full operational and technical oversight",
-      "Redesigned PCB in Altium — reducing wire strain and enabling modular component replacement during competition",
-      "Stabilized power rails by transitioning to boost converter architecture, eliminating voltage droops under thruster load",
-      "Spearheading DVL integration for accurate dead-reckoning navigation — a first for the WIRED team",
+      "Executive Lead of 40+ member organization across electrical, mechanical, software, and business sub-teams",
+      "Led boost converter transition: 15V → 24V (DVL), 18V (thrusters), 16V (Jetson) — eliminated voltage droops under thruster load",
+      "Redesigned ESC layout to 1×4 modular configuration with velcro retention — eliminated terminal block failures from wire strain",
+      "Spearheading first-ever DVL integration for WIRED team — enabling accurate dead-reckoning AUV navigation",
+      "Designed GPIO extension PCB in Altium (Samtec SSW-120-02-T-D-RA, 40-pin Jetson header)",
+      "Researched and specified Jetson thermal management solution for sealed hull operation",
+      "Drove Battery Management System (BMS) research and prototyping for real-time cell monitoring",
     ],
     tags: [
       "Altium Designer",
@@ -212,7 +259,26 @@ export const experiencesData: ExperienceData[] = [
       "Power Electronics",
       "ROS 2",
       "DVL",
+      "NVIDIA Jetson",
+      "Roboflow",
+      "OpenCV",
       "Leadership",
+    ],
+    schematics: [
+      {
+        type: "image",
+        title: "Electrical Wiring Schematic",
+        src: "/sphoorthi-website/auv-schematic.jpg",
+        caption:
+          "Full electrical schematic: Jetson Nano, 8× ESCs, boost converters, fuse board, kill switch, PWM servo driver, battery, and thruster wiring.",
+      },
+      {
+        type: "link",
+        title: "Interactive Robot Schematic (Lucidchart)",
+        src: "https://lucid.app/lucidspark/942e65dc-3da9-467a-9b67-7f9915968b43/edit?invitationId=inv_42dee7c1-22ce-4595-b453-0952b92954f9&page=0_0#",
+        caption:
+          "Full system-level schematic showing mechanical, electrical, and sensor integration.",
+      },
     ],
   },
   {
