@@ -112,22 +112,27 @@ export default function About() {
           <div className="flex flex-col gap-6">
             {/* Headshot */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
               viewport={{ once: true }}
-              className="flex justify-center"
+              className="flex flex-col items-center gap-3"
             >
               <div className="relative">
-                <div className="w-36 h-36 rounded-full overflow-hidden border-2 border-cyan-500/40 shadow-lg shadow-cyan-500/10">
+                <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-cyan-500/40 shadow-lg shadow-cyan-500/10 ring-4 ring-cyan-500/8">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/sphoorthi-website/headshot.jpg"
                     alt="Sphoorthi Gurram"
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: "50% 18%" }}
                   />
                 </div>
-                <span className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-cyan-400 border-2 border-background" />
+                <span className="absolute bottom-1.5 right-1.5 w-3.5 h-3.5 rounded-full bg-cyan-400 border-2 border-background" />
+              </div>
+              <div className="text-center">
+                <p className="text-sm font-semibold text-spektr-cyan-50">Sphoorthi Gurram</p>
+                <p className="text-xs text-muted-foreground font-mono">EE Honors · Texas A&amp;M &apos;29</p>
               </div>
             </motion.div>
 

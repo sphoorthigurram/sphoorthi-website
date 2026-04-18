@@ -57,14 +57,6 @@ export const experiencesData: ExperienceData[] = [
       },
       {
         type: "image",
-        title: "Behind the Scenes",
-        src: "/sphoorthi-website/electra-silly.jpg",
-        caption: "End-of-semester celebrations.",
-        small: true,
-        rotateCCW: true,
-      },
-      {
-        type: "image",
         title: "Full System Topology — LTSpice Simulation",
         src: "/sphoorthi-website/ev-charger-topology.png",
         caption:
@@ -75,6 +67,13 @@ export const experiencesData: ExperienceData[] = [
         title: "IFEC 2026 Technical Proposal",
         src: "/sphoorthi-website/ev-charger-proposal.pdf",
         caption: "IEEE Future Energy Challenge 2026 — Team Electra technical proposal.",
+      },
+      {
+        type: "image",
+        title: "Behind the Scenes",
+        src: "/sphoorthi-website/electra-silly.jpg",
+        caption: "End-of-semester celebrations.",
+        rotateCCW: true,
       },
     ],
     technicalHighlights: [
