@@ -101,87 +101,8 @@ export default function ExperienceClient({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
               >
-                <SectionLabel>Schematics & Diagrams</SectionLabel>
-                <div className="space-y-5">
-                  {experience.schematics.map((s, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.4, delay: 0.32 + i * 0.1 }}
-                      className={`rounded-xl border ${experience.border} bg-card overflow-hidden`}
-                    >
-                      <div className={`px-4 py-3 border-b ${experience.border} flex items-center justify-between gap-3`}>
-                        <p className={`text-xs font-mono font-semibold ${experience.color} flex items-center gap-2`}>
-                          {s.type === "image"
-                            ? <ImageIcon className="w-3.5 h-3.5" />
-                            : <ExternalLink className="w-3.5 h-3.5" />}
-                          {s.title}
-                        </p>
-                        {s.type === "link" && (
-                          <a
-                            href={s.src}
-                            target="_blank"
-                            rel="noreferrer"
-                            className={`text-xs font-mono ${experience.color} hover:underline flex items-center gap-1`}
-                          >
-                            Open <ExternalLink className="w-3 h-3" />
-                          </a>
-                        )}
-                      </div>
-
-                      {s.type === "image" && (
-                        <>
-                          <div className={s.rotate ? "flex justify-center bg-white/5 py-4 overflow-hidden" : ""}>
-                            {/* eslint-disable-next-line @next/next/no-img-element */}
-                            <img
-                              src={s.src}
-                              alt={s.title}
-                              className={`object-contain bg-white/5 max-h-[560px] ${s.rotate ? "rotate-90 max-h-[400px] w-auto" : "w-full"}`}
-                            />
-                          </div>
-                          {s.caption && (
-                            <p className="text-xs text-muted-foreground px-4 py-3 border-t border-border leading-relaxed">
-                              {s.caption}
-                            </p>
-                          )}
-                        </>
-                      )}
-
-                      {s.type === "embed" && (
-                        <>
-                          <iframe
-                            src={s.src}
-                            title={s.title}
-                            className="w-full h-[640px] border-0"
-                          />
-                          {s.caption && (
-                            <p className="text-xs text-muted-foreground px-4 py-3 border-t border-border leading-relaxed">
-                              {s.caption}
-                            </p>
-                          )}
-                        </>
-                      )}
-
-                      {s.type === "link" && (
-                        <div className="p-6 flex flex-col items-center gap-4">
-                          <p className="text-sm text-muted-foreground text-center max-w-sm leading-relaxed">
-                            {s.caption}
-                          </p>
-                          <a
-                            href={s.src}
-                            target="_blank"
-                            rel="noreferrer"
-                            className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border ${experience.border} ${experience.bg} ${experience.color} text-sm font-mono hover:opacity-80 transition-opacity`}
-                          >
-                            <ExternalLink className="w-4 h-4" />
-                            Open Interactive Schematic
-                          </a>
-                        </div>
-                      )}
-                    </motion.div>
-                  ))}
-                </div>
+                <SectionLabel>Photos & Diagrams</SectionLabel>
+                <SchematicsGrid schematics={experience.schematics} experience={experience} />
               </motion.div>
             )}
 
@@ -327,5 +248,171 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
     <p className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-4">
       {children}
     </p>
+  );
+}
+
+function SchematicsGrid({
+  schematics,
+  experience,
+}: {
+  schematics: NonNullable<ExperienceData["schematics"]>;
+  experience: ExperienceData;
+}) {
+  // Group consecutive small items into pairs for side-by-side display
+  const groups: Array<{ items: typeof schematics; paired: boolean }> = [];
+  let i = 0;
+  while (i < schematics.length) {
+    const s = schematics[i];
+    if (s.small && i + 1 < schematics.length && schematics[i + 1].small) {
+      groups.push({ items: [s, schematics[i + 1]], paired: true });
+      i += 2;
+    } else {
+      groups.push({ items: [s], paired: false });
+      i += 1;
+    }
+  }
+
+  return (
+    <div className="space-y-5">
+      {groups.map((group, gi) =>
+        group.paired ? (
+          <motion.div
+            key={gi}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.32 + gi * 0.1 }}
+            className="grid grid-cols-2 gap-4"
+          >
+            {group.items.map((s, si) => (
+              <SchematicCard key={si} s={s} experience={experience} />
+            ))}
+          </motion.div>
+        ) : (
+          <motion.div
+            key={gi}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.32 + gi * 0.1 }}
+          >
+            <SchematicCard s={group.items[0]} experience={experience} />
+          </motion.div>
+        )
+      )}
+    </div>
+  );
+}
+
+function SchematicCard({
+  s,
+  experience,
+}: {
+  s: NonNullable<ExperienceData["schematics"]>[number];
+  experience: ExperienceData;
+}) {
+  return (
+    <div className={`rounded-xl border ${experience.border} bg-card overflow-hidden flex flex-col`}>
+      {/* Header */}
+      <div className={`px-4 py-2.5 border-b ${experience.border} flex items-center justify-between gap-3`}>
+        <p className={`text-xs font-mono font-semibold ${experience.color} flex items-center gap-2`}>
+          {s.type === "image" ? (
+            <ImageIcon className="w-3.5 h-3.5" />
+          ) : (
+            <ExternalLink className="w-3.5 h-3.5" />
+          )}
+          {s.title}
+        </p>
+        {s.type === "link" && (
+          <a
+            href={s.src}
+            target="_blank"
+            rel="noreferrer"
+            className={`text-xs font-mono ${experience.color} hover:underline flex items-center gap-1`}
+          >
+            Open <ExternalLink className="w-3 h-3" />
+          </a>
+        )}
+      </div>
+
+      {/* Image */}
+      {s.type === "image" && (
+        <>
+          {s.rotateCCW ? (
+            /* Landscape container for a portrait image rotated CCW */
+            <div className="overflow-hidden bg-black/20 flex items-center justify-center" style={{ aspectRatio: "4/3" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={s.src}
+                alt={s.title}
+                style={{
+                  transform: "rotate(-90deg)",
+                  width: "75%",
+                  height: "auto",
+                  maxHeight: "none",
+                }}
+              />
+            </div>
+          ) : s.small ? (
+            /* Small image — crop white space with cover */
+            <div className="overflow-hidden bg-white" style={{ aspectRatio: "4/3" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={s.src}
+                alt={s.title}
+                className="w-full h-full object-cover object-center scale-105"
+              />
+            </div>
+          ) : (
+            <div className="bg-white/5">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={s.src}
+                alt={s.title}
+                className="w-full object-contain max-h-[480px]"
+              />
+            </div>
+          )}
+          {s.caption && (
+            <p className="text-xs text-muted-foreground px-4 py-2.5 border-t border-border leading-relaxed">
+              {s.caption}
+            </p>
+          )}
+        </>
+      )}
+
+      {/* Embed (PDF iframe) */}
+      {s.type === "embed" && (
+        <>
+          <iframe
+            src={s.src}
+            title={s.title}
+            className="w-full border-0"
+            style={{ height: "640px" }}
+          />
+          {s.caption && (
+            <p className="text-xs text-muted-foreground px-4 py-2.5 border-t border-border leading-relaxed">
+              {s.caption}
+            </p>
+          )}
+        </>
+      )}
+
+      {/* External link */}
+      {s.type === "link" && (
+        <div className="p-6 flex flex-col items-center gap-4">
+          <p className="text-sm text-muted-foreground text-center max-w-sm leading-relaxed">
+            {s.caption}
+          </p>
+          <a
+            href={s.src}
+            target="_blank"
+            rel="noreferrer"
+            className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border ${experience.border} ${experience.bg} ${experience.color} text-sm font-mono hover:opacity-80 transition-opacity`}
+          >
+            <ExternalLink className="w-4 h-4" />
+            Open Interactive Schematic
+          </a>
+        </div>
+      )}
+    </div>
   );
 }

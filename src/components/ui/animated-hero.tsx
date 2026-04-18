@@ -34,24 +34,6 @@ function Hero() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex gap-6 py-20 lg:py-40 items-center justify-center flex-col">
 
-          {/* Headshot */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="relative"
-          >
-            <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-cyan-500/40 shadow-lg shadow-cyan-500/10">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/sphoorthi-website/headshot.jpg"
-                alt="Sphoorthi Gurram"
-                className="w-full h-full object-cover object-top"
-              />
-            </div>
-            <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-cyan-400 border-2 border-background" />
-          </motion.div>
-
           {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}

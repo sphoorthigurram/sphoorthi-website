@@ -4,6 +4,8 @@ export interface SchematicItem {
   src: string;
   caption?: string;
   rotate?: boolean;
+  rotateCCW?: boolean;
+  small?: boolean;
 }
 
 export interface ExperienceData {
@@ -51,6 +53,15 @@ export const experiencesData: ExperienceData[] = [
         title: "Meet My Team — Team Electra",
         src: "/sphoorthi-website/electra-team.png",
         caption: "Team Electra — 9-person interdisciplinary team competing in the IEEE Future Energy Challenge (IFEC 2026).",
+        small: true,
+      },
+      {
+        type: "image",
+        title: "Behind the Scenes",
+        src: "/sphoorthi-website/electra-silly.jpg",
+        caption: "End-of-semester celebrations.",
+        small: true,
+        rotateCCW: true,
       },
       {
         type: "image",
@@ -60,23 +71,10 @@ export const experiencesData: ExperienceData[] = [
           "Complete bi-directional EV charger topology: GaN-based bridgeless totem-pole PFC frontend (GS66508T, C3M0032120K) feeding a Dual Active Bridge DC-DC stage (IPP65R065C7, IPP65R045C7) with galvanic isolation, L-C filter network, and battery load. Simulated in LTSpice prior to hardware build.",
       },
       {
-        type: "image",
-        title: "Behind the Scenes",
-        src: "/sphoorthi-website/electra-silly.jpg",
-        caption: "End-of-semester celebrations.",
-        rotate: true,
-      },
-      {
         type: "embed",
         title: "IFEC 2026 Technical Proposal",
         src: "/sphoorthi-website/ev-charger-proposal.pdf",
         caption: "IEEE Future Energy Challenge 2026 — Team Electra technical proposal.",
-      },
-      {
-        type: "embed",
-        title: "End-of-Semester Presentation",
-        src: "/sphoorthi-website/electra-eos.pdf",
-        caption: "Team Electra end-of-semester design review presentation.",
       },
     ],
     technicalHighlights: [

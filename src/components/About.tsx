@@ -108,8 +108,31 @@ export default function About() {
             </div>
           </div>
 
-          {/* Stats grid */}
-          <div className="grid grid-cols-2 gap-4">
+          {/* Headshot + Stats */}
+          <div className="flex flex-col gap-6">
+            {/* Headshot */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="flex justify-center"
+            >
+              <div className="relative">
+                <div className="w-36 h-36 rounded-full overflow-hidden border-2 border-cyan-500/40 shadow-lg shadow-cyan-500/10">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/sphoorthi-website/headshot.jpg"
+                    alt="Sphoorthi Gurram"
+                    className="w-full h-full object-cover object-top"
+                  />
+                </div>
+                <span className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-cyan-400 border-2 border-background" />
+              </div>
+            </motion.div>
+
+            {/* Stats grid */}
+            <div className="grid grid-cols-2 gap-4">
             {stats.map((stat, i) => {
               const Icon = stat.icon;
               return (
@@ -135,6 +158,7 @@ export default function About() {
                 </motion.div>
               );
             })}
+            </div>
           </div>
         </motion.div>
       </div>
