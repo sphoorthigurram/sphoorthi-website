@@ -132,11 +132,28 @@ export default function ExperienceClient({
 
                       {s.type === "image" && (
                         <>
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
+                          <div className={s.rotate ? "flex justify-center bg-white/5 py-4 overflow-hidden" : ""}>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={s.src}
+                              alt={s.title}
+                              className={`object-contain bg-white/5 max-h-[560px] ${s.rotate ? "rotate-90 max-h-[400px] w-auto" : "w-full"}`}
+                            />
+                          </div>
+                          {s.caption && (
+                            <p className="text-xs text-muted-foreground px-4 py-3 border-t border-border leading-relaxed">
+                              {s.caption}
+                            </p>
+                          )}
+                        </>
+                      )}
+
+                      {s.type === "embed" && (
+                        <>
+                          <iframe
                             src={s.src}
-                            alt={s.title}
-                            className="w-full object-contain bg-white/5 max-h-[560px]"
+                            title={s.title}
+                            className="w-full h-[640px] border-0"
                           />
                           {s.caption && (
                             <p className="text-xs text-muted-foreground px-4 py-3 border-t border-border leading-relaxed">

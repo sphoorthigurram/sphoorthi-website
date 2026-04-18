@@ -24,22 +24,43 @@ function Hero() {
       id="home"
       className="relative w-full min-h-screen flex items-center justify-center overflow-hidden grid-bg"
     >
-      {/* Radial glow */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[600px] h-[600px] rounded-full bg-cyan-500/5 blur-3xl" />
+      {/* Background glows */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-cyan-500/8 blur-[120px]" />
+        <div className="absolute top-1/3 left-1/3 w-[400px] h-[400px] rounded-full bg-indigo-500/6 blur-[100px]" />
+        <div className="absolute bottom-1/3 right-1/3 w-[350px] h-[350px] rounded-full bg-cyan-400/5 blur-[90px]" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex gap-6 py-20 lg:py-40 items-center justify-center flex-col">
-          {/* Badge — links to #about */}
+
+          {/* Headshot */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="relative"
+          >
+            <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-cyan-500/40 shadow-lg shadow-cyan-500/10">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/sphoorthi-website/headshot.jpg"
+                alt="Sphoorthi Gurram"
+                className="w-full h-full object-cover object-top"
+              />
+            </div>
+            <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-cyan-400 border-2 border-background" />
+          </motion.div>
+
+          {/* Badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
           >
             <a href="#about">
               <span className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/5 text-cyan-300 text-sm hover:bg-cyan-500/10 transition-colors cursor-pointer">
-                EE Honors Program · Texas A&M · Class of 2029{" "}
+                EE Honors · Texas A&M · Class of 2029{" "}
                 <MoveRight className="w-4 h-4" />
               </span>
             </a>
@@ -52,7 +73,7 @@ function Hero() {
                 className="text-spektr-cyan-50 block"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
+                transition={{ duration: 0.5, delay: 0.15 }}
               >
                 Hi, I&apos;m Sphoorthi —
               </motion.span>
@@ -80,14 +101,12 @@ function Hero() {
             </h1>
 
             <motion.p
-              className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center mx-auto mt-2"
+              className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center mx-auto mt-2"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              Building autonomous robots, designing high-efficiency power
-              electronics, and bridging hardware with intelligence — one project
-              at a time.
+              EE honors student at Texas A&M working in robotics, power electronics, and AI.
             </motion.p>
           </div>
 

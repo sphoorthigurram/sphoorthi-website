@@ -1,8 +1,9 @@
 export interface SchematicItem {
-  type: "image" | "link";
+  type: "image" | "link" | "embed";
   title: string;
   src: string;
   caption?: string;
+  rotate?: boolean;
 }
 
 export interface ExperienceData {
@@ -47,10 +48,35 @@ export const experiencesData: ExperienceData[] = [
     schematics: [
       {
         type: "image",
+        title: "Meet My Team — Team Electra",
+        src: "/sphoorthi-website/electra-team.png",
+        caption: "Team Electra — 9-person interdisciplinary team competing in the IEEE Future Energy Challenge (IFEC 2026).",
+      },
+      {
+        type: "image",
         title: "Full System Topology — LTSpice Simulation",
         src: "/sphoorthi-website/ev-charger-topology.png",
         caption:
           "Complete bi-directional EV charger topology: GaN-based bridgeless totem-pole PFC frontend (GS66508T, C3M0032120K) feeding a Dual Active Bridge DC-DC stage (IPP65R065C7, IPP65R045C7) with galvanic isolation, L-C filter network, and battery load. Simulated in LTSpice prior to hardware build.",
+      },
+      {
+        type: "image",
+        title: "Behind the Scenes",
+        src: "/sphoorthi-website/electra-silly.jpg",
+        caption: "End-of-semester celebrations.",
+        rotate: true,
+      },
+      {
+        type: "embed",
+        title: "IFEC 2026 Technical Proposal",
+        src: "/sphoorthi-website/ev-charger-proposal.pdf",
+        caption: "IEEE Future Energy Challenge 2026 — Team Electra technical proposal.",
+      },
+      {
+        type: "embed",
+        title: "End-of-Semester Presentation",
+        src: "/sphoorthi-website/electra-eos.pdf",
+        caption: "Team Electra end-of-semester design review presentation.",
       },
     ],
     technicalHighlights: [
@@ -101,13 +127,6 @@ export const experiencesData: ExperienceData[] = [
       "PFC",
       "PCB Design",
       "Embedded Systems",
-    ],
-    links: [
-      {
-        label: "View IFEC 2026 Proposal (PDF)",
-        href: "/sphoorthi-website/ev-charger-proposal.pdf",
-        external: true,
-      },
     ],
   },
   {
@@ -485,6 +504,55 @@ export const experiencesData: ExperienceData[] = [
         src: "/sphoorthi-website/schoolhouse-feedback.png",
         caption:
           "Official Schoolhouse.world certification portfolio — Featured Feedback page from real learners. 194 positive ratings (Top 5%), 102 'Super Helpful' (Top 5%), 131 learners impacted across 25 countries.",
+      },
+    ],
+  },
+  {
+    slug: "speech-debate",
+    org: "National Speech & Debate Association",
+    shortOrg: "NSDA",
+    role: "Competitor",
+    period: "2020 – 2024",
+    location: "Nationwide",
+    category: "Speech & Debate",
+    color: "text-rose-400",
+    bg: "bg-rose-500/10",
+    border: "border-rose-500/20",
+    heroImage:
+      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1400&q=80",
+    tagline:
+      "National Degree of Distinction — top 4.89% of competitors nationwide",
+    overview:
+      "Competed nationally in Speech & Debate through the National Speech & Debate Association (NSDA), earning the National Degree of Distinction — a recognition awarded to fewer than 5% of competitors nationwide. Debate sharpened skills I use every day in engineering: building arguments from evidence, communicating under pressure, and thinking on my feet. For articles, posts, and competition highlights, see my LinkedIn.",
+    technicalHighlights: [
+      {
+        label: "National Degree of Distinction",
+        detail:
+          "Earned the NSDA's National Degree of Distinction — placing in the top 4.89% of competitors nationally across multiple event formats and tournament circuits.",
+      },
+      {
+        label: "Skills Transfer to Engineering",
+        detail:
+          "Debate built rapid synthesis of technical evidence, structured argumentation, and the ability to defend design decisions clearly — skills directly applied when presenting proposals and debugging systems under pressure.",
+      },
+    ],
+    achievements: [
+      "National Degree of Distinction — top 4.89% of NSDA competitors nationwide",
+      "Competed across multiple event formats in regional and national tournaments",
+    ],
+    tags: [
+      "Public Speaking",
+      "Research",
+      "Argumentation",
+      "Communication",
+      "NSDA",
+    ],
+    links: [
+      {
+        label: "View on LinkedIn",
+        href: "https://www.linkedin.com/in/sphoorthi-gurram",
+        external: true,
+        description: "Articles, posts, and competition highlights",
       },
     ],
   },
