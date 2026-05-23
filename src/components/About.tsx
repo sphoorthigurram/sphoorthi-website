@@ -6,7 +6,7 @@ import { Zap, Users, Globe, Award } from "lucide-react";
 const stats = [
   {
     icon: Users,
-    value: "40+",
+    value: "230+",
     label: "Team members led",
     color: "text-cyan-400",
   },
@@ -41,7 +41,6 @@ export default function About() {
           viewport={{ once: true }}
           className="grid md:grid-cols-2 gap-16 items-center"
         >
-          {/* Text */}
           <div className="space-y-6">
             <div>
               <p className="text-cyan-400 text-sm font-mono mb-2 tracking-widest uppercase">
@@ -52,26 +51,28 @@ export default function About() {
               </h2>
             </div>
             <p className="text-muted-foreground leading-relaxed">
-              I&apos;m Sphoorthi Gurram, a first-year Electrical Engineering
-              student in the{" "}
+              I&apos;m Sphoorthi Gurram, an Electrical Engineering student in
+              the{" "}
               <span className="text-foreground font-medium">
                 Honors Program at Texas A&M
               </span>{" "}
-              (Class of 2029). I&apos;m passionate about building systems that
-              sit at the intersection of power electronics, robotics, and AI.
+              (Class of 2029). I like building things that have to work in the
+              real world: power electronics, robots, embedded systems, and the
+              software that ties them together.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              From leading a 9-person team to design a{" "}
+              My work has ranged from leading a team designing a{" "}
               <span className="text-cyan-300">
                 1 kW bi-directional EV charger
               </span>{" "}
-              achieving ~96% efficiency, to engineering YOLO-based computer
-              vision pipelines for a humanoid robot — I thrive on tackling hard
-              problems end-to-end, from circuit schematics to deployment code.
+              targeting ~96% efficiency to building YOLO-based computer vision
+              pipelines for a humanoid robot. I care about the full stack, from
+              circuit schematics and mechanical constraints to code that runs on
+              the actual system.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Outside engineering, I tutor mathematics on Schoolhouse.world —
-              working with{" "}
+              Outside engineering, I tutor mathematics on Schoolhouse.world and
+              have worked with{" "}
               <span className="text-foreground font-medium">
                 125+ students across 25 countries
               </span>{" "}
@@ -82,12 +83,11 @@ export default function About() {
               <span className="text-foreground font-medium">
                 Speech &amp; Debate
               </span>
-              , earning the{" "}
+              , earned the{" "}
               <span className="text-foreground font-medium">
                 National Degree of Distinction
-              </span>{" "}
-              — a recognition placing me in the top 4.89% of competitors
-              nationwide.
+              </span>
+              , and placed in the top 4.89% of competitors nationwide.
             </p>
             <div className="flex gap-3 pt-2">
               <a
@@ -108,9 +108,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* Headshot + Stats */}
           <div className="flex flex-col gap-6">
-            {/* Headshot */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -131,38 +129,41 @@ export default function About() {
                 <span className="absolute bottom-1.5 right-1.5 w-3.5 h-3.5 rounded-full bg-cyan-400 border-2 border-background" />
               </div>
               <div className="text-center">
-                <p className="text-sm font-semibold text-spektr-cyan-50">Sphoorthi Gurram</p>
-                <p className="text-xs text-muted-foreground font-mono">EE Honors · Texas A&amp;M &apos;29</p>
+                <p className="text-sm font-semibold text-spektr-cyan-50">
+                  Sphoorthi Gurram
+                </p>
+                <p className="text-xs text-muted-foreground font-mono">
+                  EE Honors · Texas A&amp;M &apos;29
+                </p>
               </div>
             </motion.div>
 
-            {/* Stats grid */}
             <div className="grid grid-cols-2 gap-4">
-            {stats.map((stat, i) => {
-              const Icon = stat.icon;
-              return (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="rounded-xl border border-border bg-card p-5 flex flex-col gap-3 hover:border-cyan-500/30 transition-colors"
-                >
-                  <Icon className={`w-5 h-5 ${stat.color}`} />
-                  <div>
-                    <div
-                      className={`text-2xl font-bold tracking-tight ${stat.color}`}
-                    >
-                      {stat.value}
+              {stats.map((stat, i) => {
+                const Icon = stat.icon;
+                return (
+                  <motion.div
+                    key={stat.label}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    viewport={{ once: true }}
+                    className="rounded-xl border border-border bg-card p-5 flex flex-col gap-3 hover:border-cyan-500/30 transition-colors"
+                  >
+                    <Icon className={`w-5 h-5 ${stat.color}`} />
+                    <div>
+                      <div
+                        className={`text-2xl font-bold tracking-tight ${stat.color}`}
+                      >
+                        {stat.value}
+                      </div>
+                      <div className="text-xs text-muted-foreground mt-0.5 leading-snug">
+                        {stat.label}
+                      </div>
                     </div>
-                    <div className="text-xs text-muted-foreground mt-0.5 leading-snug">
-                      {stat.label}
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </motion.div>
