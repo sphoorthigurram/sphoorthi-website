@@ -122,8 +122,8 @@ export default function About() {
                   <img
                     src="/sphoorthi-website/headshot.jpg"
                     alt="Sphoorthi Gurram"
-                    className="w-full h-full object-cover"
-                    style={{ objectPosition: "50% 18%" }}
+                    className="w-full h-full object-cover scale-125"
+                    style={{ objectPosition: "50% 16%" }}
                   />
                 </div>
                 <span className="absolute bottom-1.5 right-1.5 w-3.5 h-3.5 rounded-full bg-cyan-400 border-2 border-background" />

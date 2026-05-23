@@ -22,17 +22,17 @@ const photos = [
   {
     src: "/sphoorthi-website/gallery/ev-charger-first-presentation.jpg",
     alt: "Team Electra presenting the bidirectional EV charger",
-    caption: "Our first Team Electra presentation for the EV charger.",
+    caption: "Team photo from our first EV charger presentation.",
   },
   {
     src: "/sphoorthi-website/gallery/think-tank-electra-team-1.jpg",
     alt: "Think Tank Electra team standing together after a presentation",
-    caption: "Think Tank Electra after presenting our charger concept.",
+    caption: "Team Electra team photo.",
   },
   {
     src: "/sphoorthi-website/gallery/think-tank-electra-team-2.jpg",
     alt: "Think Tank Electra team candid photo",
-    caption: "The Electra team after a long presentation cycle.",
+    caption: "Team Electra team photo.",
   },
 ];
 
