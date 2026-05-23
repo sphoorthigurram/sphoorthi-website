@@ -61,4 +61,32 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  .photo-carousel-track {
+    animation: photo-carousel 45s linear infinite;
+  }
+
+  .photo-carousel-track:hover {
+    animation-play-state: paused;
+  }
+
+  .gallery-photo:hover .gallery-photo-image,
+  .gallery-photo:focus-within .gallery-photo-image {
+    transform: scale(1.05);
+  }
+
+  .gallery-photo:hover .gallery-photo-caption,
+  .gallery-photo:focus-within .gallery-photo-caption {
+    transform: translateY(0);
+  }
+
+  @keyframes photo-carousel {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-50% - 0.625rem));
+    }
+  }
 }
