@@ -44,17 +44,19 @@
 
 @layer utilities {
   .grid-bg {
-    background-image: url("data:image/svg+xml,%3Csvg width='760' height='460' viewBox='0 0 760 460' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%2322d3ee' stroke-opacity='.18' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M26 88h92l34 34h92l42-42h126l32 32h80l46-46h144'/%3E%3Cpath d='M70 346h78l56-56h94l34 34h96l72-72h208'/%3E%3Cpath d='M28 212h84l46-46h110l38 38h74l48-48h118l34 34h142'/%3E%3Cpath d='M168 28v70l36 36v74l-42 42v86'/%3E%3Cpath d='M482 24v58l-46 46v76l58 58v128'/%3E%3Cpath d='M626 80l-76 76v72l34 34v116'/%3E%3Cpath d='M314 430v-82l42-42v-92l-38-38v-96'/%3E%3C/g%3E%3Cg fill='none' stroke='%2367e8f9' stroke-opacity='.12' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M26 108h84l34 34h108l42-42h104'/%3E%3Cpath d='M26 128h76l34 34h124l42-42h108'/%3E%3Cpath d='M388 288h92l44-44h76l40-40h92'/%3E%3Cpath d='M390 310h100l44-44h78l40-40h80'/%3E%3Cpath d='M92 254h92l30-30h92'/%3E%3Cpath d='M96 276h96l30-30h88'/%3E%3C/g%3E%3Cg fill='%2322d3ee' fill-opacity='.26'%3E%3Ccircle cx='26' cy='88' r='4'/%3E%3Ccircle cx='118' cy='88' r='4'/%3E%3Ccircle cx='244' cy='122' r='4'/%3E%3Ccircle cx='412' cy='80' r='4'/%3E%3Ccircle cx='524' cy='112' r='4'/%3E%3Ccircle cx='714' cy='66' r='4'/%3E%3Ccircle cx='70' cy='346' r='4'/%3E%3Ccircle cx='204' cy='290' r='4'/%3E%3Ccircle cx='428' cy='324' r='4'/%3E%3Ccircle cx='708' cy='252' r='4'/%3E%3Ccircle cx='168' cy='28' r='4'/%3E%3Ccircle cx='162' cy='336' r='4'/%3E%3Ccircle cx='482' cy='24' r='4'/%3E%3Ccircle cx='494' cy='390' r='4'/%3E%3Ccircle cx='626' cy='80' r='4'/%3E%3Ccircle cx='584' cy='378' r='4'/%3E%3C/g%3E%3Cg fill='%2367e8f9' fill-opacity='.14'%3E%3Crect x='84' y='248' width='42' height='8' rx='4'/%3E%3Crect x='640' y='198' width='52' height='8' rx='4'/%3E%3Crect x='386' y='284' width='42' height='8' rx='4'/%3E%3Crect x='294' y='72' width='56' height='8' rx='4'/%3E%3C/g%3E%3C/svg%3E");
-    background-size: 760px 460px;
+    background-image:
+      linear-gradient(rgba(244, 114, 182, 0.085) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(244, 114, 182, 0.085) 1px, transparent 1px);
+    background-size: 60px 60px;
     background-color: hsl(240 14% 4%);
   }
 
   .glow-cyan {
-    box-shadow: 0 0 40px rgba(34, 211, 238, 0.15);
+    box-shadow: 0 0 40px rgba(244, 114, 182, 0.16);
   }
 
   .text-gradient-cyan {
-    background: linear-gradient(135deg, #22d3ee, #818cf8);
+    background: linear-gradient(135deg, #f472b6, #818cf8);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
