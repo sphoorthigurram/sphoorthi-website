@@ -28,7 +28,7 @@ function Hero() {
       <div className="absolute inset-0 pointer-events-none">
         {/* Radial vignette darkening edges */}
         <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 70% at 50% 50%, transparent 30%, hsl(240 12% 2%) 100%)" }} />
-        {/* Core cyan glow */}
+        {/* Core pink glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-pink-500/15 blur-[130px]" />
         {/* Indigo accent — upper left */}
         <div className="absolute top-1/4 left-1/4 w-[500px] h-[400px] rounded-full bg-rose-500/12 blur-[110px]" />
@@ -46,7 +46,7 @@ function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <a href="#about">
-              <span className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-cyan-500/20 bg-cyan-500/5 text-cyan-300 text-sm hover:bg-cyan-500/10 transition-colors cursor-pointer">
+              <span className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-pink-500/20 bg-pink-500/5 text-pink-300 text-sm hover:bg-pink-500/10 transition-colors cursor-pointer">
                 EE Honors · Texas A&M · Class of 2029{" "}
                 <MoveRight className="w-4 h-4" />
               </span>
@@ -111,7 +111,7 @@ function Hero() {
             </Button>
             <Button
               size="lg"
-              className="gap-3 bg-cyan-500 text-gray-950 hover:bg-cyan-400 font-semibold"
+              className="gap-3 bg-pink-500 text-gray-950 hover:bg-pink-400 font-semibold"
               asChild
             >
               <a href="#contact">
@@ -132,7 +132,7 @@ function Hero() {
               transition={{ repeat: Infinity, duration: 1.8 }}
               className="w-5 h-8 rounded-full border border-border flex items-start justify-center pt-1.5"
             >
-              <div className="w-1 h-2 rounded-full bg-cyan-400/60" />
+              <div className="w-1 h-2 rounded-full bg-pink-400/60" />
             </motion.div>
           </motion.div>
         </div>
