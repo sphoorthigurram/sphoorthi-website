@@ -86,11 +86,34 @@ export default function ProjectClient({ project }: { project: ProjectData }) {
               </p>
             </motion.div>
 
-            {/* Technical Highlights */}
+            {/* Achievements */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.18 }}
+            >
+              <SectionLabel>Key Achievements</SectionLabel>
+              <ul className="space-y-3">
+                {project.achievements.map((item, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: -12 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.2 + i * 0.07 }}
+                    className="flex gap-3 text-sm text-foreground/80 leading-relaxed"
+                  >
+                    <span className={`mt-[7px] w-1.5 h-1.5 rounded-full shrink-0 ${project.color} bg-current`} />
+                    {item}
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Technical Highlights */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.26 }}
             >
               <SectionLabel>Technical Details</SectionLabel>
               <div className="space-y-3">
@@ -99,7 +122,7 @@ export default function ProjectClient({ project }: { project: ProjectData }) {
                     key={item.label}
                     initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.2 + i * 0.07 }}
+                    transition={{ duration: 0.4, delay: 0.28 + i * 0.07 }}
                     className={`rounded-xl border ${project.border} bg-card p-4 hover:${project.bg} transition-colors`}
                   >
                     <p className={`text-xs font-mono font-semibold ${project.color} mb-1.5 tracking-wide`}>
@@ -185,29 +208,6 @@ export default function ProjectClient({ project }: { project: ProjectData }) {
                 </div>
               </motion.div>
             )}
-
-            {/* Achievements */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.38 }}
-            >
-              <SectionLabel>Key Achievements</SectionLabel>
-              <ul className="space-y-3">
-                {project.achievements.map((item, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: -12 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.4 + i * 0.07 }}
-                    className="flex gap-3 text-sm text-foreground/80 leading-relaxed"
-                  >
-                    <span className={`mt-[7px] w-1.5 h-1.5 rounded-full shrink-0 ${project.color} bg-current`} />
-                    {item}
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
           </div>
 
           {/* Sidebar */}

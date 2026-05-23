@@ -50,13 +50,6 @@ export const experiencesData: ExperienceData[] = [
     schematics: [
       {
         type: "image",
-        title: "Meet My Team — Team Electra",
-        src: "/sphoorthi-website/electra-team.png",
-        caption: "Team Electra — 9-person interdisciplinary team competing in the IEEE Future Energy Challenge (IFEC 2026).",
-        small: true,
-      },
-      {
-        type: "image",
         title: "Full System Topology — LTSpice Simulation",
         src: "/sphoorthi-website/ev-charger-topology.png",
         caption:
@@ -67,13 +60,6 @@ export const experiencesData: ExperienceData[] = [
         title: "IFEC 2026 Technical Proposal",
         src: "/sphoorthi-website/ev-charger-proposal.pdf",
         caption: "IEEE Future Energy Challenge 2026 — Team Electra technical proposal.",
-      },
-      {
-        type: "image",
-        title: "Behind the Scenes",
-        src: "/sphoorthi-website/electra-silly.jpg",
-        caption: "End-of-semester celebrations.",
-        rotateCCW: true,
       },
     ],
     technicalHighlights: [
