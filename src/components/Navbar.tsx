@@ -40,9 +40,9 @@ export default function Navbar() {
           {/* Logo */}
           <a
             href="#home"
-            className="text-lg font-bold tracking-tight text-spektr-cyan-50 hover:text-cyan-400 transition-colors"
+            className="text-lg font-bold tracking-tight text-spektr-cyan-50 hover:text-pink-400 transition-colors"
           >
-            <span className="text-cyan-400">S</span>G
+            <span className="text-pink-400">S</span>G
           </a>
 
           {/* Desktop nav */}
@@ -63,7 +63,7 @@ export default function Navbar() {
             <Button
               variant="outline"
               size="sm"
-              className="border-cyan-500/30 text-cyan-300 hover:bg-cyan-500/10 hover:text-cyan-200"
+              className="border-pink-500/30 text-pink-300 hover:bg-pink-500/10 hover:text-pink-200"
               asChild
             >
               <a href="#contact">Contact Me</a>

@@ -15,6 +15,11 @@ const photos = [
     caption: "Some of the WIRED Robotics women headed to nationals.",
   },
   {
+    src: "/sphoorthi-website/gallery/think-tank-electra-team-1.jpg",
+    alt: "Think Tank Electra team standing together after a presentation",
+    caption: "Team Electra team photo.",
+  },
+  {
     src: "/sphoorthi-website/gallery/auv-build-collage.jpg",
     alt: "A collage of AUV electronics work and team build sessions",
     caption: "Build days, wiring, debugging, and pool testing for the AUV.",
@@ -23,11 +28,6 @@ const photos = [
     src: "/sphoorthi-website/gallery/ev-charger-first-presentation.jpg",
     alt: "Team Electra presenting the bidirectional EV charger",
     caption: "Team photo from our first EV charger presentation.",
-  },
-  {
-    src: "/sphoorthi-website/gallery/think-tank-electra-team-1.jpg",
-    alt: "Think Tank Electra team standing together after a presentation",
-    caption: "Team Electra team photo.",
   },
   {
     src: "/sphoorthi-website/gallery/think-tank-electra-team-2.jpg",
