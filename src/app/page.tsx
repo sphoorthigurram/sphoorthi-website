@@ -14,8 +14,8 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
-      <CurrentBench />
       <PhotoCarousel />
+      <CurrentBench />
       <Projects />
       <Experience />
       <Skills />

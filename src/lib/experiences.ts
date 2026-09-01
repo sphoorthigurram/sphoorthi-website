@@ -33,10 +33,10 @@ export interface ExperienceData {
 export const experiencesData: ExperienceData[] = [
   {
     slug: "ev-charger",
-    org: "TAMU Think Tank — Team Electra",
+    org: "TAMU Think Tank - Team Electra",
     shortOrg: "TAMU Think Tank",
     role: "Technical Lead",
-    period: "Aug 2025 – Present",
+    period: "Aug 2025 - Present",
     location: "College Station, TX",
     category: "Power Electronics",
     color: "text-blue-800",
@@ -47,70 +47,44 @@ export const experiencesData: ExperienceData[] = [
     tagline:
       "Leading design of a 1 kW bi-directional EV charger for the IEEE Future Energy Challenge",
     overview:
-      "As Technical Lead of Team Electra, I led a 9-person interdisciplinary team to design and build a 1 kW bi-directional onboard EV charger for the IEEE Future Energy Challenge (IFEC 2026). The charger achieves ~96% peak efficiency and ~0.99 power factor — performance competitive with commercial-grade hardware — while supporting full Vehicle-to-Grid (V2G) power reversal. The project pushed me to own the system at every level: simulation, schematic, PCB, gate driver tuning, and debugging across both AC and DC stages.",
+      "As Technical Lead of Team Electra, I led a 9-person interdisciplinary team to design and build a 1 kW bi-directional onboard EV charger for the IEEE Future Energy Challenge. The charger targets high efficiency and near-unity power factor using a GaN-based bridgeless totem-pole PFC frontend and a Dual Active Bridge DC-DC stage, with full bidirectional power flow for Vehicle-to-Grid operation.",
+    technicalHighlights: [
+      {
+        label: "Frontend Topology",
+        detail:
+          "GaN-based bridgeless totem-pole PFC reduces conduction losses while supporting power factor correction at the AC input.",
+      },
+      {
+        label: "DC-DC Stage",
+        detail:
+          "Dual Active Bridge architecture provides galvanic isolation, soft-switching behavior, and bidirectional power flow.",
+      },
+      {
+        label: "System Debugging",
+        detail:
+          "Served as primary system debugger across power-stage bring-up, schematic review, PCB constraints, and proposal milestones.",
+      },
+    ],
+    achievements: [
+      "Achieved approximately 96% efficiency and approximately 0.99 power factor in the design target",
+      "Co-authored the IEEE IFEC 2026 technical proposal",
+      "Led a 9-person team across hardware design, PCB layout, simulation, and test phases",
+    ],
+    tags: ["GaN", "Power Electronics", "Altium Designer", "LTSpice", "DAB", "PFC"],
     schematics: [
       {
         type: "image",
-        title: "Full System Topology — LTSpice Simulation",
+        title: "Full System Topology",
         src: "/sphoorthi-website/ev-charger-topology.png",
         caption:
-          "Complete bi-directional EV charger topology: GaN-based bridgeless totem-pole PFC frontend (GS66508T, C3M0032120K) feeding a Dual Active Bridge DC-DC stage (IPP65R065C7, IPP65R045C7) with galvanic isolation, L-C filter network, and battery load. Simulated in LTSpice prior to hardware build.",
+          "Bi-directional EV charger topology simulated before hardware build.",
       },
       {
         type: "embed",
         title: "IFEC 2026 Technical Proposal",
         src: "/sphoorthi-website/ev-charger-proposal.pdf",
-        caption: "IEEE Future Energy Challenge 2026 — Team Electra technical proposal.",
+        caption: "IEEE Future Energy Challenge 2026 technical proposal.",
       },
-    ],
-    technicalHighlights: [
-      {
-        label: "Frontend Topology",
-        detail:
-          "GaN-based bridgeless totem-pole PFC — eliminates the conventional diode bridge, cutting conduction losses and enabling near-unity power factor correction at the AC input",
-      },
-      {
-        label: "DC-DC Stage",
-        detail:
-          "Dual Active Bridge (DAB) architecture provides galvanic isolation, soft-switching for minimal switching losses, and bidirectional power flow for V2G operation",
-      },
-      {
-        label: "DC Bus",
-        detail:
-          "Stable 400 V DC bus — compatible with standard EV battery voltages and grid-tied inverter requirements, enabling future integration with home energy storage",
-      },
-      {
-        label: "Wide-Bandgap Devices",
-        detail:
-          "GaN transistors selected over Si MOSFETs for lower on-resistance, faster switching, and higher temperature operation — enabling a more compact and efficient design",
-      },
-      {
-        label: "Design Tools",
-        detail:
-          "Altium Designer for multi-layer PCB layout and design rule checks; LTSpice for circuit simulation and switching waveform validation before hardware build",
-      },
-      {
-        label: "My Role",
-        detail:
-          "Primary system debugger across both power stages; co-authored the IEEE IFEC 2026 technical proposal; coordinated team across schematic, PCB, and firmware milestones",
-      },
-    ],
-    achievements: [
-      "Achieved ~96% efficiency and ~0.99 power factor — on par with commercial onboard EV chargers",
-      "Resolved gate driver timing faults and DAB resonance instability as primary system debugger",
-      "Co-authored the IEEE IFEC 2026 technical proposal accepted for international competition",
-      "Led 9-person team across hardware design, PCB layout, simulation, and test phases",
-      "Designed for full bidirectionality — supporting Vehicle-to-Grid (V2G) power export",
-    ],
-    tags: [
-      "GaN",
-      "Power Electronics",
-      "Altium Designer",
-      "LTSpice",
-      "DAB Architecture",
-      "PFC",
-      "PCB Design",
-      "Embedded Systems",
     ],
   },
   {
@@ -118,73 +92,40 @@ export const experiencesData: ExperienceData[] = [
     org: "Project EDEN",
     shortOrg: "Project EDEN",
     role: "Software Engineer",
-    period: "Jan 2026 – Present",
+    period: "Jan 2026 - Present",
     location: "College Station, TX",
-    category: "AI · Robotics",
+    category: "AI / Robotics",
     color: "text-indigo-800",
     bg: "bg-indigo-50",
     border: "border-indigo-200",
     heroImage: "/sphoorthi-website/eden-simulator.png",
     tagline:
-      "Engineering the vision pipeline and power architecture for an AI humanoid robot — with a custom 3D web simulator",
+      "Engineering the vision pipeline and power architecture for an AI humanoid robot",
     overview:
-      "Project EDEN is building an AI-powered humanoid robot with adaptive reasoning capabilities. As a Software Engineer I own two critical subsystems: the computer vision pipeline enabling real-time human perception, and the power distribution architecture keeping the bipedal platform operational under dynamic loads. The team also built a full-featured browser-based 3D simulator — the EDEN Simulator — to develop and validate autonomous behaviors before hardware deployment.",
+      "Project EDEN is building an AI-powered humanoid robot with adaptive reasoning capabilities. As a Software Engineer, I work on the computer vision pipeline for real-time human perception, the power distribution architecture for the bipedal platform, and a browser-based 3D simulator used to validate autonomous behaviors before hardware deployment.",
     technicalHighlights: [
       {
-        label: "EDEN Simulator — 3D Web Platform",
+        label: "EDEN Simulator",
         detail:
-          "Browser-native 3D robot simulator built with Three.js and React Three Fiber (R3F). Simulates a TurtleBot3-scale differential-drive robot in a 30 × 20 m procedural environment with real-time physics dynamics (motor τ = 0.14 s). Runs entirely in-browser — no backend required.",
+          "Browser-native 3D robot simulator built with Three.js and React Three Fiber for validating autonomy behaviors.",
       },
       {
-        label: "LIDAR Raycast Engine",
+        label: "Computer Vision",
         detail:
-          "Custom LIDAR simulation: 270° field of view, 180 rays, 1.30 m minimum range. Produces real-time occupancy point clouds used for mapping, obstacle avoidance, and autonomous navigation — mirroring physical sensor specs.",
+          "YOLO-based detection work for real-time human detection and tracking on edge compute hardware.",
       },
       {
-        label: "Cognitive Gate — LLM Autonomous Reasoning",
+        label: "Power Architecture",
         detail:
-          "LLM-based task reasoning module wired into the robot's control loop. Receives sensor state and telemetry, sets high-level goals (e.g. 'explore unexplored area'), generates action sequences, and runs in an autonomous loop. Avg decision latency: 6820 ms, P95: 9603 ms.",
-      },
-      {
-        label: "ROS-Style Topic Bus",
-        detail:
-          "Internal publish/subscribe topic bus modeled after ROS, enabling decoupled communication between the dynamics engine, LIDAR, cognitive agent, and UI telemetry panels. Active topics include /map (2.0 Hz, 341 msgs) and /odom.",
-      },
-      {
-        label: "Real-Time Telemetry",
-        detail:
-          "Full telemetry dashboard streams: X/Y position, heading, linear/angular velocity, wheel L/R speeds (rad/s), odometry drift, LIDAR min distance, collision count, bumper stop, total distance traveled, and battery %. 2D occupancy minimap with lethal, inflation, and free zones.",
-      },
-      {
-        label: "Computer Vision Pipeline",
-        detail:
-          "Trained YOLO-based object detection models in Python for real-time human detection and tracking on edge compute hardware. Optimized for low latency within the ROS 2 sensor-to-actuator loop.",
-      },
-      {
-        label: "Power Distribution Architecture",
-        detail:
-          "Designed the full power distribution system for the bipedal platform: rail voltages, battery management, load sequencing, and protection circuits for motors, sensors, and compute boards.",
+          "Power distribution planning for motors, sensors, batteries, and compute boards on the bipedal platform.",
       },
     ],
     achievements: [
-      "Built browser-native 3D robot simulator with physics dynamics, LIDAR raycast, and LLM Cognitive Gate",
-      "Integrated Cognitive Gate: LLM autonomous reasoning loop with real-time sensor feedback and goal planning",
-      "Implemented ROS-style topic bus enabling decoupled sim architecture (dynamics, LIDAR, AI, UI)",
-      "Built real-time YOLO human detection pipeline achieving accurate tracking in dynamic environments",
-      "Designed complete power distribution architecture for motors, sensors, and compute on the bipedal platform",
+      "Built and linked a live browser-native 3D simulator",
+      "Implemented ROS-style simulator architecture for decoupled dynamics, sensing, and autonomy modules",
+      "Built real-time computer vision pipeline work for human detection",
     ],
-    tags: [
-      "Three.js",
-      "React Three Fiber",
-      "ROS 2",
-      "Python",
-      "YOLO",
-      "Computer Vision",
-      "LLM / Cognitive AI",
-      "Power Electronics",
-      "Embedded Systems",
-      "PyTorch",
-    ],
+    tags: ["Three.js", "React Three Fiber", "ROS 2", "Python", "YOLO", "Computer Vision"],
     links: [
       {
         label: "EDEN Simulator",
@@ -192,14 +133,20 @@ export const experiencesData: ExperienceData[] = [
         external: true,
         description: "Live browser-based 3D robot simulator",
       },
+      {
+        label: "Project EDEN",
+        href: "https://eden-robotics.github.io/Eden/",
+        external: true,
+        description: "Project site and technical context",
+      },
     ],
   },
   {
     slug: "wired-auv",
     org: "WIRED AUV Team",
     shortOrg: "WIRED AUV",
-    role: "Executive Lead · Electrical Engineer",
-    period: "Aug 2025 – Present",
+    role: "Executive Lead / Electrical Engineer",
+    period: "Aug 2025 - Present",
     location: "College Station, TX",
     category: "Robotics",
     color: "text-sky-800",
@@ -207,179 +154,116 @@ export const experiencesData: ExperienceData[] = [
     border: "border-sky-200",
     heroImage: "/sphoorthi-website/wired-auv-pool.jpg",
     tagline:
-      "Leading a 40+ member AUV team while redesigning the power architecture and DVL integration",
+      "Leading a 60+ member AUV team while redesigning the power architecture and DVL integration",
     overview:
-      "WIRED (Water-Integrated Robotics Engineering and Design) is Texas A&M's competitive Autonomous Underwater Vehicle team, competing in the international RoboSub competition. As Executive Lead, I manage cross-functional operations across four sub-teams while also contributing hands-on as an electrical engineer — redesigning the full power architecture and spearheading Doppler Velocity Log (DVL) sensor integration for autonomous underwater navigation.",
+      "WIRED is Texas A&M's competitive Autonomous Underwater Vehicle team for RoboSub. As Executive Lead and Electrical Engineer, I manage a 60+ member organization across electrical, mechanical, software, and business sub-teams while contributing hands-on to the robot's power architecture, DVL integration, PCB work, and field testing.",
     technicalHighlights: [
       {
-        label: "Compute — NVIDIA Jetson Nano 4GB",
+        label: "Power Architecture",
         detail:
-          "Main CPU: NVIDIA Jetson Nano 4GB (25.6 GB/s memory bandwidth). Runs Python 3 control code, ZED SDK, Roboflow object detection, and DVL interface. GPIO extension PCB (Samtec SSW-120-02-T-D-RA, 40-pin) designed in Altium for peripheral connectivity.",
+          "Transitioned the power subsystem to regulated rails for DVL, thrusters, and Jetson loads while reducing voltage-drop risk under thruster load.",
       },
       {
-        label: "Power Architecture — Boost Converter Transition",
+        label: "DVL Integration",
         detail:
-          "Replaced legacy buck converters with boost converters providing regulated rails: 24 V (Teledyne DVL), 18 V (T200 thrusters), 16 V (Jetson Nano). Tuned via potentiometers, verified with multimeter. Powered by 2× Turnigy 16000mAh 6S 12C LiPo packs.",
+          "Spearheading Doppler Velocity Log integration for underwater dead-reckoning navigation without GPS.",
       },
       {
-        label: "Propulsion — 8× Blue Robotics T200 Thrusters",
+        label: "Custom PCBs",
         detail:
-          "8× T200 Thrusters (7–26 V, 30 A) controlled via 8× Basic ESCs driven by Adafruit PCA9685 16-ch 12-bit PWM/Servo Driver (I2C). ESC layout redesigned to 1×4 modular with velcro retention to eliminate wire strain and terminal block disconnects.",
+          "Designed and revised PCB-level hardware in Altium, including GPIO extension and subsystem support boards.",
       },
       {
-        label: "Navigation — Teledyne Marine Wayfinder DVL",
+        label: "Current Lucid Schematic",
         detail:
-          "600 kHz Doppler Velocity Log with ±1.15% bottom-tracking accuracy. Enables dead-reckoning navigation without GPS. PID controller uses DVL distance data for error computation — first DVL integration in WIRED team history.",
-      },
-      {
-        label: "Sensor Suite",
-        detail:
-          "ZED Mini stereo camera (100 Hz, 0.1–15 m depth) for top vision; Blue Robotics Low-Light HD Camera (Sony IMX322, 1920×1080) for bottom detection; VectorNav VN-100 IMU/AHRS; Bar30 pressure sensor (300 m, 2 mm resolution); Ping2 Sonar (25° beam, 300 m rating).",
-      },
-      {
-        label: "Custom PCBs — Altium Designer",
-        detail:
-          "Designed: (1) Fuse Board PCB — centralized 10-position fuse distribution; (2) Mission Switch PCB — active-high GPIO trigger for thruster code; (3) Kill Switch — solid-state relay (25 A) disconnecting battery from thrusters; (4) GPIO Extension PCB for 40-pin Jetson header.",
-      },
-      {
-        label: "Vision & ML Pipeline",
-        detail:
-          "Roboflow Inference object detection for underwater task recognition (gate, slalom, octagon, bin). OpenCV camera pipeline. Competition tasks: Gate, Slalom, Surface in Octagon, Return Home, and Coin Flip.",
-      },
-      {
-        label: "Thermal Management",
-        detail:
-          "Researched cooling for Jetson Nano inside sealed hull: evaluated Noctua NF-A4x20 5V PWM (NVIDIA-recommended), NF-A4x10 compact, Waveshare Fan-4020-PWM-5V, Seeed ICE Tower (85°C→45°C), and IP67-rated 140mm waterproof fan.",
+          "Maintained a system-level schematic covering thruster-side routing, Jetson-side routing, kill switch, mission switch, power conversion, fuse board, ESC PCB, PWM routing, sensors, and Jetson pins.",
       },
     ],
     achievements: [
-      "Executive Lead of 40+ member organization across electrical, mechanical, software, and business sub-teams",
-      "Led boost converter transition: 15V → 24V (DVL), 18V (thrusters), 16V (Jetson) — eliminated voltage droops under thruster load",
-      "Redesigned ESC layout to 1×4 modular configuration with velcro retention — eliminated terminal block failures from wire strain",
-      "Spearheading first-ever DVL integration for WIRED team — enabling accurate dead-reckoning AUV navigation",
-      "Designed GPIO extension PCB in Altium (Samtec SSW-120-02-T-D-RA, 40-pin Jetson header)",
-      "Researched and specified Jetson thermal management solution for sealed hull operation",
-      "Drove Battery Management System (BMS) research and prototyping for real-time cell monitoring",
+      "Executive Lead of a 60+ member organization across electrical, mechanical, software, and business sub-teams",
+      "Led boost converter transition for DVL, thrusters, and Jetson rails",
+      "Redesigned ESC layout to reduce terminal block failures from wire strain",
+      "Spearheading first DVL integration in WIRED team history",
     ],
-    tags: [
-      "Altium Designer",
-      "PCB Design",
-      "Fusion360",
-      "SolidWorks",
-      "Python",
-      "Power Electronics",
-      "ROS 2",
-      "DVL",
-      "NVIDIA Jetson",
-      "Roboflow",
-      "OpenCV",
-      "Leadership",
-    ],
+    tags: ["Altium Designer", "PCB Design", "Python", "Power Electronics", "DVL", "NVIDIA Jetson", "Leadership"],
     schematics: [
       {
         type: "image",
-        title: "Electrical Wiring Schematic",
+        title: "Current Lucid Electrical Schematic",
         src: "/sphoorthi-website/auv-schematic.jpg",
         caption:
-          "Full electrical schematic: Jetson Nano, 8× ESCs, boost converters, fuse board, kill switch, PWM servo driver, battery, and thruster wiring.",
+          "Current WIRED AUV schematic covering the thruster side, Jetson side, kill switch, mission switch, power conversion, fuse board, ESC PCB, PWM routing, sensors, and Jetson pins.",
       },
       {
         type: "link",
         title: "Interactive Robot Schematic (Lucidchart)",
         src: "https://lucid.app/lucidspark/942e65dc-3da9-467a-9b67-7f9915968b43/edit?invitationId=inv_42dee7c1-22ce-4595-b453-0952b92954f9&page=0_0#",
         caption:
-          "Full system-level schematic showing mechanical, electrical, and sensor integration.",
+          "Open the interactive system-level schematic in Lucidchart for the latest WIRED AUV wiring view.",
       },
     ],
   },
   {
     slug: "shine-lab",
-    org: "SHINE Lab — Texas A&M",
-    shortOrg: "SHINE Lab",
-    role: "Student Researcher",
-    period: "Feb 2026 – Present",
+    org: "Sunstrike Optics LLC",
+    shortOrg: "Sunstrike Optics",
+    role: "Engineering Research Intern",
+    period: "Feb 2026 - Present",
     location: "College Station, TX",
-    category: "Energy Research",
+    category: "Solar Research",
     color: "text-amber-800",
     bg: "bg-amber-50",
     border: "border-amber-200",
-    heroImage:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1400&q=80",
+    heroImage: "/sphoorthi-website/shine-tracker.png",
     tagline:
-      "Proposing solar-thermal e-waste desoldering using a Fresnel-lens solar furnace at SHINE Lab",
+      "Testing and debugging solar-tracker prototypes for high-temperature optical concentration research",
     overview:
-      "At the SHINE (Solar Harvesting Innovations for New Ecosystems) Lab at Texas A&M, I'm contributing to an off-grid concentrating solar system that uses a Fresnel lens to focus sunlight into a high-temperature solar furnace. My research proposal targets solar-thermal e-waste desoldering — using precisely concentrated solar heat (reaching 217–250 °C) to cleanly separate electronic components from circuit boards and recover critical minerals. Over 62 million tonnes of e-waste are generated annually with less than 23% formally recycled; solar-thermal processing offers a carbon-neutral, zero-fuel alternative to acid baths and open-air burning.",
+      "At Sunstrike Optics LLC, I support solar-tracker prototype testing and lab bring-up for high-temperature optical concentration research. My work has included setting up a second prototype, validating thermal readings, checking circuit behavior with a multimeter, cleaning up tracker wiring, preparing stepper motor connections, and documenting debugging progress across controller, encoder, and display tests.",
     technicalHighlights: [
       {
-        label: "Concentrating Solar — System Physics",
+        label: "Prototype Bring-Up",
         detail:
-          "Fresnel lens concentrates Direct Normal Irradiance (DNI) onto a receiver. Geometric concentration factor Cg = Area_in / Area_out. Useful power: P_W = DNI × Area × η. Only direct (not diffuse) sunlight can be focused — requiring accurate dual-axis sun tracking. SHINE uses a 12″ × 12″ Fresnel lens producing small-system (<1 MW) concentrations on par with a solar furnace.",
+          "Set up and tested solar-tracker prototype hardware, organized wiring, and prepared the system for continued integration work.",
       },
       {
-        label: "E-Waste Desoldering — Proposal",
+        label: "Thermal Readings",
         detail:
-          "Lead-free solders melt at 217–250 °C; FR4 PCB substrate degrades/combusts at 300–400 °C. Precisely controlled solar heat allows clean desoldering within that window — separating valuable ICs, capacitors, and metals without burning the board or releasing toxic fumes. E-waste feedstock is essentially free; solar process heat costs nothing, making experimental iteration very low-cost.",
+          "Debugged thermal sensor readings, checked connections, validated live temperature changes, and documented outdoor test results.",
       },
       {
-        label: "Dual-Axis Solar Tracker",
+        label: "Tracker Wiring",
         detail:
-          "Dual-axis tracker keeps the Fresnel lens pointed at the sun throughout the day. Built by the ITDE senior design team (Fall 2025 – Spring 2026) using T-slot aluminum frame, belt-drive mechanism, and stepper motors. Electronics controlled via ESP32 (Arduino IDE) with data piped to MATLAB for analysis.",
+          "Inspected solar-tracker mechanical units, removed old cable harnesses, and prepared encoder and stepper motor wiring for safer integration.",
       },
       {
-        label: "Precision Sun-Tracking",
+        label: "Controller Debugging",
         detail:
-          "Programming microcontrollers and interfacing angular position sensors for two-axis sun-tracking — maximizing daily energy capture and maintaining peak concentration throughout the day.",
-      },
-      {
-        label: "Thermal Modeling — MATLAB/Simulink",
-        detail:
-          "MATLAB/Simulink models of receiver thermal dynamics, heat flux distribution, and system efficiency under varying insolation — used to validate the desoldering temperature window (target: 217–250 °C) and guide receiver geometry optimization.",
-      },
-      {
-        label: "DAQ & Electronics",
-        detail:
-          "ESP32 microcontroller (Arduino IDE) interfaces with position sensors and drives the dual-axis tracker. MATLAB receives telemetry for logging and analysis. Multi-channel DAQ monitors temperature, pyranometer readings, and power output in real time.",
-      },
-      {
-        label: "Impact & Funding Case",
-        detail:
-          "62M+ tonnes of e-waste generated annually; <23% formally recycled. 'Circular Electronics' and 'Urban Mining' are top priorities for 2026 sustainability grants. Solar-thermal approach is carbon-neutral with near-zero operating cost — feedstock is free (e-waste) and fuel is free (sun).",
+          "Ran controller power checks, upload tests, display checks, and serial debugging to isolate issues during prototype bring-up.",
       },
     ],
     achievements: [
-      "Authored research proposal for solar-thermal e-waste desoldering — targeting the 217–250 °C solder melt window with Fresnel lens concentration",
-      "Established thermal feasibility case: solder melts before FR4 substrate degrades (300–400 °C), enabling clean component separation",
-      "Contributed to dual-axis solar tracker development (ESP32/Arduino IDE → MATLAB pipeline)",
-      "Built MATLAB/Simulink model to predict heat flux distribution at the receiver and guide geometry optimization",
-      "Integrated multi-channel DAQ system monitoring thermal, optical, and power metrics in real time",
+      "Set up a second solar-tracker prototype and documented testing progress",
+      "Validated thermal readings through connection checks, multimeter testing, and observed temperature changes",
+      "Cleaned up old tracker wiring and prepared stepper motor and encoder connections",
+      "Debugged controller upload, display, and serial communication issues during lab bring-up",
     ],
-    tags: [
-      "MATLAB",
-      "Simulink",
-      "ESP32",
-      "Arduino IDE",
-      "Fresnel Optics",
-      "Thermal Systems",
-      "DAQ",
-      "Embedded Systems",
-      "Solar-Thermal",
-    ],
+    tags: ["ESP32", "Arduino IDE", "Thermal Testing", "Circuit Debugging", "Prototype Bring-Up", "Solar Tracking"],
     schematics: [
       {
         type: "image",
-        title: "Dual-Axis Solar Tracker",
+        title: "Solar Tracker Prototype",
         src: "/sphoorthi-website/shine-tracker.png",
         caption:
-          "SHINE Lab dual-axis solar tracker prototype — T-slot aluminum frame with belt-drive mechanism and stepper motors. Keeps the 12″×12″ Fresnel lens pointed at the sun for maximum DNI concentration throughout the day.",
+          "Sunstrike Optics tracker prototype used for solar concentration research. Public summary only: setup, wiring cleanup, thermal readings, and circuit debugging.",
       },
     ],
   },
   {
     slug: "prd-lab",
-    org: "Peace Resistance & Democracy Lab — UT Dallas",
-    shortOrg: "PRD Lab · UTDallas",
+    org: "Peace Resistance & Democracy Lab - UT Dallas",
+    shortOrg: "PRD Lab / UT Dallas",
     role: "Research Intern",
-    period: "May 2024 – Aug 2024",
+    period: "May 2024 - Aug 2024",
     location: "Richardson, TX",
     category: "Research",
     color: "text-emerald-800",
@@ -390,114 +274,59 @@ export const experiencesData: ExperienceData[] = [
     tagline:
       "Applying data science methods to study democratic resilience and non-violent resistance",
     overview:
-      "At the Peace Resistance & Democracy Lab at UT Dallas, I contributed to faculty-led research studying the mechanisms of democratic breakdown and non-violent resistance movements. Using computational methods, I analyzed historical datasets across dozens of countries to identify structural patterns correlated with democratic collapse and resilience — providing quantitative support for political science research. This experience sharpened my ability to extract signal from complex datasets and communicate findings through clear data visualizations.",
+      "At the Peace Resistance & Democracy Lab at UT Dallas, I contributed to faculty-led research studying democratic breakdown and non-violent resistance movements. I analyzed historical datasets, built visualizations, and wrote comparative research reports.",
     technicalHighlights: [
-      {
-        label: "Data Analysis",
-        detail:
-          "R programming with scikit-learn and plotly to visualize multi-dimensional trends in non-violent revolution datasets spanning decades and 50+ countries",
-      },
-      {
-        label: "Statistical Methods",
-        detail:
-          "Regression analysis and clustering to identify structural factors correlated with democratic breakdown, informing the lab's broader quantitative comparative politics study",
-      },
-      {
-        label: "Country Case Studies",
-        detail:
-          "Authored in-depth research reports on Kyrgyzstan and Uruguay as contrasting cases of democratic backsliding and resilience — contributing to the lab's publication pipeline",
-      },
-      {
-        label: "Visualization Output",
-        detail:
-          "Produced interactive plotly dashboards and R-based charts mapping patterns across regions, used in lab presentations and the ongoing faculty research manuscript",
-      },
+      { label: "Data Analysis", detail: "Used R, scikit-learn, and plotly for research data visualization." },
+      { label: "Research Writing", detail: "Authored case-study reports on Kyrgyzstan and Uruguay." },
     ],
     achievements: [
-      "Produced data visualizations mapping non-violent revolution trends across 50+ countries using R and plotly",
-      "Authored research reports on Kyrgyzstan and Uruguay as comparative case studies in democratic resilience",
-      "Applied statistical clustering to identify shared structural preconditions across democratic breakdown events",
+      "Produced data visualizations across 50+ countries",
+      "Authored comparative country reports for faculty-led research",
     ],
-    tags: [
-      "R Programming",
-      "Data Visualization",
-      "scikit-learn",
-      "plotly",
-      "Statistical Analysis",
-      "Research Methods",
-      "Political Science",
-    ],
+    tags: ["R", "Data Visualization", "scikit-learn", "plotly", "Research Methods"],
   },
   {
     slug: "schoolhouse",
     org: "Schoolhouse World",
     shortOrg: "Schoolhouse.world",
     role: "Mathematics Tutor",
-    period: "May 2024 – Aug 2024",
-    location: "Virtual · Global",
+    period: "May 2024 - Aug 2024",
+    location: "Virtual / Global",
     category: "Volunteer",
     color: "text-rose-800",
     bg: "bg-rose-50",
     border: "border-rose-200",
-    heroImage:
-      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80",
+    heroImage: "/sphoorthi-website/schoolhouse-feedback.png",
     tagline:
-      "Tutoring 125+ students across 25 countries on the world's largest peer-led learning platform",
+      "Tutoring 100+ learners across 20 countries on a peer-led learning platform",
     overview:
-      "Schoolhouse.world is a free, peer-to-peer tutoring platform co-founded by Sal Khan. As a certified mathematics tutor, I worked with students across 25 countries — an experience that developed my ability to communicate complex concepts clearly under diverse learning styles, design structured curricula from scratch, and lead programs at scale. Beyond 1-on-1 sessions, I organized a summer camp and a 4-week intensive bootcamp, coordinating scheduling, lesson plans, and assessments across time zones.",
+      "As a certified mathematics tutor on Schoolhouse.world, I taught 100+ learners across 20 countries through tutoring sessions, a summer camp, and a four-week math bootcamp.",
     technicalHighlights: [
-      {
-        label: "Scale",
-        detail:
-          "125+ students tutored across 25 countries — coordinating scheduling, curriculum, and real-time progress tracking across global time zones",
-      },
-      {
-        label: "Summer Camp",
-        detail:
-          "Organized and led a structured summer math camp with weekly themed sessions, milestone assessments, and customized practice problem sets",
-      },
-      {
-        label: "4-Week Bootcamp",
-        detail:
-          "Designed and executed a 4-week intensive bootcamp covering algebra through calculus with tiered difficulty tracks, improving average assessment scores",
-      },
-      {
-        label: "Subjects",
-        detail:
-          "Algebra, Pre-Calculus, Calculus, and Statistics — adapting explanations to each student's background, pace, and learning style across language and cultural barriers",
-      },
+      { label: "Tutoring Scale", detail: "Taught 100+ learners across 20 countries." },
+      { label: "Program Design", detail: "Organized a summer camp and four-week bootcamp with tiered lesson plans." },
     ],
     achievements: [
-      "Tutored 125+ students across 25 countries in mathematics from algebra through calculus",
-      "Organized a summer math camp with structured weekly curriculum and milestone-based progress tracking",
-      "Led a 4-week intensive bootcamp — designing tiered lesson plans that measurably improved student assessment scores",
-      "194 positive ratings · Top 5% — 102 'Super Helpful', Friendly, Interactive, Good Explanations",
+      "Taught 100+ learners across 20 countries",
+      "Earned 194 positive ratings and Top 5% Schoolhouse feedback recognition",
     ],
-    tags: [
-      "Mathematics",
-      "Curriculum Design",
-      "Communication",
-      "Cross-Cultural",
-      "Leadership",
-      "Mentoring",
-    ],
+    tags: ["Mathematics", "Curriculum Design", "Communication", "Mentoring"],
     schematics: [
       {
         type: "image",
-        title: "Featured Feedback — Schoolhouse.world Certification Portfolio",
+        title: "Featured Feedback",
         src: "/sphoorthi-website/schoolhouse-feedback.png",
         caption:
-          "Official Schoolhouse.world certification portfolio — Featured Feedback page from real learners. 194 positive ratings (Top 5%), 102 'Super Helpful' (Top 5%), 131 learners impacted across 25 countries.",
+          "Schoolhouse.world certification portfolio feedback from real learners.",
       },
     ],
   },
   {
     slug: "speech-debate",
-    org: "National Speech & Debate — Prosper High School",
+    org: "National Speech & Debate - Prosper High School",
     shortOrg: "NSDA",
-    role: "Competitor · CLA Debate Agent",
-    period: "2020 – 2024",
-    location: "Prosper, TX · Nationwide",
+    role: "Competitor / CLA Debate Agent",
+    period: "2020 - 2024",
+    location: "Prosper, TX / Nationwide",
     category: "Speech & Debate",
     color: "text-red-800",
     bg: "bg-red-50",
@@ -505,82 +334,25 @@ export const experiencesData: ExperienceData[] = [
     heroImage:
       "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1400&q=80",
     tagline:
-      "National Degree of Distinction — top 4.89% of competitors nationwide",
+      "National Degree of Distinction - top 4.89% of competitors nationwide",
     overview:
-      "I competed in Speech & Debate throughout high school at Prosper High School, earning the NSDA National Degree of Distinction — awarded to fewer than 5% of competitors nationwide. I competed across Lincoln-Douglas, Congressional Debate, and Extemporaneous Speaking at district, regional, and national circuits. Beyond competition, I served as a senior Debate Agent for Civic Leaders of America (CLA), organizing mock-congress conventions, bill-writing sessions, and mentoring newer competitors. Debate is where I learned to think fast, argue precisely, and speak with conviction — skills I carry into every engineering pitch and design review.",
+      "I competed in Speech & Debate throughout high school at Prosper High School, earning the NSDA National Degree of Distinction. I competed across Lincoln-Douglas, Congressional Debate, and Extemporaneous Speaking, and served as a senior Debate Agent for Civic Leaders of America.",
     technicalHighlights: [
-      {
-        label: "NSDA National Degree of Distinction",
-        detail:
-          "Top 4.89% of competitors nationwide — earned through consistent performance across tournaments, event formats, and seasons at the national circuit level.",
-      },
-      {
-        label: "Event Formats",
-        detail:
-          "Competed in Lincoln-Douglas Debate, Congressional Debate, and Extemporaneous Speaking — each requiring different skill sets: case construction, floor oratory, and rapid research synthesis.",
-      },
-      {
-        label: "CLA Debate Agent",
-        detail:
-          "Senior leader at Civic Leaders of America — organized mock-congress conventions featuring bill writing, political party platforms, and activism fairs. Featured in Eagle Nation Online for civic leadership work.",
-      },
-      {
-        label: "Tournament Circuit",
-        detail:
-          "Competed at Prosper Eagles TFA NIETOC, Prosper ISD UIL Invitational, Princeton Tournament, and multiple regional and district championships throughout the season.",
-      },
-      {
-        label: "Skills Transfer",
-        detail:
-          "Debate built rapid synthesis of technical evidence, structured argumentation, and the ability to defend decisions under pressure — directly applied in engineering proposals, design reviews, and project pitches.",
-      },
-      {
-        label: "Program Highlights",
-        detail:
-          "Part of a nationally competitive Prosper High School debate team that finaled in extemporaneous speaking and congress consecutively, and championed the LBJ District tournament.",
-      },
+      { label: "Recognition", detail: "Earned the NSDA National Degree of Distinction." },
+      { label: "Leadership", detail: "Organized mock-congress conventions and mentored newer competitors." },
     ],
     achievements: [
-      "NSDA National Degree of Distinction — top 4.89% of competitors nationwide",
-      "Competed in LD Debate, Congressional Debate, and Extemporaneous Speaking at regional and national level",
-      "Senior Debate Agent at Civic Leaders of America — organized conventions for 100+ student civic leaders",
-      "Featured in Eagle Nation Online for debate season preparation and civic leadership work",
-      "Part of Prosper High School team that finaled in extemporaneous speaking and congress consecutively",
-      "Championed the LBJ District tournament as part of Prosper's nationally competitive program",
+      "NSDA National Degree of Distinction - top 4.89% nationwide",
+      "Competed across LD Debate, Congressional Debate, and Extemporaneous Speaking",
+      "Senior Debate Agent at Civic Leaders of America",
     ],
-    tags: [
-      "Lincoln-Douglas",
-      "Congressional Debate",
-      "Extemporaneous",
-      "NSDA",
-      "CLA",
-      "Public Speaking",
-      "Research",
-    ],
+    tags: ["Lincoln-Douglas", "Congressional Debate", "Extemporaneous", "Public Speaking"],
     links: [
       {
-        label: "LinkedIn — Competition Highlights",
+        label: "LinkedIn - Competition Highlights",
         href: "https://www.linkedin.com/in/sphoorthi-gurram",
         external: true,
         description: "Posts, articles, and competition updates",
-      },
-      {
-        label: "Eagle Nation Online — Debate Season Preview",
-        href: "https://eaglenationonline.com/58815/news/debate-team-prepares-to-slam-gavel-at-start-of-season/",
-        external: true,
-        description: "Featured in Prosper High School's student newspaper",
-      },
-      {
-        label: "Eagle Nation Online — Empowering Future Leaders",
-        href: "https://eaglenationonline.com/63761/features/empowering-future-leaders/",
-        external: true,
-        description: "CLA civic leadership feature — Prosper student newspaper",
-      },
-      {
-        label: "National Speech & Debate Association",
-        href: "https://www.speechanddebate.org/recognition-opportunities/",
-        external: true,
-        description: "NSDA recognition — National Degree of Distinction",
       },
     ],
   },

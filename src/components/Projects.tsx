@@ -2,17 +2,16 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Zap, Bot, Waves, Sun, ExternalLink, ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink, Zap, Bot, Waves } from "lucide-react";
 
 const projects = [
   {
-    slug: "ev-charger",
     experienceSlug: "ev-charger",
     title: "1 kW Bi-Directional EV Charger",
-    org: "TAMU Think Tank · Team Electra",
+    org: "TAMU Think Tank / Team Electra",
     description:
-      "Designed and implemented a high-efficiency onboard EV charger utilizing a GaN-based bridgeless totem-pole PFC frontend and a Dual Active Bridge (DAB) DC-DC stage. Achieved ~96% efficiency and ~0.99 power factor — on par with commercial chargers.",
-    highlight: "~96% efficiency · 400 V DC bus",
+      "Designed and implemented a high-efficiency onboard EV charger using a GaN-based bridgeless totem-pole PFC frontend and a Dual Active Bridge DC-DC stage.",
+    highlight: "~96% efficiency / 400 V DC bus",
     tags: ["GaN", "Power Electronics", "Altium", "LTSpice", "DAB Architecture"],
     icon: Zap,
     color: "text-blue-800",
@@ -22,50 +21,36 @@ const projects = [
       "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
   },
   {
-    slug: "eden",
     experienceSlug: "eden-robot",
-    title: "Project EDEN — AI Humanoid Robot",
-    org: "EDEN Startup · Software Engineer",
+    title: "Project EDEN - AI Humanoid Robot",
+    org: "EDEN Startup / Software Engineer",
     description:
-      "Engineering the software stack for an AI humanoid robot with adaptive reasoning. Built a browser-native 3D simulator with Three.js/R3F, LIDAR raycast engine, and LLM Cognitive Gate. Trained YOLO CV models for real-time human detection.",
-    highlight: "3D Sim · LLM Cognitive Gate",
+      "Engineering the software stack for an AI humanoid robot with adaptive reasoning, real-time human detection, and a browser-native 3D simulator.",
+    highlight: "3D Sim / Cognitive Gate",
     tags: ["Three.js", "ROS 2", "YOLO", "LLM / Cognitive AI", "Embedded Systems"],
     icon: Bot,
     color: "text-indigo-800",
     bg: "bg-indigo-50",
     border: "border-indigo-200",
     image: "/sphoorthi-website/eden-simulator.png",
+    links: [
+      { label: "Live simulator", href: "https://eden-robotics.github.io/Eden/sim" },
+      { label: "Project EDEN", href: "https://eden-robotics.github.io/Eden/" },
+    ],
   },
   {
-    slug: "wired-auv",
     experienceSlug: "wired-auv",
     title: "Autonomous Underwater Vehicle",
-    org: "WIRED AUV Team · Executive Lead",
+    org: "WIRED AUV Team / Executive Lead",
     description:
-      'Leading "Swim Shady" — a competition AUV with NVIDIA Jetson Nano, 8× T200 thrusters, Teledyne DVL navigation, and custom Altium PCBs. Transitioned power to boost converters (24V/18V rails) and led DVL integration for dead-reckoning navigation.',
-    highlight: "40+ member team · DVL Integration",
+      'Leading "Swim Shady," a competition AUV with NVIDIA Jetson Nano, 8x T200 thrusters, Teledyne DVL navigation, and custom Altium PCBs.',
+    highlight: "60+ member team / DVL integration",
     tags: ["Altium", "PCB Design", "Python", "Power Electronics", "DVL"],
     icon: Waves,
     color: "text-sky-800",
     bg: "bg-sky-50",
     border: "border-sky-200",
     image: "/sphoorthi-website/wired-auv-pool.jpg",
-  },
-  {
-    slug: "solar-furnace",
-    experienceSlug: "shine-lab",
-    title: "Concentrating Solar Furnace",
-    org: "SHINE Lab · Student Researcher",
-    description:
-      "Collaborating on an off-grid concentrating solar system using Fresnel lenses to generate high-temperature thermal energy. Programming microprocessors for precise sun-tracking and using MATLAB/Simulink to model and test receiver components.",
-    highlight: "Off-grid solar · Sun-tracking system",
-    tags: ["MATLAB", "Microprocessors", "Sensors", "Fresnel Optics", "DAQ"],
-    icon: Sun,
-    color: "text-amber-800",
-    bg: "bg-amber-50",
-    border: "border-amber-200",
-    image:
-      "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
   },
 ];
 
@@ -99,11 +84,9 @@ export default function Projects() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Link
-                  href={`/experience/${project.experienceSlug}`}
-                  className={`group block h-full overflow-hidden border ${project.border} bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-md`}
+                <article
+                  className={`group flex h-full flex-col overflow-hidden border ${project.border} bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-md`}
                 >
-                  {/* Image */}
                   <div className="relative h-48 overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
@@ -124,7 +107,6 @@ export default function Projects() {
                     </span>
                   </div>
 
-                  {/* Content */}
                   <div className="p-5 flex flex-col gap-3 flex-1">
                     <div>
                       <p className={`text-xs font-mono ${project.color} mb-1`}>
@@ -143,19 +125,39 @@ export default function Projects() {
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className={`text-xs px-2 py-0.5 rounded-md ${project.bg} ${project.color} border ${project.border}`}
+                          className={`text-xs px-2 py-0.5 ${project.bg} ${project.color} border ${project.border}`}
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    <div className={`flex items-center gap-1.5 text-xs font-mono ${project.color} mt-1 group-hover:gap-2.5 transition-all`}>
+                    {"links" in project && project.links && (
+                      <div className="flex flex-wrap gap-2 pt-1">
+                        {project.links.map((link) => (
+                          <a
+                            key={link.label}
+                            href={link.href}
+                            target="_blank"
+                            rel="noreferrer"
+                            className={`inline-flex items-center gap-1.5 border ${project.border} ${project.bg} px-2.5 py-1 text-xs font-mono ${project.color} transition-colors hover:bg-white`}
+                          >
+                            {link.label}
+                            <ExternalLink className="h-3 w-3" />
+                          </a>
+                        ))}
+                      </div>
+                    )}
+
+                    <Link
+                      href={`/experience/${project.experienceSlug}`}
+                      className={`flex items-center gap-1.5 text-xs font-mono ${project.color} mt-1 group-hover:gap-2.5 transition-all`}
+                    >
                       View details
                       <ArrowRight className="w-3.5 h-3.5" />
-                    </div>
+                    </Link>
                   </div>
-                </Link>
+                </article>
               </motion.div>
             );
           })}

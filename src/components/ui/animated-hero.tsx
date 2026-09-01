@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button";
 
 const proofPoints = [
   ["01", "Power electronics", "Technical Lead, Team Electra"],
-  ["02", "Robotics", "Executive Lead, WIRED AUV"],
-  ["03", "Research", "SHINE Lab + PRD Lab"],
+  ["02", "Robotics", "Executive Lead, 60+ member WIRED AUV"],
+  ["03", "Research", "Sunstrike Optics + PRD Lab"],
   ["04", "Teaching", "100+ learners across 20 countries"],
 ];
 

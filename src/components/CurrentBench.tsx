@@ -7,7 +7,7 @@ const benchNotes = [
   {
     number: "01",
     label: "AUV power rail",
-    detail: "Boost-converter transition for DVL, thrusters, and Jetson loads.",
+    detail: "Testing the circuit and power path for DVL, thrusters, and Jetson loads.",
     icon: Waves,
   },
   {
@@ -18,8 +18,8 @@ const benchNotes = [
   },
   {
     number: "03",
-    label: "Solar tracker",
-    detail: "ESP32 telemetry and MATLAB analysis for dual-axis tracking.",
+    label: "Sunstrike tracker",
+    detail: "Prototype setup, thermal readings, wiring cleanup, and circuit debugging.",
     icon: Gauge,
   },
 ];
@@ -27,18 +27,18 @@ const benchNotes = [
 const callouts = [
   {
     number: "A",
-    label: "DVL integration",
-    className: "left-[12%] top-[18%]",
+    label: "Testing the circuit",
+    className: "left-[8%] bottom-[12%]",
   },
   {
     number: "B",
-    label: "Power routing",
-    className: "left-[56%] top-[48%]",
+    label: "Pool validation",
+    className: "left-[72%] top-[22%]",
   },
   {
     number: "C",
-    label: "Pool validation",
-    className: "left-[72%] top-[22%]",
+    label: "Power routing",
+    className: "left-[56%] top-[48%]",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function CurrentBench() {
             </h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-[#59605d]">
               A working snapshot of the systems I am building: underwater
-              robotics, power electronics, solar tracking, and the debugging
+              robotics, power electronics, Sunstrike tracker work, and the debugging
               that connects them.
             </p>
           </div>

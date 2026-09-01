@@ -3,22 +3,22 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
-  Cpu,
-  Bot,
-  Waves,
-  Sun,
-  BookOpen,
-  GraduationCap,
   ArrowRight,
   Award,
+  BookOpen,
+  Bot,
+  Cpu,
+  GraduationCap,
+  Sun,
+  Waves,
 } from "lucide-react";
 
 const experiences = [
   {
     slug: "ev-charger",
-    org: "TAMU Think Tank — Team Electra",
+    org: "TAMU Think Tank - Team Electra",
     role: "Technical Lead",
-    period: "Aug 2025 – Present",
+    period: "Aug 2025 - Present",
     location: "College Station, TX",
     category: "Engineering",
     icon: Cpu,
@@ -27,7 +27,7 @@ const experiences = [
     border: "border-blue-200",
     bullets: [
       "Led a 9-person team to design a 1 kW bi-directional EV charger using GaN-based bridgeless totem-pole PFC and DAB architecture.",
-      "Achieved ~96% efficiency, ~0.99 power factor, and a stable 400 V DC bus — on par with commercial designs.",
+      "Achieved ~96% efficiency, ~0.99 power factor, and a stable 400 V DC bus on par with commercial designs.",
       "Served as primary system debugger and co-authored the IFEC 2026 technical proposal.",
     ],
   },
@@ -35,7 +35,7 @@ const experiences = [
     slug: "eden-robot",
     org: "Project EDEN",
     role: "Software Engineer",
-    period: "Jan 2026 – Present",
+    period: "Jan 2026 - Present",
     location: "College Station, TX",
     category: "AI / Robotics",
     icon: Bot,
@@ -51,8 +51,8 @@ const experiences = [
   {
     slug: "wired-auv",
     org: "WIRED AUV Team",
-    role: "Executive Lead · Electrical Engineer",
-    period: "Aug 2025 – Present",
+    role: "Executive Lead / Electrical Engineer",
+    period: "Aug 2025 - Present",
     location: "College Station, TX",
     category: "Robotics",
     icon: Waves,
@@ -60,33 +60,33 @@ const experiences = [
     bg: "bg-sky-50",
     border: "border-sky-200",
     bullets: [
-      "Lead a 40+ member team across electrical, mechanical, software, and business sub-teams.",
+      "Lead a 60+ member team across electrical, mechanical, software, and business sub-teams.",
       "Redesigned ESC layout and PCB in Altium to reduce wire strain and enable modular stacking.",
       "Transitioned power subsystem to boost converters providing stabilized 24 V / 18 V rails; leading DVL integration.",
     ],
   },
   {
     slug: "shine-lab",
-    org: "SHINE Lab — Texas A&M",
-    role: "Student Researcher",
-    period: "Feb 2026 – Present",
+    org: "Sunstrike Optics LLC",
+    role: "Engineering Research Intern",
+    period: "Feb 2026 - Present",
     location: "College Station, TX",
-    category: "Research",
+    category: "Solar Research",
     icon: Sun,
     color: "text-amber-800",
     bg: "bg-amber-50",
     border: "border-amber-200",
     bullets: [
-      "Contributing to an off-grid concentrating solar furnace using Fresnel lenses for high-temperature thermal energy.",
-      "Programming microcontrollers for precise two-axis sun-tracking and interfacing multi-channel DAQ sensors.",
-      "Building MATLAB/Simulink models of receiver thermal dynamics to guide geometry optimization.",
+      "Set up and tested solar-tracker prototypes for high-temperature optical concentration research.",
+      "Debugged thermal readings, controller upload issues, encoder readiness, and circuit behavior with multimeter checks.",
+      "Cleaned up tracker wiring and prepared stepper motor connections for safer, more reliable integration.",
     ],
   },
   {
     slug: "prd-lab",
-    org: "Peace Resistance & Democracy Lab — UTDallas",
+    org: "Peace Resistance & Democracy Lab - UT Dallas",
     role: "Research Intern",
-    period: "May 2024 – Aug 2024",
+    period: "May 2024 - Aug 2024",
     location: "Richardson, TX",
     category: "Research",
     icon: BookOpen,
@@ -102,33 +102,33 @@ const experiences = [
     slug: "schoolhouse",
     org: "Schoolhouse World",
     role: "Mathematics Tutor",
-    period: "May 2024 – Aug 2024",
-    location: "Virtual · Global",
+    period: "May 2024 - Aug 2024",
+    location: "Virtual / Global",
     category: "Volunteer",
     icon: GraduationCap,
     color: "text-rose-800",
     bg: "bg-rose-50",
     border: "border-rose-200",
     bullets: [
-      "Tutored 125+ students across 25 countries on the world's largest peer-led tutoring platform.",
+      "Tutored 100+ learners across 20 countries on the world's largest peer-led tutoring platform.",
       "Organized a summer camp and 4-week math bootcamp, designing tiered lesson plans and tracking student progress.",
     ],
   },
   {
     slug: "speech-debate",
-    org: "National Speech & Debate — Prosper High School",
-    role: "Competitor · CLA Debate Agent",
-    period: "2020 – 2024",
-    location: "Prosper, TX · Nationwide",
+    org: "National Speech & Debate - Prosper High School",
+    role: "Competitor / CLA Debate Agent",
+    period: "2020 - 2024",
+    location: "Prosper, TX / Nationwide",
     category: "Speech & Debate",
     icon: Award,
     color: "text-red-800",
     bg: "bg-red-50",
     border: "border-red-200",
     bullets: [
-      "Earned the NSDA National Degree of Distinction — awarded to the top 4.89% of competitors nationwide.",
+      "Earned the NSDA National Degree of Distinction, awarded to the top 4.89% of competitors nationwide.",
       "Competed across LD, Congressional Debate, and Extemporaneous Speaking at regional and national tournaments.",
-      "Senior debate agent for Civic Leaders of America — organized mock-congress conventions and mentored newer competitors.",
+      "Senior debate agent for Civic Leaders of America; organized mock-congress conventions and mentored newer competitors.",
     ],
   },
 ];
@@ -167,14 +167,12 @@ export default function Experience() {
                   viewport={{ once: true }}
                   className="md:pl-16 relative"
                 >
-                  {/* Timeline dot */}
                   <div
                     className={`absolute left-0 top-1 w-10 h-10 border ${exp.border} ${exp.bg} hidden md:flex items-center justify-center`}
                   >
                     <Icon className={`w-4 h-4 ${exp.color}`} />
                   </div>
 
-                  {/* Card — wrapped in Link */}
                   <Link href={`/experience/${exp.slug}`} className="block group">
                     <div
                       className={`border ${exp.border} bg-card p-5 md:p-6 transition-all duration-300 cursor-pointer group-hover:-translate-y-0.5 group-hover:shadow-sm`}
@@ -182,9 +180,7 @@ export default function Experience() {
                       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
                         <div>
                           <div className="flex items-center gap-2 mb-0.5">
-                            <Icon
-                              className={`w-4 h-4 ${exp.color} md:hidden`}
-                            />
+                            <Icon className={`w-4 h-4 ${exp.color} md:hidden`} />
                             <h3 className="font-semibold text-slate-950 text-base">
                               {exp.org}
                             </h3>
