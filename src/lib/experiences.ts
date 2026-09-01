@@ -5,6 +5,7 @@ export interface SchematicItem {
   caption?: string;
   rotate?: boolean;
   rotateCCW?: boolean;
+  rotateCW?: boolean;
   small?: boolean;
 }
 
@@ -38,9 +39,9 @@ export const experiencesData: ExperienceData[] = [
     period: "Aug 2025 – Present",
     location: "College Station, TX",
     category: "Power Electronics",
-    color: "text-cyan-400",
-    bg: "bg-cyan-500/10",
-    border: "border-cyan-500/20",
+    color: "text-blue-800",
+    bg: "bg-blue-50",
+    border: "border-blue-200",
     heroImage:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1400&q=80",
     tagline:
@@ -120,9 +121,9 @@ export const experiencesData: ExperienceData[] = [
     period: "Jan 2026 – Present",
     location: "College Station, TX",
     category: "AI · Robotics",
-    color: "text-indigo-400",
-    bg: "bg-indigo-500/10",
-    border: "border-indigo-500/20",
+    color: "text-indigo-800",
+    bg: "bg-indigo-50",
+    border: "border-indigo-200",
     heroImage: "/sphoorthi-website/eden-simulator.png",
     tagline:
       "Engineering the vision pipeline and power architecture for an AI humanoid robot — with a custom 3D web simulator",
@@ -201,9 +202,9 @@ export const experiencesData: ExperienceData[] = [
     period: "Aug 2025 – Present",
     location: "College Station, TX",
     category: "Robotics",
-    color: "text-blue-400",
-    bg: "bg-blue-500/10",
-    border: "border-blue-500/20",
+    color: "text-sky-800",
+    bg: "bg-sky-50",
+    border: "border-sky-200",
     heroImage: "/sphoorthi-website/wired-auv-pool.jpg",
     tagline:
       "Leading a 40+ member AUV team while redesigning the power architecture and DVL integration",
@@ -299,9 +300,9 @@ export const experiencesData: ExperienceData[] = [
     period: "Feb 2026 – Present",
     location: "College Station, TX",
     category: "Energy Research",
-    color: "text-yellow-400",
-    bg: "bg-yellow-500/10",
-    border: "border-yellow-500/20",
+    color: "text-amber-800",
+    bg: "bg-amber-50",
+    border: "border-amber-200",
     heroImage:
       "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1400&q=80",
     tagline:
@@ -381,9 +382,9 @@ export const experiencesData: ExperienceData[] = [
     period: "May 2024 – Aug 2024",
     location: "Richardson, TX",
     category: "Research",
-    color: "text-emerald-400",
-    bg: "bg-emerald-500/10",
-    border: "border-emerald-500/20",
+    color: "text-emerald-800",
+    bg: "bg-emerald-50",
+    border: "border-emerald-200",
     heroImage:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=80",
     tagline:
@@ -435,9 +436,9 @@ export const experiencesData: ExperienceData[] = [
     period: "May 2024 – Aug 2024",
     location: "Virtual · Global",
     category: "Volunteer",
-    color: "text-pink-400",
-    bg: "bg-pink-500/10",
-    border: "border-pink-500/20",
+    color: "text-rose-800",
+    bg: "bg-rose-50",
+    border: "border-rose-200",
     heroImage:
       "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1400&q=80",
     tagline:
@@ -492,50 +493,94 @@ export const experiencesData: ExperienceData[] = [
   },
   {
     slug: "speech-debate",
-    org: "National Speech & Debate Association",
+    org: "National Speech & Debate — Prosper High School",
     shortOrg: "NSDA",
-    role: "Competitor",
+    role: "Competitor · CLA Debate Agent",
     period: "2020 – 2024",
-    location: "Nationwide",
+    location: "Prosper, TX · Nationwide",
     category: "Speech & Debate",
-    color: "text-rose-400",
-    bg: "bg-rose-500/10",
-    border: "border-rose-500/20",
+    color: "text-red-800",
+    bg: "bg-red-50",
+    border: "border-red-200",
     heroImage:
       "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1400&q=80",
     tagline:
       "National Degree of Distinction — top 4.89% of competitors nationwide",
     overview:
-      "Competed nationally in Speech & Debate through the National Speech & Debate Association (NSDA), earning the National Degree of Distinction — a recognition awarded to fewer than 5% of competitors nationwide. Debate sharpened skills I use every day in engineering: building arguments from evidence, communicating under pressure, and thinking on my feet. For articles, posts, and competition highlights, see my LinkedIn.",
+      "I competed in Speech & Debate throughout high school at Prosper High School, earning the NSDA National Degree of Distinction — awarded to fewer than 5% of competitors nationwide. I competed across Lincoln-Douglas, Congressional Debate, and Extemporaneous Speaking at district, regional, and national circuits. Beyond competition, I served as a senior Debate Agent for Civic Leaders of America (CLA), organizing mock-congress conventions, bill-writing sessions, and mentoring newer competitors. Debate is where I learned to think fast, argue precisely, and speak with conviction — skills I carry into every engineering pitch and design review.",
     technicalHighlights: [
       {
-        label: "National Degree of Distinction",
+        label: "NSDA National Degree of Distinction",
         detail:
-          "Earned the NSDA's National Degree of Distinction — placing in the top 4.89% of competitors nationally across multiple event formats and tournament circuits.",
+          "Top 4.89% of competitors nationwide — earned through consistent performance across tournaments, event formats, and seasons at the national circuit level.",
       },
       {
-        label: "Skills Transfer to Engineering",
+        label: "Event Formats",
         detail:
-          "Debate built rapid synthesis of technical evidence, structured argumentation, and the ability to defend design decisions clearly — skills directly applied when presenting proposals and debugging systems under pressure.",
+          "Competed in Lincoln-Douglas Debate, Congressional Debate, and Extemporaneous Speaking — each requiring different skill sets: case construction, floor oratory, and rapid research synthesis.",
+      },
+      {
+        label: "CLA Debate Agent",
+        detail:
+          "Senior leader at Civic Leaders of America — organized mock-congress conventions featuring bill writing, political party platforms, and activism fairs. Featured in Eagle Nation Online for civic leadership work.",
+      },
+      {
+        label: "Tournament Circuit",
+        detail:
+          "Competed at Prosper Eagles TFA NIETOC, Prosper ISD UIL Invitational, Princeton Tournament, and multiple regional and district championships throughout the season.",
+      },
+      {
+        label: "Skills Transfer",
+        detail:
+          "Debate built rapid synthesis of technical evidence, structured argumentation, and the ability to defend decisions under pressure — directly applied in engineering proposals, design reviews, and project pitches.",
+      },
+      {
+        label: "Program Highlights",
+        detail:
+          "Part of a nationally competitive Prosper High School debate team that finaled in extemporaneous speaking and congress consecutively, and championed the LBJ District tournament.",
       },
     ],
     achievements: [
-      "National Degree of Distinction — top 4.89% of NSDA competitors nationwide",
-      "Competed across multiple event formats in regional and national tournaments",
+      "NSDA National Degree of Distinction — top 4.89% of competitors nationwide",
+      "Competed in LD Debate, Congressional Debate, and Extemporaneous Speaking at regional and national level",
+      "Senior Debate Agent at Civic Leaders of America — organized conventions for 100+ student civic leaders",
+      "Featured in Eagle Nation Online for debate season preparation and civic leadership work",
+      "Part of Prosper High School team that finaled in extemporaneous speaking and congress consecutively",
+      "Championed the LBJ District tournament as part of Prosper's nationally competitive program",
     ],
     tags: [
+      "Lincoln-Douglas",
+      "Congressional Debate",
+      "Extemporaneous",
+      "NSDA",
+      "CLA",
       "Public Speaking",
       "Research",
-      "Argumentation",
-      "Communication",
-      "NSDA",
     ],
     links: [
       {
-        label: "View on LinkedIn",
+        label: "LinkedIn — Competition Highlights",
         href: "https://www.linkedin.com/in/sphoorthi-gurram",
         external: true,
-        description: "Articles, posts, and competition highlights",
+        description: "Posts, articles, and competition updates",
+      },
+      {
+        label: "Eagle Nation Online — Debate Season Preview",
+        href: "https://eaglenationonline.com/58815/news/debate-team-prepares-to-slam-gavel-at-start-of-season/",
+        external: true,
+        description: "Featured in Prosper High School's student newspaper",
+      },
+      {
+        label: "Eagle Nation Online — Empowering Future Leaders",
+        href: "https://eaglenationonline.com/63761/features/empowering-future-leaders/",
+        external: true,
+        description: "CLA civic leadership feature — Prosper student newspaper",
+      },
+      {
+        label: "National Speech & Debate Association",
+        href: "https://www.speechanddebate.org/recognition-opportunities/",
+        external: true,
+        description: "NSDA recognition — National Degree of Distinction",
       },
     ],
   },

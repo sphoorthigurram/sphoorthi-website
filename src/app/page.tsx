@@ -3,6 +3,7 @@ import { Hero } from "@/components/ui/animated-hero";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
+import CurrentBench from "@/components/CurrentBench";
 import PhotoCarousel from "@/components/PhotoCarousel";
 import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
@@ -13,6 +14,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Navbar />
       <Hero />
+      <CurrentBench />
       <PhotoCarousel />
       <Projects />
       <Experience />

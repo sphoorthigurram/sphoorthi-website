@@ -10,36 +10,36 @@ const contactLinks = [
     label: "Email",
     value: "gurramsphoorthi@tamu.edu",
     href: "mailto:gurramsphoorthi@tamu.edu",
-    color: "text-cyan-400",
-    bg: "bg-cyan-500/10",
-    border: "border-cyan-500/20",
+    color: "text-blue-800",
+    bg: "bg-blue-50",
+    border: "border-blue-200",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
     value: "linkedin.com/in/sphoorthi-gurram",
     href: "https://linkedin.com/in/sphoorthi-gurram",
-    color: "text-indigo-400",
-    bg: "bg-indigo-500/10",
-    border: "border-indigo-500/20",
+    color: "text-indigo-800",
+    bg: "bg-indigo-50",
+    border: "border-indigo-200",
   },
   {
     icon: Github,
     label: "GitHub",
     value: "github.com/sphoorthigurram",
     href: "https://github.com/sphoorthigurram",
-    color: "text-violet-400",
-    bg: "bg-violet-500/10",
-    border: "border-violet-500/20",
+    color: "text-slate-800",
+    bg: "bg-slate-100",
+    border: "border-slate-300",
   },
   {
     icon: MapPin,
     label: "Location",
     value: "College Station, TX",
     href: null,
-    color: "text-emerald-400",
-    bg: "bg-emerald-500/10",
-    border: "border-emerald-500/20",
+    color: "text-emerald-800",
+    bg: "bg-emerald-50",
+    border: "border-emerald-200",
   },
 ];
 
@@ -54,10 +54,10 @@ export default function Contact() {
           viewport={{ once: true }}
           className="text-center mb-14"
         >
-          <p className="text-cyan-400 text-sm font-mono mb-2 tracking-widest uppercase">
+          <p className="text-[#5a1720] text-sm font-mono mb-2 tracking-widest uppercase">
             Contact
           </p>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-spektr-cyan-50 mb-4">
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-slate-950 mb-4">
             Let&apos;s connect
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto leading-relaxed">
@@ -77,10 +77,10 @@ export default function Contact() {
             const Icon = link.icon;
             const inner = (
               <div
-                className={`rounded-xl border ${link.border} bg-card p-5 flex flex-col items-center gap-3 text-center hover:${link.bg} transition-colors group`}
+                className={`border ${link.border} bg-card p-5 flex flex-col items-center gap-3 text-center shadow-sm transition-colors group`}
               >
                 <div
-                  className={`w-10 h-10 rounded-full ${link.bg} border ${link.border} flex items-center justify-center`}
+                  className={`w-10 h-10 ${link.bg} border ${link.border} flex items-center justify-center`}
                 >
                   <Icon className={`w-5 h-5 ${link.color}`} />
                 </div>
@@ -121,7 +121,7 @@ export default function Contact() {
         >
           <Button
             size="lg"
-            className="gap-3 bg-cyan-500 text-gray-950 hover:bg-cyan-400 font-semibold"
+            className="gap-3 bg-[#5a1720] text-white hover:bg-[#7a2430] font-semibold"
             asChild
           >
             <a href="mailto:gurramsphoorthi@tamu.edu">

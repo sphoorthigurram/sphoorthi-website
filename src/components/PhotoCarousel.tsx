@@ -40,12 +40,12 @@ export default function PhotoCarousel() {
   const carouselPhotos = [...photos, ...photos];
 
   return (
-    <section id="gallery" className="py-20 px-4 overflow-hidden bg-card/30">
+    <section id="gallery" className="py-20 px-4 overflow-hidden bg-white/55 border-y border-border">
       <div className="container mx-auto max-w-5xl mb-10">
-        <p className="text-cyan-400 text-sm font-mono mb-2 tracking-widest uppercase">
+        <p className="text-[#5a1720] text-sm font-mono mb-2 tracking-widest uppercase">
           Gallery
         </p>
-        <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-spektr-cyan-50">
+        <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-slate-950">
           Work in motion
         </h2>
       </div>
@@ -55,7 +55,7 @@ export default function PhotoCarousel() {
           {carouselPhotos.map((photo, index) => (
             <figure
               key={`${photo.src}-${index}`}
-              className="gallery-photo relative h-[250px] w-[340px] shrink-0 overflow-hidden rounded-lg border border-border bg-card md:h-[320px] md:w-[460px]"
+              className="gallery-photo relative h-[250px] w-[340px] shrink-0 overflow-hidden border border-border bg-card shadow-sm md:h-[320px] md:w-[460px]"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -64,7 +64,7 @@ export default function PhotoCarousel() {
                 className="gallery-photo-image h-full w-full object-cover transition duration-500"
                 loading="lazy"
               />
-              <figcaption className="gallery-photo-caption absolute inset-x-0 bottom-0 translate-y-full bg-background/90 px-4 py-4 text-sm leading-relaxed text-spektr-cyan-50 backdrop-blur-md transition duration-300">
+              <figcaption className="gallery-photo-caption absolute inset-x-0 bottom-0 translate-y-full bg-white/95 px-4 py-4 text-sm leading-relaxed text-slate-950 transition duration-300">
                 {photo.caption}
               </figcaption>
             </figure>

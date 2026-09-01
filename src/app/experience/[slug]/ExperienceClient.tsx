@@ -19,21 +19,21 @@ export default function ExperienceClient({
   experience: ExperienceData;
 }) {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-[#f7f1e8] text-[#27211b]">
       {/* Hero */}
-      <div className="relative h-[55vh] min-h-[340px] overflow-hidden">
+      <div className="relative h-[48vh] min-h-[320px] overflow-hidden border-b border-[#d8cfc1] bg-[#eee5d8]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={experience.heroImage}
           alt={experience.org}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover opacity-90"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-background/30 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f7f1e8]/5 via-[#f7f1e8]/25 to-[#f7f1e8]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f7f1e8]/60 via-[#f7f1e8]/15 to-transparent" />
 
         <Link
           href="/"
-          className="absolute top-6 left-6 flex items-center gap-2 text-sm text-white/90 hover:text-white bg-background/50 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2 transition-all hover:bg-background/70"
+          className="absolute top-6 left-6 flex items-center gap-2 border border-[#cfc4b5] bg-[#fffaf2] px-4 py-2 text-sm text-[#3b332a] shadow-sm transition-all hover:bg-white"
         >
           <ArrowLeft className="w-4 h-4" />
           Back
@@ -41,7 +41,7 @@ export default function ExperienceClient({
 
         <div className="absolute top-6 right-6">
           <span
-            className={`text-xs px-3 py-1.5 rounded-full ${experience.bg} ${experience.color} border ${experience.border} font-mono backdrop-blur-sm`}
+            className={`border border-[#cfc4b5] bg-[#fffaf2] px-3 py-1.5 font-mono text-xs ${experience.color} shadow-sm`}
           >
             {experience.category}
           </span>
@@ -55,15 +55,15 @@ export default function ExperienceClient({
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="-mt-16 relative z-10 mb-10"
+          className="-mt-12 relative z-10 mb-10 border-b border-[#d8cfc1] bg-[#f7f1e8]/95 pb-8 pt-4"
         >
           <p className={`text-xs font-mono ${experience.color} mb-2 tracking-widest uppercase`}>
             {experience.org}
           </p>
-          <h1 className="text-3xl md:text-[2.6rem] font-bold tracking-tight text-spektr-cyan-50 mb-4 leading-tight max-w-2xl">
+          <h1 className="text-3xl md:text-[2.6rem] font-bold tracking-tight text-[#27211b] mb-4 leading-tight max-w-2xl">
             {experience.tagline}
           </h1>
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-[#6e6255]">
             <span className={`font-semibold ${experience.color}`}>{experience.role}</span>
             <span className="flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5" />
@@ -87,8 +87,8 @@ export default function ExperienceClient({
               transition={{ duration: 0.5, delay: 0.1 }}
             >
               <SectionLabel>Overview</SectionLabel>
-              <div className={`rounded-xl border ${experience.border} p-5 ${experience.bg}`}>
-                <p className="text-foreground/85 leading-relaxed text-[0.95rem]">
+              <div className="rounded-lg border border-[#d8cfc1] bg-[#fffaf2] p-5">
+                <p className="text-[0.95rem] leading-relaxed text-[#3b332a]">
                   {experience.overview}
                 </p>
               </div>
@@ -120,10 +120,10 @@ export default function ExperienceClient({
                     initial={{ opacity: 0, x: -12 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.35, delay: 0.38 + i * 0.06 }}
-                    className={`flex gap-3 text-sm leading-relaxed rounded-lg border ${experience.border} bg-card px-4 py-3`}
+                    className="flex gap-3 rounded-lg border border-[#d8cfc1] bg-[#fffaf2] px-4 py-3 text-sm leading-relaxed"
                   >
-                    <span className={`mt-[6px] w-1.5 h-1.5 rounded-full shrink-0 ${experience.color} bg-current`} />
-                    <span className="text-foreground/80">{item}</span>
+                    <span className={`mt-[6px] w-1.5 h-1.5 shrink-0 ${experience.color} bg-current`} />
+                    <span className="text-[#3b332a]">{item}</span>
                   </motion.li>
                 ))}
               </ul>
@@ -143,14 +143,14 @@ export default function ExperienceClient({
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.35, delay: 0.46 + i * 0.06 }}
-                    className={`rounded-xl border ${experience.border} bg-card overflow-hidden flex flex-col`}
+                    className="flex flex-col overflow-hidden rounded-lg border border-[#d8cfc1] bg-[#fffaf2]"
                   >
                     <div className={`h-1 w-full ${experience.color} bg-current opacity-60`} />
                     <div className="p-4 flex flex-col gap-2 flex-1">
                       <p className={`text-xs font-mono font-semibold ${experience.color} leading-snug`}>
                         {item.label}
                       </p>
-                      <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                      <p className="text-sm text-[#6e6255] leading-relaxed flex-1">
                         {item.detail}
                       </p>
                     </div>
@@ -167,9 +167,9 @@ export default function ExperienceClient({
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="rounded-xl border border-border bg-card p-5"
+              className="rounded-lg border border-[#d8cfc1] bg-[#fffaf2] p-5"
             >
-              <h3 className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-3 flex items-center gap-2">
+              <h3 className="mb-3 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#6e6255]">
                 <Tag className="w-3.5 h-3.5" />
                 Tech Stack
               </h3>
@@ -177,7 +177,7 @@ export default function ExperienceClient({
                 {experience.tags.map((tag) => (
                   <span
                     key={tag}
-                    className={`text-xs px-2.5 py-1 rounded-md ${experience.bg} ${experience.color} border ${experience.border}`}
+                    className={`rounded-md border border-[#d8cfc1] bg-[#f7f1e8] px-2.5 py-1 text-xs ${experience.color}`}
                   >
                     {tag}
                   </span>
@@ -191,9 +191,9 @@ export default function ExperienceClient({
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.25 }}
-                className="rounded-xl border border-border bg-card p-5"
+                className="rounded-lg border border-[#d8cfc1] bg-[#fffaf2] p-5"
               >
-                <h3 className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-3 flex items-center gap-2">
+                <h3 className="mb-3 flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-[#6e6255]">
                   <FileText className="w-3.5 h-3.5" />
                   Resources
                 </h3>
@@ -204,7 +204,7 @@ export default function ExperienceClient({
                       href={link.href}
                       target={link.external ? "_blank" : undefined}
                       rel="noreferrer"
-                      className={`flex items-start gap-3 p-3 rounded-lg border ${experience.border} ${experience.bg} hover:opacity-80 transition-opacity group`}
+                      className="group flex items-start gap-3 rounded-lg border border-[#d8cfc1] bg-[#f7f1e8] p-3 transition-colors hover:bg-white"
                     >
                       <ExternalLink className={`w-4 h-4 mt-0.5 shrink-0 ${experience.color}`} />
                       <div className="min-w-0">
@@ -212,7 +212,7 @@ export default function ExperienceClient({
                           {link.label}
                         </p>
                         {link.description && (
-                          <p className="text-xs text-muted-foreground mt-0.5 leading-snug">
+                          <p className="mt-0.5 text-xs leading-snug text-[#6e6255]">
                             {link.description}
                           </p>
                         )}
@@ -230,7 +230,7 @@ export default function ExperienceClient({
             >
               <Link
                 href="/#experience"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="flex items-center gap-2 text-sm text-[#6e6255] transition-colors hover:text-[#27211b]"
               >
                 <ArrowLeft className="w-4 h-4" />
                 All experiences
@@ -245,7 +245,7 @@ export default function ExperienceClient({
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-xs font-mono text-muted-foreground uppercase tracking-widest mb-4">
+    <p className="mb-4 font-mono text-xs uppercase tracking-widest text-[#6e6255]">
       {children}
     </p>
   );
@@ -310,9 +310,9 @@ function SchematicCard({
   experience: ExperienceData;
 }) {
   return (
-    <div className={`rounded-xl border ${experience.border} bg-card overflow-hidden flex flex-col`}>
+    <div className="flex flex-col overflow-hidden rounded-lg border border-[#d8cfc1] bg-[#fffaf2]">
       {/* Header */}
-      <div className={`px-4 py-2.5 border-b ${experience.border} flex items-center justify-between gap-3`}>
+      <div className="flex items-center justify-between gap-3 border-b border-[#d8cfc1] px-4 py-2.5">
         <p className={`text-xs font-mono font-semibold ${experience.color} flex items-center gap-2`}>
           {s.type === "image" ? (
             <ImageIcon className="w-3.5 h-3.5" />
@@ -338,17 +338,22 @@ function SchematicCard({
         <>
           {s.rotateCCW ? (
             /* Landscape container for a portrait image rotated CCW */
-            <div className="overflow-hidden bg-black/20 flex items-center justify-center" style={{ aspectRatio: "4/3" }}>
+            <div className="overflow-hidden bg-[#eee5d8] flex items-center justify-center" style={{ aspectRatio: "4/3" }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={s.src}
                 alt={s.title}
-                style={{
-                  transform: "rotate(-90deg)",
-                  width: "75%",
-                  height: "auto",
-                  maxHeight: "none",
-                }}
+                style={{ transform: "rotate(-90deg)", width: "75%", height: "auto", maxHeight: "none" }}
+              />
+            </div>
+          ) : s.rotateCW ? (
+            /* Landscape container for a portrait image rotated CW */
+            <div className="overflow-hidden bg-[#eee5d8] flex items-center justify-center" style={{ aspectRatio: "4/3" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={s.src}
+                alt={s.title}
+                style={{ transform: "rotate(90deg)", width: "75%", height: "auto", maxHeight: "none" }}
               />
             </div>
           ) : s.small ? (
@@ -362,7 +367,7 @@ function SchematicCard({
               />
             </div>
           ) : (
-            <div className="bg-white/5">
+            <div className="bg-[#f7f1e8]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={s.src}
@@ -372,7 +377,7 @@ function SchematicCard({
             </div>
           )}
           {s.caption && (
-            <p className="text-xs text-muted-foreground px-4 py-2.5 border-t border-border leading-relaxed">
+            <p className="border-t border-[#d8cfc1] px-4 py-2.5 text-xs leading-relaxed text-[#6e6255]">
               {s.caption}
             </p>
           )}
@@ -389,7 +394,7 @@ function SchematicCard({
             style={{ height: "640px" }}
           />
           {s.caption && (
-            <p className="text-xs text-muted-foreground px-4 py-2.5 border-t border-border leading-relaxed">
+            <p className="border-t border-[#d8cfc1] px-4 py-2.5 text-xs leading-relaxed text-[#6e6255]">
               {s.caption}
             </p>
           )}
@@ -399,14 +404,14 @@ function SchematicCard({
       {/* External link */}
       {s.type === "link" && (
         <div className="p-6 flex flex-col items-center gap-4">
-          <p className="text-sm text-muted-foreground text-center max-w-sm leading-relaxed">
+          <p className="max-w-sm text-center text-sm leading-relaxed text-[#6e6255]">
             {s.caption}
           </p>
           <a
             href={s.src}
             target="_blank"
             rel="noreferrer"
-            className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border ${experience.border} ${experience.bg} ${experience.color} text-sm font-mono hover:opacity-80 transition-opacity`}
+            className={`inline-flex items-center gap-2 rounded-lg border border-[#d8cfc1] bg-[#f7f1e8] px-5 py-2.5 font-mono text-sm ${experience.color} transition-colors hover:bg-white`}
           >
             <ExternalLink className="w-4 h-4" />
             Open Interactive Schematic

@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3%;
-    --foreground: 210 40% 98%;
-    --card: 240 8% 6%;
-    --card-foreground: 210 40% 98%;
-    --popover: 240 10% 3%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 186 100% 50%;
-    --primary-foreground: 240 10% 3%;
-    --secondary: 240 4% 13%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 240 4% 13%;
-    --muted-foreground: 215 20% 55%;
-    --accent: 240 4% 13%;
-    --accent-foreground: 210 40% 98%;
+    --background: 42 38% 96%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 351 59% 22%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 32% 91%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 38 26% 90%;
+    --muted-foreground: 220 14% 39%;
+    --accent: 37 46% 88%;
+    --accent-foreground: 351 59% 22%;
     --destructive: 0 62% 30%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 240 4% 16%;
-    --input: 240 4% 16%;
-    --ring: 186 100% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 35 18% 78%;
+    --input: 35 18% 78%;
+    --ring: 351 59% 22%;
     --radius: 0.5rem;
   }
 }
@@ -45,21 +45,14 @@
 @layer utilities {
   .grid-bg {
     background-image:
-      linear-gradient(rgba(244, 114, 182, 0.085) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(244, 114, 182, 0.085) 1px, transparent 1px);
+      linear-gradient(rgba(79, 127, 145, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(79, 127, 145, 0.12) 1px, transparent 1px);
     background-size: 60px 60px;
-    background-color: hsl(240 14% 4%);
+    background-color: hsl(var(--background));
   }
 
   .glow-cyan {
-    box-shadow: 0 0 40px rgba(244, 114, 182, 0.16);
-  }
-
-  .text-gradient-cyan {
-    background: linear-gradient(135deg, #f472b6, #818cf8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
   }
 
   .photo-carousel-track {

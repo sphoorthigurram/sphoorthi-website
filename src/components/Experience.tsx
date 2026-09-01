@@ -10,6 +10,7 @@ import {
   BookOpen,
   GraduationCap,
   ArrowRight,
+  Award,
 } from "lucide-react";
 
 const experiences = [
@@ -21,9 +22,9 @@ const experiences = [
     location: "College Station, TX",
     category: "Engineering",
     icon: Cpu,
-    color: "text-cyan-400",
-    bg: "bg-cyan-500/10",
-    border: "border-cyan-500/20",
+    color: "text-blue-800",
+    bg: "bg-blue-50",
+    border: "border-blue-200",
     bullets: [
       "Led a 9-person team to design a 1 kW bi-directional EV charger using GaN-based bridgeless totem-pole PFC and DAB architecture.",
       "Achieved ~96% efficiency, ~0.99 power factor, and a stable 400 V DC bus — on par with commercial designs.",
@@ -38,9 +39,9 @@ const experiences = [
     location: "College Station, TX",
     category: "AI / Robotics",
     icon: Bot,
-    color: "text-indigo-400",
-    bg: "bg-indigo-500/10",
-    border: "border-indigo-500/20",
+    color: "text-indigo-800",
+    bg: "bg-indigo-50",
+    border: "border-indigo-200",
     bullets: [
       "Engineered and trained YOLO-based computer vision models for real-time human detection on an AI humanoid robot.",
       "Designed the full power distribution architecture for the bipedal platform.",
@@ -55,9 +56,9 @@ const experiences = [
     location: "College Station, TX",
     category: "Robotics",
     icon: Waves,
-    color: "text-blue-400",
-    bg: "bg-blue-500/10",
-    border: "border-blue-500/20",
+    color: "text-sky-800",
+    bg: "bg-sky-50",
+    border: "border-sky-200",
     bullets: [
       "Lead a 40+ member team across electrical, mechanical, software, and business sub-teams.",
       "Redesigned ESC layout and PCB in Altium to reduce wire strain and enable modular stacking.",
@@ -72,9 +73,9 @@ const experiences = [
     location: "College Station, TX",
     category: "Research",
     icon: Sun,
-    color: "text-yellow-400",
-    bg: "bg-yellow-500/10",
-    border: "border-yellow-500/20",
+    color: "text-amber-800",
+    bg: "bg-amber-50",
+    border: "border-amber-200",
     bullets: [
       "Contributing to an off-grid concentrating solar furnace using Fresnel lenses for high-temperature thermal energy.",
       "Programming microcontrollers for precise two-axis sun-tracking and interfacing multi-channel DAQ sensors.",
@@ -89,9 +90,9 @@ const experiences = [
     location: "Richardson, TX",
     category: "Research",
     icon: BookOpen,
-    color: "text-emerald-400",
-    bg: "bg-emerald-500/10",
-    border: "border-emerald-500/20",
+    color: "text-emerald-800",
+    bg: "bg-emerald-50",
+    border: "border-emerald-200",
     bullets: [
       "Used R, scikit-learn, and plotly to visualize trends in non-violent revolution datasets across 50+ countries.",
       "Authored research reports on Kyrgyzstan and Uruguay supporting a study on democratic breakdown.",
@@ -105,19 +106,36 @@ const experiences = [
     location: "Virtual · Global",
     category: "Volunteer",
     icon: GraduationCap,
-    color: "text-pink-400",
-    bg: "bg-pink-500/10",
-    border: "border-pink-500/20",
+    color: "text-rose-800",
+    bg: "bg-rose-50",
+    border: "border-rose-200",
     bullets: [
       "Tutored 125+ students across 25 countries on the world's largest peer-led tutoring platform.",
       "Organized a summer camp and 4-week math bootcamp, designing tiered lesson plans and tracking student progress.",
+    ],
+  },
+  {
+    slug: "speech-debate",
+    org: "National Speech & Debate — Prosper High School",
+    role: "Competitor · CLA Debate Agent",
+    period: "2020 – 2024",
+    location: "Prosper, TX · Nationwide",
+    category: "Speech & Debate",
+    icon: Award,
+    color: "text-red-800",
+    bg: "bg-red-50",
+    border: "border-red-200",
+    bullets: [
+      "Earned the NSDA National Degree of Distinction — awarded to the top 4.89% of competitors nationwide.",
+      "Competed across LD, Congressional Debate, and Extemporaneous Speaking at regional and national tournaments.",
+      "Senior debate agent for Civic Leaders of America — organized mock-congress conventions and mentored newer competitors.",
     ],
   },
 ];
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-4 bg-card/30">
+    <section id="experience" className="py-24 px-4 bg-white/55 border-y border-border">
       <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -126,10 +144,10 @@ export default function Experience() {
           viewport={{ once: true }}
           className="mb-14"
         >
-          <p className="text-cyan-400 text-sm font-mono mb-2 tracking-widest uppercase">
+          <p className="text-[#5a1720] text-sm font-mono mb-2 tracking-widest uppercase">
             Experience
           </p>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-spektr-cyan-50">
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-slate-950">
             What I&apos;ve been building
           </h2>
         </motion.div>
@@ -151,7 +169,7 @@ export default function Experience() {
                 >
                   {/* Timeline dot */}
                   <div
-                    className={`absolute left-0 top-1 w-10 h-10 rounded-full border ${exp.border} ${exp.bg} hidden md:flex items-center justify-center`}
+                    className={`absolute left-0 top-1 w-10 h-10 border ${exp.border} ${exp.bg} hidden md:flex items-center justify-center`}
                   >
                     <Icon className={`w-4 h-4 ${exp.color}`} />
                   </div>
@@ -159,7 +177,7 @@ export default function Experience() {
                   {/* Card — wrapped in Link */}
                   <Link href={`/experience/${exp.slug}`} className="block group">
                     <div
-                      className={`rounded-xl border ${exp.border} bg-card p-5 md:p-6 hover:${exp.bg} transition-all duration-300 cursor-pointer`}
+                      className={`border ${exp.border} bg-card p-5 md:p-6 transition-all duration-300 cursor-pointer group-hover:-translate-y-0.5 group-hover:shadow-sm`}
                     >
                       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
                         <div>
@@ -167,7 +185,7 @@ export default function Experience() {
                             <Icon
                               className={`w-4 h-4 ${exp.color} md:hidden`}
                             />
-                            <h3 className="font-semibold text-foreground text-base">
+                            <h3 className="font-semibold text-slate-950 text-base">
                               {exp.org}
                             </h3>
                           </div>
@@ -183,7 +201,7 @@ export default function Experience() {
                             {exp.location}
                           </p>
                           <span
-                            className={`inline-block mt-1 text-xs px-2 py-0.5 rounded-full ${exp.bg} ${exp.color} border ${exp.border}`}
+                            className={`inline-block mt-1 text-xs px-2 py-0.5 ${exp.bg} ${exp.color} border ${exp.border}`}
                           >
                             {exp.category}
                           </span>
@@ -197,7 +215,7 @@ export default function Experience() {
                             className="text-sm text-muted-foreground leading-relaxed flex gap-2"
                           >
                             <span
-                              className={`mt-1.5 w-1 h-1 rounded-full shrink-0 ${exp.color} bg-current`}
+                              className={`mt-1.5 w-1 h-1 shrink-0 ${exp.color} bg-current`}
                             />
                             {b}
                           </li>

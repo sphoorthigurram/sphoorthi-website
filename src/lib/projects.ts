@@ -36,9 +36,9 @@ export const projectsData: ProjectData[] = [
     period: "Aug 2025 – Present",
     location: "College Station, TX",
     category: "Power Electronics",
-    color: "text-cyan-400",
-    bg: "bg-cyan-500/10",
-    border: "border-cyan-500/20",
+    color: "text-blue-800",
+    bg: "bg-blue-50",
+    border: "border-blue-200",
     cardImage:
       "https://images.unsplash.com/photo-1593941707882-a5bac6861d12?w=800&q=80",
     heroImage:
@@ -107,9 +107,9 @@ export const projectsData: ProjectData[] = [
     period: "Jan 2026 – Present",
     location: "College Station, TX",
     category: "AI · Robotics",
-    color: "text-indigo-400",
-    bg: "bg-indigo-500/10",
-    border: "border-indigo-500/20",
+    color: "text-indigo-800",
+    bg: "bg-indigo-50",
+    border: "border-indigo-200",
     cardImage: "/sphoorthi-website/eden-simulator.png",
     heroImage: "/sphoorthi-website/eden-simulator.png",
     tagline:
@@ -189,9 +189,9 @@ export const projectsData: ProjectData[] = [
     period: "Aug 2025 – Present",
     location: "College Station, TX",
     category: "Robotics",
-    color: "text-blue-400",
-    bg: "bg-blue-500/10",
-    border: "border-blue-500/20",
+    color: "text-sky-800",
+    bg: "bg-sky-50",
+    border: "border-sky-200",
     cardImage:
       "https://images.unsplash.com/photo-1614728423169-3f65fd722b7e?w=800&q=80",
     heroImage:
@@ -303,9 +303,9 @@ export const projectsData: ProjectData[] = [
     period: "Feb 2026 – Present",
     location: "College Station, TX",
     category: "Energy Research",
-    color: "text-yellow-400",
-    bg: "bg-yellow-500/10",
-    border: "border-yellow-500/20",
+    color: "text-amber-800",
+    bg: "bg-amber-50",
+    border: "border-amber-200",
     cardImage:
       "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
     heroImage:

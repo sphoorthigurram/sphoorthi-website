@@ -1,141 +1,92 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import { MoveRight, Mail } from "lucide-react";
+import { ArrowUpRight, Mail, MoveRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+const proofPoints = [
+  ["01", "Power electronics", "Technical Lead, Team Electra"],
+  ["02", "Robotics", "Executive Lead, WIRED AUV"],
+  ["03", "Research", "SHINE Lab + PRD Lab"],
+  ["04", "Teaching", "100+ learners across 20 countries"],
+];
+
 function Hero() {
-  const [titleNumber, setTitleNumber] = useState(0);
-  const titles = useMemo(
-    () => ["an engineer", "a researcher", "a builder", "a leader", "an innovator"],
-    []
-  );
-
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setTitleNumber((prev) => (prev === titles.length - 1 ? 0 : prev + 1));
-    }, 2000);
-    return () => clearTimeout(timeoutId);
-  }, [titleNumber, titles]);
-
   return (
     <section
       id="home"
-      className="relative w-full min-h-screen flex items-center justify-center overflow-hidden grid-bg"
+      className="relative min-h-screen overflow-hidden border-b border-border bg-background"
     >
-      {/* Background glows */}
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Radial vignette darkening edges */}
-        <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 80% 70% at 50% 50%, transparent 30%, hsl(240 12% 2%) 100%)" }} />
-        {/* Core pink glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-pink-500/15 blur-[130px]" />
-        {/* Indigo accent — upper left */}
-        <div className="absolute top-1/4 left-1/4 w-[500px] h-[400px] rounded-full bg-rose-500/12 blur-[110px]" />
-        {/* Teal accent — lower right */}
-        <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[350px] rounded-full bg-fuchsia-400/10 blur-[100px]" />
-      </div>
+      <div className="absolute inset-0 grid-bg opacity-70" />
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="flex gap-6 py-20 lg:py-40 items-center justify-center flex-col">
-
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
+      <div className="container relative z-10 mx-auto grid min-h-screen max-w-6xl items-center gap-12 px-4 py-28 lg:grid-cols-[1.35fr_0.65fr] lg:py-36">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="max-w-4xl"
+        >
+          <a
+            href="#about"
+            className="mb-8 inline-flex items-center gap-2 border-b border-[#5a1720] pb-1 text-sm font-medium text-[#5a1720] transition-colors hover:text-[#7a2430]"
           >
-            <a href="#about">
-              <span className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-pink-500/20 bg-pink-500/5 text-pink-300 text-sm hover:bg-pink-500/10 transition-colors cursor-pointer">
-                EE Honors · Texas A&M · Class of 2029{" "}
-                <MoveRight className="w-4 h-4" />
-              </span>
-            </a>
-          </motion.div>
+            EE Honors / Texas A&M / Class of 2029
+            <MoveRight className="h-4 w-4" />
+          </a>
 
-          {/* Headline */}
-          <div className="flex gap-3 flex-col">
-            <h1 className="text-5xl md:text-7xl max-w-3xl tracking-tighter text-center font-normal">
-              <motion.span
-                className="text-spektr-cyan-50 block"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.15 }}
-              >
-                Hi, I&apos;m Sphoorthi —
-              </motion.span>
-              <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-2 h-[1.2em]">
-                &nbsp;
-                {titles.map((title, index) => (
-                  <motion.span
-                    key={index}
-                    className="absolute font-semibold text-gradient-cyan"
-                    initial={{ opacity: 0, y: "-100%" }}
-                    transition={{ type: "spring", stiffness: 50 }}
-                    animate={
-                      titleNumber === index
-                        ? { y: 0, opacity: 1 }
-                        : {
-                            y: titleNumber > index ? "-150%" : "150%",
-                            opacity: 0,
-                          }
-                    }
-                  >
-                    {title}
-                  </motion.span>
-                ))}
-              </span>
-            </h1>
+          <h1 className="text-5xl font-semibold leading-[0.98] text-slate-950 md:text-7xl lg:text-8xl">
+            Sphoorthi Gurram
+          </h1>
 
-            <motion.p
-              className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-xl text-center mx-auto mt-2"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              EE honors student at Texas A&M working in robotics, power electronics, and AI.
-            </motion.p>
-          </div>
+          <p className="mt-6 max-w-2xl text-xl leading-relaxed text-slate-700 md:text-2xl">
+            Currently pursuing a Bachelor of Science in Engineering at Texas
+            A&M, building robotics, power electronics, and AI systems that have
+            to work in the real world.
+          </p>
 
-          {/* CTAs */}
-          <motion.div
-            className="flex flex-row gap-3 flex-wrap justify-center"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.45 }}
-          >
-            <Button size="lg" className="gap-3" variant="outline" asChild>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <Button size="lg" className="gap-3 bg-[#5a1720] text-white hover:bg-[#7a2430]" asChild>
               <a href="#projects">
-                View Projects <MoveRight className="w-4 h-4" />
+                Explore work <ArrowUpRight className="h-4 w-4" />
               </a>
             </Button>
-            <Button
-              size="lg"
-              className="gap-3 bg-pink-500 text-gray-950 hover:bg-pink-400 font-semibold"
-              asChild
-            >
-              <a href="#contact">
-                Get in Touch <Mail className="w-4 h-4" />
+            <Button size="lg" className="gap-3 border-slate-300 bg-white text-slate-950 hover:bg-slate-100" variant="outline" asChild>
+              <a href="mailto:gurramsphoorthi@tamu.edu">
+                Email <Mail className="h-4 w-4" />
               </a>
             </Button>
-          </motion.div>
+          </div>
+        </motion.div>
 
-          {/* Scroll indicator */}
-          <motion.div
-            className="absolute bottom-8 left-1/2 -translate-x-1/2"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.2 }}
-          >
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ repeat: Infinity, duration: 1.8 }}
-              className="w-5 h-8 rounded-full border border-border flex items-start justify-center pt-1.5"
-            >
-              <div className="w-1 h-2 rounded-full bg-pink-400/60" />
-            </motion.div>
-          </motion.div>
-        </div>
+        <motion.aside
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="border-l border-border pl-6 lg:pl-8"
+        >
+          <p className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
+            Current record
+          </p>
+          <div className="mt-6 divide-y divide-border">
+            {proofPoints.map(([number, label, detail]) => (
+              <a
+                key={label}
+                href="#experience"
+                className="group grid grid-cols-[2.5rem_1fr] gap-4 py-4"
+              >
+                <span className="font-mono text-sm text-[#5a1720]">{number}</span>
+                <span>
+                  <span className="block text-base font-semibold text-slate-950 group-hover:text-[#5a1720]">
+                    {label}
+                  </span>
+                  <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">
+                    {detail}
+                  </span>
+                </span>
+              </a>
+            ))}
+          </div>
+        </motion.aside>
       </div>
     </section>
   );

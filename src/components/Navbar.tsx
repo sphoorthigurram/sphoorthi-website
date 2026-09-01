@@ -28,8 +28,8 @@ export default function Navbar() {
     <motion.header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/80 backdrop-blur-md border-b border-border"
-          : "bg-transparent"
+          ? "bg-background/95 border-b border-border shadow-sm"
+          : "bg-background/80"
       }`}
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -40,9 +40,9 @@ export default function Navbar() {
           {/* Logo */}
           <a
             href="#home"
-            className="text-lg font-bold tracking-tight text-spektr-cyan-50 hover:text-pink-400 transition-colors"
+            className="text-lg font-bold tracking-tight text-slate-950 hover:text-[#5a1720] transition-colors"
           >
-            <span className="text-pink-400">S</span>G
+            <span className="text-[#5a1720]">S</span>G
           </a>
 
           {/* Desktop nav */}
@@ -51,7 +51,7 @@ export default function Navbar() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm text-muted-foreground hover:text-slate-950 transition-colors"
               >
                 {link.label}
               </a>
@@ -63,7 +63,7 @@ export default function Navbar() {
             <Button
               variant="outline"
               size="sm"
-              className="border-pink-500/30 text-pink-300 hover:bg-pink-500/10 hover:text-pink-200"
+              className="border-slate-300 bg-white text-slate-950 hover:bg-slate-100"
               asChild
             >
               <a href="#contact">Contact Me</a>
@@ -72,7 +72,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden text-muted-foreground hover:text-foreground"
+            className="md:hidden text-muted-foreground hover:text-slate-950"
             onClick={() => setMobileOpen((v) => !v)}
             aria-label="Toggle menu"
           >
@@ -88,7 +88,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {mobileOpen && (
         <motion.div
-          className="md:hidden bg-background/95 backdrop-blur-md border-b border-border px-4 py-4 flex flex-col gap-3"
+          className="md:hidden bg-background border-b border-border px-4 py-4 flex flex-col gap-3"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
         >
@@ -96,7 +96,7 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+              className="text-sm text-muted-foreground hover:text-slate-950 transition-colors py-1"
               onClick={() => setMobileOpen(false)}
             >
               {link.label}
@@ -104,7 +104,7 @@ export default function Navbar() {
           ))}
           <a
             href="mailto:gurramsphoorthi@tamu.edu"
-            className="text-sm text-cyan-400 mt-1"
+            className="text-sm text-[#5a1720] mt-1"
           >
             gurramsphoorthi@tamu.edu
           </a>

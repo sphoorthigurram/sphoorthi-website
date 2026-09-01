@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-border py-8 px-4">
+    <footer className="border-t border-border bg-white/55 py-8 px-4">
       <div className="container mx-auto max-w-5xl flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-muted-foreground">
         <p>
-          <span className="text-cyan-400 font-semibold">Sphoorthi Gurram</span>{" "}
+          <span className="text-slate-950 font-semibold">Sphoorthi Gurram</span>{" "}
           · EE @ Texas A&amp;M
         </p>
         <div className="flex items-center gap-4">
@@ -11,7 +11,7 @@ export default function Footer() {
             href="https://github.com/sphoorthigurram"
             target="_blank"
             rel="noreferrer"
-            className="hover:text-cyan-400 transition-colors"
+            className="hover:text-[#5a1720] transition-colors"
           >
             GitHub
           </a>
@@ -20,14 +20,14 @@ export default function Footer() {
             href="https://linkedin.com/in/sphoorthi-gurram"
             target="_blank"
             rel="noreferrer"
-            className="hover:text-cyan-400 transition-colors"
+            className="hover:text-[#5a1720] transition-colors"
           >
             LinkedIn
           </a>
           <span className="text-border">·</span>
           <a
             href="mailto:gurramsphoorthi@tamu.edu"
-            className="hover:text-cyan-400 transition-colors"
+            className="hover:text-[#5a1720] transition-colors"
           >
             gurramsphoorthi@tamu.edu
           </a>

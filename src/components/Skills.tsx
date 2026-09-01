@@ -7,9 +7,9 @@ const skillCategories = [
   {
     label: "Engineering & Design",
     icon: Wrench,
-    color: "text-cyan-400",
-    bg: "bg-cyan-500/10",
-    border: "border-cyan-500/20",
+    color: "text-blue-800",
+    bg: "bg-blue-50",
+    border: "border-blue-200",
     skills: [
       "Altium Designer",
       "LTSpice",
@@ -25,9 +25,9 @@ const skillCategories = [
   {
     label: "Software & Robotics",
     icon: Code2,
-    color: "text-indigo-400",
-    bg: "bg-indigo-500/10",
-    border: "border-indigo-500/20",
+    color: "text-indigo-800",
+    bg: "bg-indigo-50",
+    border: "border-indigo-200",
     skills: [
       "Python",
       "C++",
@@ -43,9 +43,9 @@ const skillCategories = [
   {
     label: "Data & AI",
     icon: BrainCircuit,
-    color: "text-violet-400",
-    bg: "bg-violet-500/10",
-    border: "border-violet-500/20",
+    color: "text-emerald-800",
+    bg: "bg-emerald-50",
+    border: "border-emerald-200",
     skills: [
       "Computer Vision",
       "YOLO",
@@ -65,7 +65,7 @@ const certifications = ["Fusion360 Certified"];
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-4 bg-card/30">
+    <section id="skills" className="py-24 px-4">
       <div className="container mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -74,10 +74,10 @@ export default function Skills() {
           viewport={{ once: true }}
           className="mb-14"
         >
-          <p className="text-cyan-400 text-sm font-mono mb-2 tracking-widest uppercase">
+          <p className="text-[#5a1720] text-sm font-mono mb-2 tracking-widest uppercase">
             Skills
           </p>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-spektr-cyan-50">
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-slate-950">
             Tools & technologies
           </h2>
         </motion.div>
@@ -92,11 +92,11 @@ export default function Skills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className={`rounded-2xl border ${cat.border} bg-card p-5 space-y-4`}
+                className={`border ${cat.border} bg-card p-5 space-y-4 shadow-sm`}
               >
                 <div className="flex items-center gap-3">
                   <div
-                    className={`w-9 h-9 rounded-lg ${cat.bg} border ${cat.border} flex items-center justify-center`}
+                    className={`w-9 h-9 ${cat.bg} border ${cat.border} flex items-center justify-center`}
                   >
                     <Icon className={`w-4 h-4 ${cat.color}`} />
                   </div>
@@ -109,7 +109,7 @@ export default function Skills() {
                   {cat.skills.map((skill) => (
                     <span
                       key={skill}
-                      className={`text-xs px-2.5 py-1 rounded-md border ${cat.border} ${cat.bg} text-foreground/80`}
+                      className={`text-xs px-2.5 py-1 border ${cat.border} ${cat.bg} text-foreground/80`}
                     >
                       {skill}
                     </span>
@@ -128,7 +128,7 @@ export default function Skills() {
           viewport={{ once: true }}
           className="grid sm:grid-cols-2 gap-6"
         >
-          <div className="rounded-xl border border-border bg-card p-5">
+          <div className="border border-border bg-card p-5 shadow-sm">
             <p className="text-xs font-mono text-muted-foreground mb-3 uppercase tracking-widest">
               Languages
             </p>
@@ -136,7 +136,7 @@ export default function Skills() {
               {languages.map((lang) => (
                 <span
                   key={lang}
-                  className="text-sm px-3 py-1 rounded-md bg-secondary text-foreground/80 border border-border"
+                  className="text-sm px-3 py-1 bg-secondary text-foreground/80 border border-border"
                 >
                   {lang}
                 </span>
@@ -144,7 +144,7 @@ export default function Skills() {
             </div>
           </div>
 
-          <div className="rounded-xl border border-border bg-card p-5">
+          <div className="border border-border bg-card p-5 shadow-sm">
             <p className="text-xs font-mono text-muted-foreground mb-3 uppercase tracking-widest">
               Certifications
             </p>
@@ -152,7 +152,7 @@ export default function Skills() {
               {certifications.map((cert) => (
                 <span
                   key={cert}
-                  className="text-sm px-3 py-1 rounded-md bg-yellow-500/10 text-yellow-400 border border-yellow-500/20"
+                  className="text-sm px-3 py-1 bg-amber-50 text-amber-800 border border-amber-200"
                 >
                   {cert}
                 </span>

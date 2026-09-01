@@ -8,25 +8,25 @@ const stats = [
     icon: Users,
     value: "230+",
     label: "Team members led",
-    color: "text-cyan-400",
+    color: "text-blue-800",
   },
   {
     icon: Globe,
-    value: "125+",
-    label: "Students tutored across 25 countries",
-    color: "text-indigo-400",
+    value: "100+",
+    label: "Learners taught across 20 countries",
+    color: "text-indigo-800",
   },
   {
     icon: Zap,
     value: "~96%",
     label: "Efficiency on EV charger design",
-    color: "text-yellow-400",
+    color: "text-amber-800",
   },
   {
     icon: Award,
     value: "Top 4.89%",
     label: "National Speech & Debate",
-    color: "text-emerald-400",
+    color: "text-emerald-800",
   },
 ];
 
@@ -43,16 +43,16 @@ export default function About() {
         >
           <div className="space-y-6">
             <div>
-              <p className="text-cyan-400 text-sm font-mono mb-2 tracking-widest uppercase">
+              <p className="text-[#5a1720] text-sm font-mono mb-2 tracking-widest uppercase">
                 About Me
               </p>
-              <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-spektr-cyan-50">
+              <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-slate-950">
                 Hardware meets intelligence
               </h2>
             </div>
             <p className="text-muted-foreground leading-relaxed">
-              I&apos;m Sphoorthi Gurram, an Electrical Engineering student in
-              the{" "}
+              I&apos;m Sphoorthi Gurram, currently pursuing a Bachelor of
+              Science in Engineering in the{" "}
               <span className="text-foreground font-medium">
                 Honors Program at Texas A&M
               </span>{" "}
@@ -72,9 +72,9 @@ export default function About() {
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Outside engineering, I tutor mathematics on Schoolhouse.world and
-              have worked with{" "}
+              have taught{" "}
               <span className="text-foreground font-medium">
-                125+ students across 25 countries
+                100+ learners across 20 countries
               </span>{" "}
               through sessions, a summer camp, and a 4-week intensive bootcamp.
             </p>
@@ -92,7 +92,7 @@ export default function About() {
             <div className="flex gap-3 pt-2">
               <a
                 href="mailto:gurramsphoorthi@tamu.edu"
-                className="text-sm text-cyan-400 hover:text-cyan-300 underline underline-offset-4 transition-colors"
+                className="text-sm text-[#5a1720] hover:text-[#7a2430] underline underline-offset-4 transition-colors"
               >
                 gurramsphoorthi@tamu.edu
               </a>
@@ -101,7 +101,7 @@ export default function About() {
                 href="https://linkedin.com/in/sphoorthi-gurram"
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm text-cyan-400 hover:text-cyan-300 underline underline-offset-4 transition-colors"
+                className="text-sm text-[#5a1720] hover:text-[#7a2430] underline underline-offset-4 transition-colors"
               >
                 LinkedIn
               </a>
@@ -117,7 +117,7 @@ export default function About() {
               className="flex flex-col items-center gap-3"
             >
               <div className="relative">
-                <div className="w-28 h-28 rounded-full overflow-hidden border-2 border-cyan-500/40 shadow-lg shadow-cyan-500/10 ring-4 ring-cyan-500/8">
+                <div className="w-28 h-28 overflow-hidden border border-border shadow-sm">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/sphoorthi-website/headshot.jpg"
@@ -126,10 +126,10 @@ export default function About() {
                     style={{ objectPosition: "50% 16%" }}
                   />
                 </div>
-                <span className="absolute bottom-1.5 right-1.5 w-3.5 h-3.5 rounded-full bg-cyan-400 border-2 border-background" />
+                <span className="absolute bottom-1.5 right-1.5 w-3.5 h-3.5 bg-[#5a1720] border-2 border-background" />
               </div>
               <div className="text-center">
-                <p className="text-sm font-semibold text-spektr-cyan-50">
+                <p className="text-sm font-semibold text-slate-950">
                   Sphoorthi Gurram
                 </p>
                 <p className="text-xs text-muted-foreground font-mono">
@@ -148,7 +148,7 @@ export default function About() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: i * 0.1 }}
                     viewport={{ once: true }}
-                    className="rounded-xl border border-border bg-card p-5 flex flex-col gap-3 hover:border-cyan-500/30 transition-colors"
+                    className="border border-border bg-card p-5 flex flex-col gap-3 shadow-sm hover:border-[#b27a30] transition-colors"
                   >
                     <Icon className={`w-5 h-5 ${stat.color}`} />
                     <div>

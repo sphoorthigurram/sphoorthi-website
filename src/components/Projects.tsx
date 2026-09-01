@@ -15,9 +15,9 @@ const projects = [
     highlight: "~96% efficiency · 400 V DC bus",
     tags: ["GaN", "Power Electronics", "Altium", "LTSpice", "DAB Architecture"],
     icon: Zap,
-    color: "text-cyan-400",
-    bg: "bg-cyan-500/10",
-    border: "border-cyan-500/20",
+    color: "text-blue-800",
+    bg: "bg-blue-50",
+    border: "border-blue-200",
     image:
       "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
   },
@@ -31,9 +31,9 @@ const projects = [
     highlight: "3D Sim · LLM Cognitive Gate",
     tags: ["Three.js", "ROS 2", "YOLO", "LLM / Cognitive AI", "Embedded Systems"],
     icon: Bot,
-    color: "text-indigo-400",
-    bg: "bg-indigo-500/10",
-    border: "border-indigo-500/20",
+    color: "text-indigo-800",
+    bg: "bg-indigo-50",
+    border: "border-indigo-200",
     image: "/sphoorthi-website/eden-simulator.png",
   },
   {
@@ -46,9 +46,9 @@ const projects = [
     highlight: "40+ member team · DVL Integration",
     tags: ["Altium", "PCB Design", "Python", "Power Electronics", "DVL"],
     icon: Waves,
-    color: "text-blue-400",
-    bg: "bg-blue-500/10",
-    border: "border-blue-500/20",
+    color: "text-sky-800",
+    bg: "bg-sky-50",
+    border: "border-sky-200",
     image: "/sphoorthi-website/wired-auv-pool.jpg",
   },
   {
@@ -61,9 +61,9 @@ const projects = [
     highlight: "Off-grid solar · Sun-tracking system",
     tags: ["MATLAB", "Microprocessors", "Sensors", "Fresnel Optics", "DAQ"],
     icon: Sun,
-    color: "text-yellow-400",
-    bg: "bg-yellow-500/10",
-    border: "border-yellow-500/20",
+    color: "text-amber-800",
+    bg: "bg-amber-50",
+    border: "border-amber-200",
     image:
       "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
   },
@@ -71,7 +71,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-4">
+    <section id="projects" className="px-4 py-24">
       <div className="container mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -80,15 +80,15 @@ export default function Projects() {
           viewport={{ once: true }}
           className="mb-14"
         >
-          <p className="text-cyan-400 text-sm font-mono mb-2 tracking-widest uppercase">
+          <p className="text-[#5a1720] text-sm font-mono mb-2 tracking-widest uppercase">
             Projects
           </p>
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-spektr-cyan-50">
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-tight text-slate-950">
             Featured work
           </h2>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid gap-5 md:grid-cols-[1.1fr_0.9fr]">
           {projects.map((project, i) => {
             const Icon = project.icon;
             return (
@@ -101,7 +101,7 @@ export default function Projects() {
               >
                 <Link
                   href={`/experience/${project.experienceSlug}`}
-                  className={`group rounded-2xl border ${project.border} bg-card overflow-hidden hover:${project.bg} transition-all duration-300 flex flex-col h-full block`}
+                  className={`group block h-full overflow-hidden border ${project.border} bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-md`}
                 >
                   {/* Image */}
                   <div className="relative h-48 overflow-hidden">
@@ -109,16 +109,16 @@ export default function Projects() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover opacity-60 group-hover:opacity-75 group-hover:scale-105 transition-all duration-500"
+                      className="w-full h-full object-cover opacity-85 group-hover:scale-105 transition-all duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
                     <div
-                      className={`absolute top-3 left-3 w-9 h-9 rounded-lg ${project.bg} border ${project.border} flex items-center justify-center`}
+                      className={`absolute top-3 left-3 w-9 h-9 ${project.bg} border ${project.border} flex items-center justify-center`}
                     >
                       <Icon className={`w-4 h-4 ${project.color}`} />
                     </div>
                     <span
-                      className={`absolute top-3 right-3 text-xs px-2.5 py-1 rounded-full ${project.bg} ${project.color} border ${project.border} font-mono`}
+                      className={`absolute top-3 right-3 text-xs px-2.5 py-1 ${project.bg} ${project.color} border ${project.border} font-mono`}
                     >
                       {project.highlight}
                     </span>
@@ -166,7 +166,7 @@ export default function Projects() {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
-          className="text-center text-sm text-muted-foreground mt-10 flex items-center justify-center gap-2"
+          className="mt-10 flex items-center gap-2 text-sm text-muted-foreground"
         >
           <ExternalLink className="w-4 h-4" />
           More on{" "}
@@ -174,7 +174,7 @@ export default function Projects() {
             href="https://linkedin.com/in/sphoorthi-gurram"
             target="_blank"
             rel="noreferrer"
-            className="text-cyan-400 hover:text-cyan-300 underline underline-offset-4"
+            className="text-[#5a1720] hover:text-[#7a2430] underline underline-offset-4"
           >
             LinkedIn
           </a>
