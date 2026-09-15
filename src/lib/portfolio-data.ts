@@ -21,7 +21,7 @@ export const projects: Project[] = [
     org: "TAMU Think Tank · Team Electra",
     role: "Technical Lead",
     year: "2025 — Present",
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80",
+    image: "https://sphoorthigurram.github.io/sphoorthi-website/gallery/ev-charger-presentation-1.jpg",
     summary:
       "A grid-interactive 1 kW charger built around GaN switching: a bridgeless totem-pole PFC front end feeding a Dual Active Bridge DC-DC stage, capable of pushing energy back into the grid.",
     highlights: [
@@ -132,7 +132,7 @@ export const projects: Project[] = [
     org: "Sunstrike Optics LLC / SHINE Lab",
     role: "Student Researcher",
     year: "2026 — Present",
-    image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
+    image: "https://sphoorthigurram.github.io/sphoorthi-website/gallery/fresnel-lens-diagram.svg",
     summary:
       "An off-grid Fresnel lens solar concentrator that tracks the sun on two axes and logs its thermal behavior for model validation.",
     highlights: [
@@ -148,6 +148,11 @@ export const projects: Project[] = [
       { label: "Power", value: "Off-grid" },
     ],
     diagrams: [
+      {
+        title: "Fresnel Lens Concentration",
+        description: "Large-aperture Fresnel optics focusing sunlight onto a high-intensity focal spot.",
+        image: "https://sphoorthigurram.github.io/sphoorthi-website/gallery/fresnel-lens-diagram.svg",
+      },
       {
         title: "Dual-Axis Solar Tracker",
         description: "Tracking assembly for maintaining continuous solar focus on the Fresnel concentrator.",
