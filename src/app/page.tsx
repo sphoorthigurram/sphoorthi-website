@@ -13,9 +13,9 @@ export default function Home() {
       <main>
         <Hero />
         <StatsBanner />
-        <Projects />
         <PhotoCarousel />
         <Gallery />
+        <Projects />
         <Experience />
         <Skills />
         <Certifications />

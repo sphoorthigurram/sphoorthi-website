@@ -21,7 +21,7 @@ export const projects: Project[] = [
     org: "TAMU Think Tank · Team Electra",
     role: "Technical Lead",
     year: "2025 — Present",
-    image: "https://sphoorthigurram.github.io/sphoorthi-website/gallery/ev-charger-presentation-1.jpg",
+    image: "https://sphoorthigurram.github.io/sphoorthi-website/ev-charger-topology.png",
     summary:
       "A grid-interactive 1 kW charger built around GaN switching: a bridgeless totem-pole PFC front end feeding a Dual Active Bridge DC-DC stage, capable of pushing energy back into the grid.",
     highlights: [
@@ -39,7 +39,7 @@ export const projects: Project[] = [
     diagrams: [
       {
         title: "Full System Topology",
-        description: "Power-stage architecture for the complete 1 kW bidirectional charging system.",
+        description: "Power-stage architecture for the complete 1 kW bidirectional / V2X-capable charging system.",
         image: "https://sphoorthigurram.github.io/sphoorthi-website/ev-charger-topology.png",
       },
     ],
@@ -358,21 +358,28 @@ export const certifications: Certification[] = [
     date: "Aug 2026",
     description:
       "Completed the Purdue University, University of Texas at Austin, and Intel Corporation sponsored Semiconductor Fabrication 101 course.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Intel_logo_%282006-2020%29.svg/512px-Intel_logo_%282006-2020%29.svg.png",
   },
   {
     id: "wireless-microwave-communications",
     title: "Wireless, Microwave, and Communications Engineering",
     issuer: "National Science Foundation (NSF)",
-    date: "",
+    date: "Jun 2026",
     description:
       "Specialized coursework and research exposure in wireless systems, microwave engineering, and communications.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/NSF.svg/512px-NSF.svg.png",
   },
   {
     id: "fusion360-certified",
     title: "Autodesk Fusion 360 Certified User",
     issuer: "Autodesk",
-    date: "",
+    date: "May 2025",
     description: "Certified user of Autodesk Fusion 360 for CAD, CAM, and collaborative product design.",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Autodesk_Logo.svg/512px-Autodesk_Logo.svg.png",
+    url: "https://www.certiport.com/portal/pages/credentialverification.aspx",
   },
 ];
 
@@ -386,10 +393,9 @@ export const contact = {
 };
 
 export const navLinks = [
-  { href: "#projects", label: "Projects" },
   { href: "#gallery", label: "Gallery" },
+  { href: "#projects", label: "Featured Work" },
   { href: "#experience", label: "Experience" },
-  { href: "#skills", label: "Skills" },
   { href: "#certifications", label: "Certifications" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
