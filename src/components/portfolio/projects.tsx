@@ -68,7 +68,7 @@ export function Projects() {
                 </div>
 
                 <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                  View case study
+                  View project
                   <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </span>
               </div>
@@ -147,7 +147,7 @@ export function Projects() {
                   <div className="flex items-center gap-2">
                     <ScanLine className="size-4 text-primary" />
                     <h4 className="text-sm font-semibold uppercase tracking-widest">
-                      Schematics &amp; Diagrams
+                      Schematics & Diagrams
                     </h4>
                   </div>
                   <div className="mt-4 grid gap-4">
@@ -176,7 +176,7 @@ export function Projects() {
                   <div className="flex items-center gap-2">
                     <FileText className="size-4 text-primary" />
                     <h4 className="text-sm font-semibold uppercase tracking-widest">
-                      Attachments &amp; Documents
+                      Attachments & Documents
                     </h4>
                   </div>
                   <div className="mt-4 grid gap-3">
@@ -306,7 +306,7 @@ export function Gallery() {
             type="button"
             onClick={() => step(-1)}
             aria-label="Previous photo"
-            className="absolute left-4 grid size-11 place-items-center rounded-full border border-border bg-card/80 text-muted-foreground hover:text-primary"
+            className="absolute right-4 grid size-11 place-items-center rounded-full border border-border bg-card/80 text-muted-foreground hover:text-primary"
           >
             <ChevronLeft className="size-5" />
           </button>
