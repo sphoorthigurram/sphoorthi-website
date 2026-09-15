@@ -306,7 +306,7 @@ export function Gallery() {
             type="button"
             onClick={() => step(-1)}
             aria-label="Previous photo"
-            className="absolute right-4 grid size-11 place-items-center rounded-full border border-border bg-card/80 text-muted-foreground hover:text-primary"
+            className="absolute left-4 grid size-11 place-items-center rounded-full border border-border bg-card/80 text-muted-foreground hover:text-primary"
           >
             <ChevronLeft className="size-5" />
           </button>
