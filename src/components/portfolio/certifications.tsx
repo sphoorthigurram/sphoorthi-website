@@ -12,7 +12,7 @@ export function Certifications() {
         <SectionHeading
           eyebrow="Credentials"
           title="Certifications"
-          description="Verified credentials and specialized training across semiconductor fabrication, wireless systems, and product design."
+          description="Courses and credentials in semiconductor fabrication, wireless systems, and CAD."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -24,8 +24,18 @@ export function Certifications() {
                   "hover:border-primary/30 hover:shadow-[0_0_24px_-8px_rgba(34,211,238,0.12)]",
                 )}
               >
-                <div className="grid aspect-[4/3] w-full place-items-center border-b border-border bg-gradient-to-br from-primary/10 to-transparent">
-                  <Award className="size-12 text-primary/80 transition-transform duration-500 group-hover:scale-110" />
+                <div className="grid aspect-[4/3] w-full place-items-center border-b border-border bg-background p-8">
+                  {cert.image ? (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={cert.image}
+                      alt={`${cert.issuer} logo`}
+                      className="max-h-20 w-auto max-w-full object-contain"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <Award className="size-12 text-primary/80 transition-transform duration-500 group-hover:scale-110" />
+                  )}
                 </div>
 
                 <div className="flex flex-1 flex-col p-5">

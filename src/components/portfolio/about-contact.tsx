@@ -25,7 +25,7 @@ export function About() {
         </Reveal>
 
         <div>
-          <SectionHeading eyebrow="About" title="Where hardware meets intelligence" />
+          <SectionHeading eyebrow="About" title="Where hardware meets software" />
           <Reveal delay={80} className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
             <p>
               I&apos;m a Computer Engineering Honors student at Texas A&amp;M University. My work sits
