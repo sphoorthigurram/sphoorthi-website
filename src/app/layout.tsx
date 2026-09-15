@@ -1,24 +1,32 @@
 import type { Metadata } from "next";
-import { Inter, Roboto_Mono } from "next/font/google";
+import { Space_Grotesk, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Inter({
-  variable: "--font-geist-sans",
+const display = Space_Grotesk({
+  variable: "--font-display",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Roboto_Mono({
-  variable: "--font-geist-mono",
+const sans = DM_Sans({
+  variable: "--font-sans",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+});
+
+const mono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "Sphoorthi Gurram — EE @ Texas A&M",
+  title: "Sphoorthi Gurram — Computer Engineering Portfolio",
   description:
-    "Personal portfolio of Sphoorthi Gurram — Electrical Engineering student at Texas A&M building autonomous robots, power electronics, and AI systems.",
+    "CPEN Honors student at Texas A&M building autonomous robots, bidirectional EV chargers, and intelligent hardware systems.",
   keywords: [
     "Sphoorthi Gurram",
-    "Electrical Engineering",
+    "Computer Engineering",
     "Texas A&M",
     "Robotics",
     "Power Electronics",
@@ -26,10 +34,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Sphoorthi Gurram" }],
   openGraph: {
-    title: "Sphoorthi Gurram — EE @ Texas A&M",
+    title: "Sphoorthi Gurram — Computer Engineering Portfolio",
     description:
       "Building autonomous robots, designing power electronics, and bridging hardware with intelligence.",
     type: "website",
+    images: ["https://sphoorthigurram.github.io/sphoorthi-website/headshot.jpg"],
   },
 };
 
@@ -41,7 +50,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
+        className={`${display.variable} ${sans.variable} ${mono.variable} font-sans antialiased`}
       >
         {children}
       </body>
