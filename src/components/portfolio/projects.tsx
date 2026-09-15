@@ -21,8 +21,8 @@ export function Projects() {
     <section id="projects" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-24">
       <SectionHeading
         eyebrow="Featured Work"
-        title="Projects built at the edge of hardware and intelligence"
-        description="Power converters, autonomous vehicles, and simulation stacks — click any project for the full engineering breakdown."
+        title="Selected projects"
+        description="A few builds from Team Electra, WIRED, EDEN, and the lab. Open a card for diagrams, docs, and details."
       />
 
       <div className="mt-12 grid gap-6 md:grid-cols-2">
