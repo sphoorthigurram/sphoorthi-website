@@ -355,7 +355,7 @@ export const certifications: Certification[] = [
     id: "semiconductor-fabrication",
     title: "Semiconductor Fabrication 101",
     issuer: "Purdue University, UT Austin & Intel Corporation",
-    date: "Aug 2026",
+    date: "Aug 3, 2026",
     description:
       "Completed the Purdue University, University of Texas at Austin, and Intel Corporation sponsored Semiconductor Fabrication 101 course.",
     image:
@@ -364,10 +364,10 @@ export const certifications: Certification[] = [
   {
     id: "wireless-microwave-communications",
     title: "Wireless, Microwave, and Communications Engineering",
-    issuer: "National Science Foundation (NSF)",
-    date: "Jun 2026",
+    issuer: "SMARTHub · Spectrum Sizzle Workshop",
+    date: "Jun 14, 2026",
     description:
-      "Specialized coursework and research exposure in wireless systems, microwave engineering, and communications.",
+      "Completed the Spectrum Sizzle Workshop covering spectrum policy, passive systems, communication system design, microwave circuits, and radar technology.",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/NSF.svg/512px-NSF.svg.png",
   },
