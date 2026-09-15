@@ -358,8 +358,7 @@ export const certifications: Certification[] = [
     date: "Aug 3, 2026",
     description:
       "Completed the Purdue University, University of Texas at Austin, and Intel Corporation sponsored Semiconductor Fabrication 101 course.",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Intel_logo_%282006-2020%29.svg/512px-Intel_logo_%282006-2020%29.svg.png",
+    image: "https://sphoorthigurram.github.io/sphoorthi-website/semiconductor-fab.jpg",
   },
   {
     id: "wireless-microwave-communications",
@@ -368,8 +367,7 @@ export const certifications: Certification[] = [
     date: "Jun 14, 2026",
     description:
       "Completed the Spectrum Sizzle Workshop covering spectrum policy, passive systems, communication system design, microwave circuits, and radar technology.",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/NSF.svg/512px-NSF.svg.png",
+    image: "https://sphoorthigurram.github.io/sphoorthi-website/wireless%20cert.jpg",
   },
   {
     id: "fusion360-certified",
@@ -377,8 +375,7 @@ export const certifications: Certification[] = [
     issuer: "Autodesk",
     date: "May 2025",
     description: "Certified user of Autodesk Fusion 360 for CAD, CAM, and collaborative product design.",
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Autodesk_Logo.svg/512px-Autodesk_Logo.svg.png",
+    image: "https://sphoorthigurram.github.io/sphoorthi-website/autodesk%20logo.webp",
     url: "https://www.certiport.com/portal/pages/credentialverification.aspx",
   },
 ];
