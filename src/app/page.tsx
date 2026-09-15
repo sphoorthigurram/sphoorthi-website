@@ -1,6 +1,6 @@
 import { Nav, Footer } from "@/components/portfolio/site-chrome";
 import { Hero, StatsBanner } from "@/components/portfolio/hero";
-import { Projects, Gallery } from "@/components/portfolio/projects";
+import { Projects } from "@/components/portfolio/projects";
 import { PhotoCarousel } from "@/components/portfolio/PhotoCarousel";
 import { Experience, Skills } from "@/components/portfolio/experience";
 import { Certifications } from "@/components/portfolio/certifications";
@@ -14,7 +14,6 @@ export default function Home() {
         <Hero />
         <StatsBanner />
         <PhotoCarousel />
-        <Gallery />
         <Projects />
         <Experience />
         <Skills />
