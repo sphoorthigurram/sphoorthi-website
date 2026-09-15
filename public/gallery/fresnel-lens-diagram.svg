@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" role="img" aria-labelledby="title desc">
+  <title id="title">Fresnel lens concentrating solar optics</title>
+  <desc id="desc">Sunlight focused by a large-aperture Fresnel lens onto a focal spot</desc>
+  <rect width="900" height="560" fill="#0b1220"/>
+  <!-- Sun -->
+  <circle cx="450" cy="48" r="22" fill="#f5c542"/>
+  <circle cx="450" cy="48" r="14" fill="#fff6d0"/>
+  <g stroke="#f5c542" stroke-width="2" stroke-linecap="round">
+    <line x1="450" y1="12" x2="450" y2="22"/>
+    <line x1="450" y1="74" x2="450" y2="84"/>
+    <line x1="416" y1="48" x2="426" y2="48"/>
+    <line x1="474" y1="48" x2="484" y2="48"/>
+    <line x1="426" y1="24" x2="433" y2="31"/>
+    <line x1="467" y1="65" x2="474" y2="72"/>
+    <line x1="474" y1="24" x2="467" y2="31"/>
+    <line x1="426" y1="72" x2="433" y2="65"/>
+  </g>
+  <text x="490" y="42" fill="#c9d4e8" font-family="system-ui,sans-serif" font-size="14">Sunlight (DNI ~1000 W/m²)</text>
+  <!-- Incoming rays -->
+  <g stroke="#e8a820" stroke-width="1.6" opacity="0.9">
+    <line x1="160" y1="95" x2="160" y2="195"/>
+    <line x1="250" y1="95" x2="250" y2="195"/>
+    <line x1="340" y1="95" x2="340" y2="195"/>
+    <line x1="450" y1="95" x2="450" y2="195"/>
+    <line x1="560" y1="95" x2="560" y2="195"/>
+    <line x1="650" y1="95" x2="650" y2="195"/>
+    <line x1="740" y1="95" x2="740" y2="195"/>
+  </g>
+  <!-- Lens -->
+  <rect x="120" y="195" width="660" height="28" rx="6" fill="#9aa8bc" stroke="#c5d0e0" stroke-width="1"/>
+  <path d="M140 209 L180 203 L220 209 L260 203 L300 209 L340 203 L380 209 L420 203 L460 209 L500 203 L540 209 L580 203 L620 209 L660 203 L700 209 L740 203 L760 209" fill="none" stroke="#6b7c92" stroke-width="1.2" opacity="0.7"/>
+  <text x="450" y="185" text-anchor="middle" fill="#dce6f5" font-family="system-ui,sans-serif" font-size="15" font-weight="600">Fresnel lens — large aperture, flat profile</text>
+  <text x="790" y="205" fill="#a8b6cc" font-family="system-ui,sans-serif" font-size="12">Fresnel lens</text>
+  <text x="790" y="220" fill="#a8b6cc" font-family="system-ui,sans-serif" font-size="12">flat, lightweight</text>
+  <!-- Aperture dimension -->
+  <line x1="120" y1="245" x2="780" y2="245" stroke="#7f92ad" stroke-width="1"/>
+  <line x1="120" y1="238" x2="120" y2="252" stroke="#7f92ad" stroke-width="1"/>
+  <line x1="780" y1="238" x2="780" y2="252" stroke="#7f92ad" stroke-width="1"/>
+  <text x="450" y="265" text-anchor="middle" fill="#b7c5db" font-family="system-ui,sans-serif" font-size="13">Collection aperture (A_in)</text>
+  <!-- Converging rays -->
+  <g stroke="#e8a820" stroke-width="1.5" opacity="0.95">
+    <line x1="160" y1="223" x2="450" y2="470"/>
+    <line x1="250" y1="223" x2="450" y2="470"/>
+    <line x1="340" y1="223" x2="450" y2="470"/>
+    <line x1="450" y1="223" x2="450" y2="470"/>
+    <line x1="560" y1="223" x2="450" y2="470"/>
+    <line x1="650" y1="223" x2="450" y2="470"/>
+    <line x1="740" y1="223" x2="450" y2="470"/>
+  </g>
+  <!-- Focal length -->
+  <line x1="95" y1="223" x2="95" y2="470" stroke="#7f92ad" stroke-width="1"/>
+  <line x1="88" y1="223" x2="102" y2="223" stroke="#7f92ad" stroke-width="1"/>
+  <line x1="88" y1="470" x2="102" y2="470" stroke="#7f92ad" stroke-width="1"/>
+  <text x="78" y="355" text-anchor="middle" fill="#b7c5db" font-family="system-ui,sans-serif" font-size="13" transform="rotate(-90 78 355)">focal length</text>
+  <!-- Labels right -->
+  <text x="620" y="330" fill="#a8b6cc" font-family="system-ui,sans-serif" font-size="13">Converging rays</text>
+  <text x="620" y="348" fill="#a8b6cc" font-family="system-ui,sans-serif" font-size="13">refracted to focus</text>
+  <line x1="600" y1="340" x2="520" y2="360" stroke="#7f92ad" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="620" y="420" fill="#a8b6cc" font-family="system-ui,sans-serif" font-size="13">Focal point</text>
+  <text x="620" y="438" fill="#a8b6cc" font-family="system-ui,sans-serif" font-size="13">peak intensity</text>
+  <line x1="600" y1="425" x2="480" y2="460" stroke="#7f92ad" stroke-width="1" stroke-dasharray="3 3"/>
+  <!-- Focal spot -->
+  <circle cx="450" cy="470" r="16" fill="#f5c542" opacity="0.35"/>
+  <circle cx="450" cy="470" r="8" fill="#f5c542"/>
+  <circle cx="450" cy="470" r="3.5" fill="#fff6d0"/>
+  <text x="450" y="510" text-anchor="middle" fill="#dce6f5" font-family="system-ui,sans-serif" font-size="14">A_out (focal spot)</text>
+</svg>
