@@ -15,9 +15,9 @@ export default function Home() {
         <StatsBanner />
         <PhotoCarousel />
         <Projects />
+        <Certifications />
         <Experience />
         <Skills />
-        <Certifications />
         <About />
         <Contact />
       </main>

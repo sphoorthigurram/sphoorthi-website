@@ -24,17 +24,19 @@ export function Certifications() {
                   "hover:border-primary/30 hover:shadow-[0_0_24px_-8px_rgba(34,211,238,0.12)]",
                 )}
               >
-                <div className="grid aspect-[4/3] w-full place-items-center border-b border-border bg-background p-8">
+                <div className="relative aspect-[4/3] w-full border-b border-border bg-background p-3 sm:p-4">
                   {cert.image ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
                       src={cert.image}
-                      alt={`${cert.issuer} logo`}
-                      className="max-h-20 w-auto max-w-full object-contain"
+                      alt={cert.title}
+                      className="size-full object-contain"
                       loading="lazy"
                     />
                   ) : (
-                    <Award className="size-12 text-primary/80 transition-transform duration-500 group-hover:scale-110" />
+                    <div className="grid size-full place-items-center">
+                      <Award className="size-12 text-primary/80" />
+                    </div>
                   )}
                 </div>
 
