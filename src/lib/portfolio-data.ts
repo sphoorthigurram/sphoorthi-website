@@ -392,8 +392,8 @@ export const contact = {
 export const navLinks = [
   { href: "#gallery", label: "Gallery" },
   { href: "#projects", label: "Featured Work" },
-  { href: "#experience", label: "Experience" },
   { href: "#certifications", label: "Certifications" },
+  { href: "#experience", label: "Experience" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];
