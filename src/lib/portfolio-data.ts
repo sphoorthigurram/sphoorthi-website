@@ -381,6 +381,16 @@ export const certifications: Certification[] = [
     image: "https://sphoorthigurram.github.io/sphoorthi-website/wireless%20cert.jpg",
   },
   {
+    id: "electronics-foundations-fundamentals",
+    title: "Electronics Foundations: Fundamentals",
+    issuer: "LinkedIn Learning",
+    date: "2026",
+    description:
+      "Completed Barron Stone's Electronics Foundations course covering voltage, current, resistance, power, circuit basics, multimeters, and real-world power sources.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+    url: "https://sphoorthigurram.github.io/sphoorthi-website/CertificateOfCompletion_Electronics%20Foundations%20Fundamentals.pdf",
+  },
+  {
     id: "fusion360-certified",
     title: "Autodesk Fusion 360 Certified User",
     issuer: "Autodesk",
