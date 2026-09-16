@@ -18,9 +18,9 @@ export const projects: Project[] = [
   {
     id: "ev-charger",
     title: "1 kW Bi-Directional EV Charger",
-    org: "TAMU Think Tank · Team Electra",
+    org: "TAMU Think Tank \u00b7 Team Electra",
     role: "Technical Lead",
-    year: "2025 — Present",
+    year: "2025 \u2014 Present",
     image: "https://sphoorthigurram.github.io/sphoorthi-website/ev-charger-topology.png",
     summary:
       "A grid-interactive 1 kW charger built around GaN switching: a bridgeless totem-pole PFC front end feeding a Dual Active Bridge DC-DC stage, capable of pushing energy back into the grid.",
@@ -54,13 +54,13 @@ export const projects: Project[] = [
   },
   {
     id: "eden",
-    title: "Project EDEN — AI Humanoid Robot",
+    title: "Project EDEN \u2014 AI Humanoid Robot",
     org: "EDEN Startup",
     role: "Software Engineer",
-    year: "2026 — Present",
+    year: "2026 \u2014 Present",
     image: "https://sphoorthigurram.github.io/sphoorthi-website/eden-simulator.png",
     summary:
-      "A humanoid robotics framework with adaptive reasoning, emotional context, and long-term memory — EDEN can remember you, text you, and link those conversations to your physical face with computer vision. The current sim applies that stack to enforcing lab safety rules.",
+      "A humanoid robotics framework with adaptive reasoning, emotional context, and long-term memory \u2014 EDEN can remember you, text you, and link those conversations to your physical face with computer vision. The current sim applies that stack to enforcing lab safety rules.",
     highlights: [
       "Personality and long-term memory so EDEN can recall people and ongoing conversations",
       "Messaging integration that connects text chats to a recognized face via computer vision",
@@ -105,21 +105,21 @@ export const projects: Project[] = [
     title: 'Autonomous Underwater Vehicle "Swim Shady"',
     org: "WIRED AUV Team",
     role: "Executive Lead & Electrical Engineer",
-    year: "2025 — Present",
+    year: "2025 \u2014 Present",
     image: "https://sphoorthigurram.github.io/sphoorthi-website/wired-auv-pool.jpg",
     summary:
       "A competition-grade autonomous submarine designed, wired, and pool-tested by a 40+ member team, from custom power boards to Doppler velocity navigation.",
     highlights: [
       "Led a 40+ member multidisciplinary team through design, build, and pool testing",
       "NVIDIA Jetson Nano compute running the autonomy stack onboard",
-      "8× T200 thrusters for full six-degree-of-freedom maneuvering",
+      "8\u00d7 T200 thrusters for full six-degree-of-freedom maneuvering",
       "Teledyne DVL navigation for precise underwater dead reckoning",
       "Custom Altium PCBs with boost converters supplying 24 V and 18 V rails",
     ],
     stack: ["Altium Designer", "Jetson Nano", "Python", "Sensor Fusion", "Linux"],
     metrics: [
       { label: "Team", value: "40+ members" },
-      { label: "Thrusters", value: "8× T200" },
+      { label: "Thrusters", value: "8\u00d7 T200" },
       { label: "Rails", value: "24 V / 18 V" },
     ],
     diagrams: [
@@ -142,7 +142,7 @@ export const projects: Project[] = [
     title: "Concentrating Solar Furnace",
     org: "Sunstrike Optics LLC / SHINE Lab",
     role: "Student Researcher",
-    year: "2026 — Present",
+    year: "2026 \u2014 Present",
     image: "https://sphoorthigurram.github.io/sphoorthi-website/gallery/fresnel-lens-diagram.svg",
     summary:
       "An off-grid Fresnel lens solar concentrator that tracks the sun on two axes and logs its thermal behavior for model validation.",
@@ -227,9 +227,9 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
-    org: "TAMU Think Tank — Team Electra",
+    org: "TAMU Think Tank \u2014 Team Electra",
     role: "Technical Lead",
-    period: "Aug 2025 – Present",
+    period: "Aug 2025 \u2013 Present",
     location: "College Station, TX",
     points: [
       "Lead the electrical design of a 1 kW bi-directional EV charger from topology selection to board bring-up.",
@@ -241,7 +241,7 @@ export const experiences: Experience[] = [
   {
     org: "Project EDEN",
     role: "Software Engineer",
-    period: "Jan 2026 – Present",
+    period: "Jan 2026 \u2013 Present",
     location: "College Station, TX",
     points: [
       "Build EDEN's interaction stack: personality, long-term memory, and messaging tied to face recognition via computer vision.",
@@ -253,19 +253,19 @@ export const experiences: Experience[] = [
   {
     org: "WIRED AUV Team",
     role: "Executive Lead & Electrical Engineer",
-    period: "Aug 2025 – Present",
+    period: "Aug 2025 \u2013 Present",
     location: "College Station, TX",
     points: [
       "Direct a 40+ member team building the autonomous underwater vehicle \u201cSwim Shady\u201d.",
       "Designed custom Altium PCBs with boost converters delivering 24 V and 18 V rails.",
-      "Integrated Jetson Nano compute, 8× T200 thrusters, and Teledyne DVL navigation.",
+      "Integrated Jetson Nano compute, 8\u00d7 T200 thrusters, and Teledyne DVL navigation.",
     ],
     tags: ["Leadership", "PCB Design", "Sensor Fusion"],
   },
   {
     org: "Sunstrike Optics LLC / SHINE Lab",
     role: "Student Researcher",
-    period: "Feb 2026 – Present",
+    period: "Feb 2026 \u2013 Present",
     location: "College Station, TX",
     points: [
       "Develop an off-grid concentrating solar furnace with microprocessor two-axis sun tracking.",
@@ -274,9 +274,9 @@ export const experiences: Experience[] = [
     tags: ["MATLAB", "Research", "Instrumentation"],
   },
   {
-    org: "Peace Resistance & Democracy Lab — UT Dallas",
+    org: "Peace Resistance & Democracy Lab \u2014 UT Dallas",
     role: "Research Intern",
-    period: "May 2024 – Aug 2024",
+    period: "May 2024 \u2013 Aug 2024",
     location: "Richardson, TX",
     points: [
       "Collected and cleaned conflict and governance datasets supporting ongoing political science research.",
@@ -287,7 +287,7 @@ export const experiences: Experience[] = [
   {
     org: "Schoolhouse.world",
     role: "Mathematics Tutor & Bootcamp Organizer",
-    period: "May 2024 – Aug 2024",
+    period: "May 2024 \u2013 Aug 2024",
     location: "Remote",
     points: [
       "Tutored 125+ students across 25 countries in algebra, precalculus, and calculus.",
@@ -374,7 +374,7 @@ export const certifications: Certification[] = [
   {
     id: "wireless-microwave-communications",
     title: "Wireless, Microwave, and Communications Engineering",
-    issuer: "SMARTHub · Spectrum Sizzle Workshop",
+    issuer: "SMARTHub \u00b7 Spectrum Sizzle Workshop",
     date: "Jun 14, 2026",
     description:
       "Completed the Spectrum Sizzle Workshop covering spectrum policy, passive systems, communication system design, microwave circuits, and radar technology.",
@@ -387,7 +387,8 @@ export const certifications: Certification[] = [
     date: "2026",
     description:
       "Completed Barron Stone's Electronics Foundations course covering voltage, current, resistance, power, circuit basics, multimeters, and real-world power sources.",
-    image: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+    image:
+      "https://sphoorthigurram.github.io/sphoorthi-website/CertificateOfCompletion_Electronics%20Foundations%20Fundamentals.pdf",
     url: "https://sphoorthigurram.github.io/sphoorthi-website/CertificateOfCompletion_Electronics%20Foundations%20Fundamentals.pdf",
   },
   {
